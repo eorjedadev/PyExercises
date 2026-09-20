@@ -1,0 +1,17 @@
+[
+  {
+    "asset": "A",
+    "destination": "backup.example.test",
+    "bytes_out": 300
+  },
+  {
+    "asset": "B",
+    "destination": "repo.example.test",
+    "bytes_out": 100
+  },
+  {
+    "asset": "D",
+    "destination": "correo.example.test",
+    "bytes_out": 100
+  }
+]

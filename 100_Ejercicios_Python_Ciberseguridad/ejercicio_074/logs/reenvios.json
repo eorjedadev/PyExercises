@@ -1,0 +1,52 @@
+[
+  {
+    "origin": "sensor1",
+    "event_id": "1",
+    "collector": "C1",
+    "received_at": "2026-01-01T00:00:10Z",
+    "payload": {
+      "status": "fail",
+      "user": "ana"
+    }
+  },
+  {
+    "origin": "sensor1",
+    "event_id": "1",
+    "collector": "C2",
+    "received_at": "2026-01-01T00:00:20Z",
+    "payload": {
+      "status": "fail",
+      "user": "ana"
+    }
+  },
+  {
+    "origin": "sensor2",
+    "event_id": "1",
+    "collector": "C1",
+    "received_at": "2026-01-01T00:00:10Z",
+    "payload": {
+      "status": "fail",
+      "user": "ana"
+    }
+  },
+  {
+    "origin": "sensor1",
+    "event_id": "1",
+    "collector": "C3",
+    "received_at": "2026-01-01T00:00:30Z",
+    "payload": {
+      "status": "ok",
+      "user": "ana"
+    }
+  },
+  {
+    "origin": "sensor1",
+    "event_id": "2",
+    "collector": "C1",
+    "received_at": "2026-01-01T00:00:40Z",
+    "payload": {
+      "status": "ok",
+      "user": "beto"
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "I1",
+    "cuenta": "ana",
+    "segundo": 0,
+    "resultado": "fail"
+  },
+  {
+    "id": "I2",
+    "cuenta": "ana",
+    "segundo": 1,
+    "resultado": "fail"
+  },
+  {
+    "id": "I3",
+    "cuenta": "ana",
+    "segundo": 2,
+    "resultado": "fail"
+  },
+  {
+    "id": "I4",
+    "cuenta": "ana",
+    "segundo": 20,
+    "resultado": "ok"
+  },
+  {
+    "id": "I5",
+    "cuenta": "ana",
+    "segundo": 61,
+    "resultado": "ok"
+  },
+  {
+    "id": "I6",
+    "cuenta": "ana",
+    "segundo": 62,
+    "resultado": "ok"
+  },
+  {
+    "id": "I7",
+    "cuenta": "ana",
+    "segundo": 63,
+    "resultado": "fail"
+  }
+]

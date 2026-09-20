@@ -1,0 +1,32 @@
+[
+  {
+    "id": "A1",
+    "name": "nota.pdf",
+    "mime": "application/pdf",
+    "prefix_hex": "255044462d312e37"
+  },
+  {
+    "id": "A2",
+    "name": "otra.pdf",
+    "mime": "text/plain",
+    "prefix_hex": "255044462d312e37"
+  },
+  {
+    "id": "A3",
+    "name": "tercera.pdf",
+    "mime": "application/pdf",
+    "prefix_hex": "68656c6c6f"
+  },
+  {
+    "id": "A4",
+    "name": "nota.pdf.txt",
+    "mime": "application/pdf",
+    "prefix_hex": "255044462d312e37"
+  },
+  {
+    "id": "A5",
+    "name": "CUARTA.PDF",
+    "mime": "application/pdf",
+    "prefix_hex": "255044462d312e37"
+  }
+]

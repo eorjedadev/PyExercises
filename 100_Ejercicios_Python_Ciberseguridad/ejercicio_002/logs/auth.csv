@@ -1,0 +1,10 @@
+id,cuenta,origen,resultado
+E01,ana,192.0.2.10,fail
+E02,ana,192.0.2.10,ok
+E03,beto,192.0.2.11,fail
+E04,ana,192.0.2.10,fail
+E05,cora,192.0.2.12,ok
+E06,ana,192.0.2.10,fail
+E07,beto,192.0.2.11,ok
+E08,dani,192.0.2.13,ok
+E09,,192.0.2.14,fail

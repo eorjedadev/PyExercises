@@ -1,0 +1,11 @@
+{
+  "version": "LAB-bad",
+  "rules": [
+    {
+      "id": "BAD",
+      "field": "failures",
+      "op": "run",
+      "value": "no-ejecutar"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "T1",
+    "host": "api.example.test",
+    "port": 443,
+    "ts": "2026-01-01T00:00:00Z",
+    "sha256": "8e5f33ad826e4d949ef229197d0377dfad991a89632ac01359d83827790f2917"
+  },
+  {
+    "id": "T2",
+    "host": "api.example.test",
+    "port": 443,
+    "ts": "2026-01-01T00:01:00Z",
+    "sha256": "204f71b59cdcc1d1c8419e1c4955d5ddd90c0d734458722020e302a4924c00f7"
+  },
+  {
+    "id": "T3",
+    "host": "api.example.test",
+    "port": 443,
+    "ts": "2026-01-01T00:01:30Z",
+    "sha256": "204f71b59cdcc1d1c8419e1c4955d5ddd90c0d734458722020e302a4924c00f7"
+  },
+  {
+    "id": "T4",
+    "host": "otro.example.test",
+    "port": 443,
+    "ts": "2026-01-01T00:00:00Z",
+    "sha256": "14b5b5213efe6072304d7b6412968aec428b2974f678fca54fd35ccbf3646ba3"
+  },
+  {
+    "id": "T5",
+    "host": "otro.example.test",
+    "port": 443,
+    "ts": "2026-01-01T00:01:00Z",
+    "sha256": "5a271eaa76f0501a9318ce204ca4bea823703712fae5f4ff0efc9678350a1ceb"
+  }
+]

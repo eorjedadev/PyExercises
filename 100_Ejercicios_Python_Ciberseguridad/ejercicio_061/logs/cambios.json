@@ -1,0 +1,14 @@
+[
+  {
+    "id": "C1",
+    "user": "ana",
+    "action": "disable",
+    "ts": "2026-01-01T10:00:00Z"
+  },
+  {
+    "id": "C2",
+    "user": "ana",
+    "action": "enable",
+    "ts": "2026-01-01T10:02:00Z"
+  }
+]

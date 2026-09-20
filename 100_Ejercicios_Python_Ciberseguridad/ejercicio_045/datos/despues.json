@@ -1,0 +1,8 @@
+{
+  "debug": true,
+  "timeout": 60,
+  "auth": {
+    "token": "LAB-DESPUES"
+  },
+  "nuevo": 2
+}

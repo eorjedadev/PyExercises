@@ -1,0 +1,39 @@
+[
+  {
+    "name": "sid",
+    "tipo": "sesion",
+    "Secure": true,
+    "HttpOnly": false,
+    "SameSite": "Lax"
+  },
+  {
+    "name": "sid2",
+    "tipo": "sesion",
+    "Secure": true,
+    "HttpOnly": true,
+    "SameSite": "Lax"
+  },
+  {
+    "name": "pref",
+    "tipo": "preferencia",
+    "Secure": true,
+    "HttpOnly": false,
+    "SameSite": "Lax"
+  },
+  {
+    "name": "integracion",
+    "tipo": "sesion",
+    "Secure": true,
+    "HttpOnly": true,
+    "SameSite": "None",
+    "excepcion_aprobada": true
+  },
+  {
+    "name": "otra",
+    "tipo": "sesion",
+    "Secure": false,
+    "HttpOnly": true,
+    "SameSite": "None",
+    "excepcion_aprobada": false
+  }
+]

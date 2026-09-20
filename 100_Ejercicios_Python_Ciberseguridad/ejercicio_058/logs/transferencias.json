@@ -1,0 +1,38 @@
+[
+  {
+    "id": "F1",
+    "asset": "A",
+    "destination": "backup.example.test",
+    "bytes_out": 700
+  },
+  {
+    "id": "F2",
+    "asset": "A",
+    "destination": "backup.example.test",
+    "bytes_out": 500
+  },
+  {
+    "id": "F3",
+    "asset": "B",
+    "destination": "repo.example.test",
+    "bytes_out": 900
+  },
+  {
+    "id": "F4",
+    "asset": "C",
+    "destination": "nuevo.example.test",
+    "bytes_out": 3000
+  },
+  {
+    "id": "F5",
+    "asset": "D",
+    "destination": "correo.example.test",
+    "bytes_out": 100
+  },
+  {
+    "id": "F6",
+    "asset": "D",
+    "destination": "correo.example.test",
+    "bytes_out": -1
+  }
+]

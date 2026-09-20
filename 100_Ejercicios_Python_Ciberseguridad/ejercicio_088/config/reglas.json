@@ -1,0 +1,26 @@
+[
+  {
+    "id": "R1",
+    "src_cidr": "192.0.2.0/24",
+    "dst_cidr": "198.51.100.0/24",
+    "protocol": "tcp",
+    "port": 443,
+    "action": "allow"
+  },
+  {
+    "id": "R2",
+    "src_cidr": "192.0.2.0/24",
+    "dst_cidr": "198.51.100.0/24",
+    "protocol": "tcp",
+    "port": "*",
+    "action": "deny"
+  },
+  {
+    "id": "R3",
+    "src_cidr": "2001:db8:1::/48",
+    "dst_cidr": "2001:db8:2::/48",
+    "protocol": "tcp",
+    "port": 443,
+    "action": "allow"
+  }
+]

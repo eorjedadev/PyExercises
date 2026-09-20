@@ -1,0 +1,26 @@
+[
+  {
+    "id": "A",
+    "alert": true
+  },
+  {
+    "id": "B",
+    "alert": true
+  },
+  {
+    "id": "C",
+    "alert": false
+  },
+  {
+    "id": "D",
+    "alert": false
+  },
+  {
+    "id": "E",
+    "alert": true
+  },
+  {
+    "id": "sin_etiqueta",
+    "alert": false
+  }
+]

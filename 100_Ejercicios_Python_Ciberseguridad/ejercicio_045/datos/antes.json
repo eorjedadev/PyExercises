@@ -1,0 +1,8 @@
+{
+  "debug": false,
+  "timeout": 30,
+  "auth": {
+    "token": "LAB-ANTES"
+  },
+  "retirado": 1
+}

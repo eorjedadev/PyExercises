@@ -1,0 +1,34 @@
+[
+  {
+    "id": "Q1",
+    "actor": "ana",
+    "object": "doc1",
+    "action": "leer",
+    "decision": "allow",
+    "status": 200
+  },
+  {
+    "id": "Q2",
+    "actor": "beto",
+    "object": "doc1",
+    "action": "leer",
+    "decision": "allow",
+    "status": 200
+  },
+  {
+    "id": "Q3",
+    "actor": "auditora",
+    "object": "doc1",
+    "action": "leer",
+    "decision": "allow",
+    "status": 200
+  },
+  {
+    "id": "Q4",
+    "actor": "ana",
+    "object": "docX",
+    "action": "leer",
+    "decision": "allow",
+    "status": 200
+  }
+]

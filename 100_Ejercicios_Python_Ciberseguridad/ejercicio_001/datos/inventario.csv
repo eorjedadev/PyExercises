@@ -1,0 +1,10 @@
+id,nombre,bytes
+F01,informe.PDF,800
+F02,factura.pdf.exe,1200
+F03,agente.ps1,500
+F04,notas.txt,300
+F05,README,100
+F06,foto.jpg,-1
+F07,respaldo.docx,900
+F08,actualizador.EXE,1400
+F09,manual.pdf.txt,300

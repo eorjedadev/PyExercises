@@ -1,0 +1,6 @@
+{
+  "inicio": "2026-01-01T00:00:00Z",
+  "fin": "2026-01-01T00:10:00Z",
+  "cuentas_minimas": 4,
+  "max_fallos_por_cuenta": 2
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "A",
+    "source": "s1",
+    "observed_at": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "B",
+    "source": "s2",
+    "observed_at": "2026-01-01T00:00:04Z"
+  },
+  {
+    "id": "C",
+    "source": "s3",
+    "observed_at": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "D",
+    "source": "sin_calibrar",
+    "observed_at": "2026-01-01T00:00:02Z"
+  }
+]

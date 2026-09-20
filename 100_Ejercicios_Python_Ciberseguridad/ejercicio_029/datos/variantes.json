@@ -1,0 +1,16 @@
+[
+  {
+    "id": "V1",
+    "cambio": "ninguno"
+  },
+  {
+    "id": "V2",
+    "cambio": "tag_hex",
+    "valor": "00000000000000000000000000000000"
+  },
+  {
+    "id": "V3",
+    "cambio": "aad_hex",
+    "valor": "01"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "P1",
+    "host": "h1",
+    "boot_id": "b1",
+    "pid": 10,
+    "ppid": null,
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-01-01T00:00:10Z",
+    "name": "servicio"
+  },
+  {
+    "id": "P2",
+    "host": "h1",
+    "boot_id": "b1",
+    "pid": 11,
+    "ppid": 10,
+    "start": "2026-01-01T00:00:05Z",
+    "end": "2026-01-01T00:00:09Z",
+    "name": "trabajo"
+  },
+  {
+    "id": "P3",
+    "host": "h1",
+    "boot_id": "b1",
+    "pid": 12,
+    "ppid": 10,
+    "start": "2026-01-01T00:00:10Z",
+    "end": "2026-01-01T00:00:20Z",
+    "name": "trabajo"
+  },
+  {
+    "id": "P4",
+    "host": "h2",
+    "boot_id": "b1",
+    "pid": 10,
+    "ppid": null,
+    "start": "2026-01-01T00:00:00Z",
+    "end": null,
+    "name": "servicio"
+  },
+  {
+    "id": "P5",
+    "host": "h1",
+    "boot_id": "b2",
+    "pid": 10,
+    "ppid": null,
+    "start": "2026-01-01T00:00:30Z",
+    "end": null,
+    "name": "servicio"
+  },
+  {
+    "id": "P6",
+    "host": "h1",
+    "boot_id": "b1",
+    "pid": 20,
+    "ppid": null,
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-01-01T00:00:20Z",
+    "name": "capturaA"
+  },
+  {
+    "id": "P7",
+    "host": "h1",
+    "boot_id": "b1",
+    "pid": 20,
+    "ppid": null,
+    "start": "2026-01-01T00:00:01Z",
+    "end": "2026-01-01T00:00:20Z",
+    "name": "capturaB"
+  },
+  {
+    "id": "P8",
+    "host": "h1",
+    "boot_id": "b1",
+    "pid": 21,
+    "ppid": 20,
+    "start": "2026-01-01T00:00:05Z",
+    "end": "2026-01-01T00:00:10Z",
+    "name": "hijo"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "A0",
+    "asset": "A",
+    "destination": "health.example.test",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "A1",
+    "asset": "A",
+    "destination": "health.example.test",
+    "ts": "2026-01-01T00:01:00Z"
+  },
+  {
+    "id": "A2",
+    "asset": "A",
+    "destination": "health.example.test",
+    "ts": "2026-01-01T00:02:00Z"
+  },
+  {
+    "id": "A3",
+    "asset": "A",
+    "destination": "health.example.test",
+    "ts": "2026-01-01T00:03:01Z"
+  },
+  {
+    "id": "A4",
+    "asset": "A",
+    "destination": "health.example.test",
+    "ts": "2026-01-01T00:04:01Z"
+  },
+  {
+    "id": "B0",
+    "asset": "B",
+    "destination": "api.example.test",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "B1",
+    "asset": "B",
+    "destination": "api.example.test",
+    "ts": "2026-01-01T00:00:10Z"
+  },
+  {
+    "id": "B2",
+    "asset": "B",
+    "destination": "api.example.test",
+    "ts": "2026-01-01T00:00:50Z"
+  },
+  {
+    "id": "B3",
+    "asset": "B",
+    "destination": "api.example.test",
+    "ts": "2026-01-01T00:02:20Z"
+  },
+  {
+    "id": "B4",
+    "asset": "B",
+    "destination": "api.example.test",
+    "ts": "2026-01-01T00:05:00Z"
+  },
+  {
+    "id": "C0",
+    "asset": "C",
+    "destination": "update.example.test",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "C1",
+    "asset": "C",
+    "destination": "update.example.test",
+    "ts": "2026-01-01T00:01:00Z"
+  },
+  {
+    "id": "C2",
+    "asset": "C",
+    "destination": "update.example.test",
+    "ts": "2026-01-01T00:02:00Z"
+  },
+  {
+    "id": "C3",
+    "asset": "C",
+    "destination": "update.example.test",
+    "ts": "2026-01-01T00:03:00Z"
+  },
+  {
+    "id": "AD",
+    "asset": "A",
+    "destination": "health.example.test",
+    "ts": "2026-01-01T00:01:00Z"
+  }
+]

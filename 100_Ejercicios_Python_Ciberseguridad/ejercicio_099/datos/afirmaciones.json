@@ -1,0 +1,29 @@
+[
+  {
+    "id": "C1",
+    "claim": "La cuenta ana accedió al portal",
+    "cited": [
+      "E1"
+    ]
+  },
+  {
+    "id": "C2",
+    "claim": "Los bytes del archivo cambiaron entre capturas",
+    "cited": [
+      "H1",
+      "H2"
+    ]
+  },
+  {
+    "id": "C3",
+    "claim": "Una persona concreta alteró el archivo",
+    "cited": [
+      "D1"
+    ]
+  },
+  {
+    "id": "C4",
+    "claim": "No hubo procesos nuevos",
+    "cited": []
+  }
+]

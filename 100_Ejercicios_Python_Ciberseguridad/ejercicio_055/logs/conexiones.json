@@ -1,0 +1,90 @@
+[
+  {
+    "id": "P0",
+    "origin": "A",
+    "destination": "srv1",
+    "port": 20,
+    "action": "deny",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "P1",
+    "origin": "A",
+    "destination": "srv1",
+    "port": 21,
+    "action": "deny",
+    "ts": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "P2",
+    "origin": "A",
+    "destination": "srv1",
+    "port": 22,
+    "action": "deny",
+    "ts": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "P3",
+    "origin": "A",
+    "destination": "srv1",
+    "port": 23,
+    "action": "deny",
+    "ts": "2026-01-01T00:00:03Z"
+  },
+  {
+    "id": "P4",
+    "origin": "A",
+    "destination": "srv1",
+    "port": 24,
+    "action": "deny",
+    "ts": "2026-01-01T00:00:04Z"
+  },
+  {
+    "id": "R0",
+    "origin": "B",
+    "destination": "srv1",
+    "port": 443,
+    "action": "allow",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "R1",
+    "origin": "B",
+    "destination": "srv1",
+    "port": 443,
+    "action": "allow",
+    "ts": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "R2",
+    "origin": "B",
+    "destination": "srv1",
+    "port": 443,
+    "action": "allow",
+    "ts": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "R3",
+    "origin": "B",
+    "destination": "srv1",
+    "port": 443,
+    "action": "allow",
+    "ts": "2026-01-01T00:00:03Z"
+  },
+  {
+    "id": "R4",
+    "origin": "B",
+    "destination": "srv1",
+    "port": 443,
+    "action": "allow",
+    "ts": "2026-01-01T00:00:04Z"
+  },
+  {
+    "id": "BAD",
+    "origin": "C",
+    "destination": "srv1",
+    "port": 0,
+    "action": "deny",
+    "ts": "2026-01-01T00:00:05Z"
+  }
+]

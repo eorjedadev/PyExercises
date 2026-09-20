@@ -1,0 +1,44 @@
+[
+  {
+    "id": "Z1",
+    "path": "docs/a.txt",
+    "type": "file",
+    "compressed": 100,
+    "uncompressed": 200
+  },
+  {
+    "id": "Z2",
+    "path": "../fuera.txt",
+    "type": "file",
+    "compressed": 10,
+    "uncompressed": 20
+  },
+  {
+    "id": "Z3",
+    "path": "grande.txt",
+    "type": "file",
+    "compressed": 30000,
+    "uncompressed": 2097152
+  },
+  {
+    "id": "Z4",
+    "path": "enlace",
+    "type": "symlink",
+    "compressed": 20,
+    "uncompressed": 20
+  },
+  {
+    "id": "Z5",
+    "path": "repetido.txt",
+    "type": "file",
+    "compressed": 10,
+    "uncompressed": 2000
+  },
+  {
+    "id": "Z6",
+    "path": "vacio.txt",
+    "type": "file",
+    "compressed": 0,
+    "uncompressed": 0
+  }
+]

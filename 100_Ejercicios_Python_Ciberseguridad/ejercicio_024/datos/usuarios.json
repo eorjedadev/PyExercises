@@ -1,0 +1,32 @@
+[
+  {
+    "usuario": "admin1",
+    "habilitada": true,
+    "privilegiada": true,
+    "mfa": false
+  },
+  {
+    "usuario": "admin2",
+    "habilitada": true,
+    "privilegiada": true,
+    "mfa": false
+  },
+  {
+    "usuario": "admin3",
+    "habilitada": true,
+    "privilegiada": true,
+    "mfa": true
+  },
+  {
+    "usuario": "admin4",
+    "habilitada": false,
+    "privilegiada": true,
+    "mfa": false
+  },
+  {
+    "usuario": "usuario1",
+    "habilitada": true,
+    "privilegiada": false,
+    "mfa": false
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "LAB-ADV-1",
+    "ecosistema": "pypi",
+    "nombre": "libalpha",
+    "min": "1.0.0",
+    "max_exclusive": "1.3.0"
+  },
+  {
+    "id": "LAB-ADV-2",
+    "ecosistema": "pypi",
+    "nombre": "libbeta",
+    "min": "1.5.0",
+    "max_exclusive": "2.0.0"
+  }
+]

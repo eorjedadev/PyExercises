@@ -1,0 +1,14 @@
+[
+  {
+    "id": "EX1",
+    "usuario": "admin2",
+    "aprobada": true,
+    "expires_at": "2026-01-01T11:06:40Z"
+  },
+  {
+    "id": "EX2",
+    "usuario": "admin1",
+    "aprobada": true,
+    "expires_at": "2026-01-01T10:00:00Z"
+  }
+]

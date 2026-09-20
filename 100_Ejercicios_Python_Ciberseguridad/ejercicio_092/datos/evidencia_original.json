@@ -1,0 +1,26 @@
+[
+  {
+    "event_id": "E1",
+    "ts": "2026-01-01T00:00:00Z",
+    "user": "ana",
+    "email": "ana@example.test",
+    "token": "LAB-TOKEN-A",
+    "action": "login"
+  },
+  {
+    "event_id": "E2",
+    "ts": "2026-01-01T00:00:10Z",
+    "user": "beto",
+    "email": "beto@example.test",
+    "token": "LAB-TOKEN-B",
+    "action": "read"
+  },
+  {
+    "event_id": "E3",
+    "ts": "2026-01-01T00:00:20Z",
+    "user": "ana",
+    "email": "ana@example.test",
+    "token": "LAB-TOKEN-A",
+    "action": "logout"
+  }
+]

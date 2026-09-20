@@ -1,0 +1,9 @@
+[
+  {
+    "load_id": "C4",
+    "control": "run_as_uid",
+    "approved": true,
+    "owner": "infra",
+    "reason": "agente de infraestructura"
+  }
+]

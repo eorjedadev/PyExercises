@@ -1,0 +1,14 @@
+[
+  {
+    "path": "timeout",
+    "new_value": 60,
+    "approved": true,
+    "ticket": "LAB-CH2"
+  },
+  {
+    "path": "auth.token",
+    "approved": true,
+    "secret_change": true,
+    "ticket": "LAB-CH3"
+  }
+]

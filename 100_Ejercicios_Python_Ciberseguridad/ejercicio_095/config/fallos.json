@@ -1,0 +1,14 @@
+[
+  {
+    "id": "F1",
+    "fail_at": "during_write"
+  },
+  {
+    "id": "F2",
+    "fail_at": "replace"
+  },
+  {
+    "id": "F3",
+    "fail_at": null
+  }
+]

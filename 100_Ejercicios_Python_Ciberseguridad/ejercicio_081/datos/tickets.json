@@ -1,0 +1,11 @@
+[
+  {
+    "id": "CH-B",
+    "user": "beto",
+    "role": "admin",
+    "start": "2026-01-01T00:03:20Z",
+    "end": "2026-01-01T00:05:00Z",
+    "approved": true,
+    "approver": "jefa"
+  }
+]

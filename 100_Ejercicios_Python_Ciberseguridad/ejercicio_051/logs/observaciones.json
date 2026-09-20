@@ -1,0 +1,32 @@
+[
+  {
+    "id": "O1",
+    "type": "domain",
+    "value": "BAD.EXAMPLE.TEST."
+  },
+  {
+    "id": "O2",
+    "type": "domain",
+    "value": "notbad.example.test"
+  },
+  {
+    "id": "O3",
+    "type": "domain",
+    "value": "viejo.example.test"
+  },
+  {
+    "id": "O4",
+    "type": "ip",
+    "value": "2001:0db8:0:0:0:0:0:1"
+  },
+  {
+    "id": "O5",
+    "type": "sha256",
+    "value": "6dc523794bc2406e26c62177ead2ea500ea9ccbebe118fb46681fae76dcb68bc"
+  },
+  {
+    "id": "O6",
+    "type": "ip",
+    "value": "203.0.113.10"
+  }
+]

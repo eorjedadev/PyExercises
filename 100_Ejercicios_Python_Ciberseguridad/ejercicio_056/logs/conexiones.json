@@ -1,0 +1,74 @@
+[
+  {
+    "id": "L1",
+    "origin": "hA",
+    "destination": "srv1",
+    "protocol": "tcp",
+    "port": 445,
+    "ts": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "L2",
+    "origin": "hA",
+    "destination": "srv2",
+    "protocol": "tcp",
+    "port": 445,
+    "ts": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "L3",
+    "origin": "hA",
+    "destination": "srv3",
+    "protocol": "tcp",
+    "port": 445,
+    "ts": "2026-01-01T00:00:03Z"
+  },
+  {
+    "id": "L4",
+    "origin": "hA",
+    "destination": "srv4",
+    "protocol": "tcp",
+    "port": 445,
+    "ts": "2026-01-01T00:00:04Z"
+  },
+  {
+    "id": "B0",
+    "origin": "hB",
+    "destination": "srv1",
+    "protocol": "tcp",
+    "port": 445,
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "B1",
+    "origin": "hB",
+    "destination": "srv1",
+    "protocol": "tcp",
+    "port": 445,
+    "ts": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "B2",
+    "origin": "hB",
+    "destination": "srv1",
+    "protocol": "tcp",
+    "port": 445,
+    "ts": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "B3",
+    "origin": "hB",
+    "destination": "srv1",
+    "protocol": "tcp",
+    "port": 445,
+    "ts": "2026-01-01T00:00:03Z"
+  },
+  {
+    "id": "U1",
+    "origin": "hA",
+    "destination": "desconocido",
+    "protocol": "tcp",
+    "port": 3389,
+    "ts": "2026-01-01T00:00:20Z"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "C1",
+    "hostname": "api.example.test",
+    "san": [
+      "api.example.test"
+    ],
+    "not_before": "2025-12-31T00:00:00Z",
+    "not_after": "2026-01-06T00:00:00Z"
+  },
+  {
+    "id": "C2",
+    "hostname": "viejo.example.test",
+    "san": [
+      "viejo.example.test"
+    ],
+    "not_before": "2025-12-12T00:00:00Z",
+    "not_after": "2025-12-31T23:59:59Z"
+  },
+  {
+    "id": "C3",
+    "hostname": "alias.example.test",
+    "san": [
+      "otro.example.test"
+    ],
+    "not_before": "2025-12-31T00:00:00Z",
+    "not_after": "2026-01-31T00:00:00Z"
+  },
+  {
+    "id": "C4",
+    "hostname": "futuro.example.test",
+    "san": [
+      "futuro.example.test"
+    ],
+    "not_before": "2026-01-01T00:00:01Z",
+    "not_after": "2026-01-31T00:00:00Z"
+  }
+]

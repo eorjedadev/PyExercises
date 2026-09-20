@@ -1,0 +1,12 @@
+[
+  {
+    "id": "doc1",
+    "owner": "ana",
+    "name": "Privado Ana"
+  },
+  {
+    "id": "doc2",
+    "owner": "beto",
+    "name": "Privado Beto"
+  }
+]

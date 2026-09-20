@@ -1,0 +1,26 @@
+[
+  {
+    "id": "A1",
+    "activo": "srv1",
+    "ts": "2026-01-01T09:00:00Z",
+    "accion": "reinicio"
+  },
+  {
+    "id": "A2",
+    "activo": "srv1",
+    "ts": "2026-01-01T10:00:00Z",
+    "accion": "cambio"
+  },
+  {
+    "id": "A3",
+    "activo": "srv2",
+    "ts": "2026-01-01T09:30:00Z",
+    "accion": "consulta_admin"
+  },
+  {
+    "id": "A4",
+    "activo": "srv1",
+    "ts": "2026-01-01T09:10:00Z",
+    "accion": "consulta_admin"
+  }
+]

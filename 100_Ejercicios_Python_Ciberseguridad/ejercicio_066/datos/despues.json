@@ -1,0 +1,23 @@
+[
+  {
+    "host": "h1",
+    "task_id": "T1",
+    "executable": "/tmp/lab/a",
+    "frequency": "daily",
+    "description": "original"
+  },
+  {
+    "host": "h1",
+    "task_id": "T2",
+    "executable": "/opt/lab/b",
+    "frequency": "daily",
+    "description": "nueva"
+  },
+  {
+    "host": "h1",
+    "task_id": "T3",
+    "executable": "/opt/lab/c",
+    "frequency": "hourly",
+    "description": "despues"
+  }
+]

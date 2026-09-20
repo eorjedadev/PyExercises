@@ -1,0 +1,14 @@
+[
+  {
+    "asset": "A",
+    "role": "agente_salud"
+  },
+  {
+    "asset": "B",
+    "role": "estacion"
+  },
+  {
+    "asset": "C",
+    "role": "actualizador"
+  }
+]

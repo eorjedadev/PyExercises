@@ -1,0 +1,20 @@
+[
+  {
+    "id": "CH1",
+    "user": "ana",
+    "role": "admin",
+    "start": "2026-01-01T00:03:20Z",
+    "end": "2026-01-01T00:05:00Z",
+    "approved": true,
+    "approver": "jefa"
+  },
+  {
+    "id": "CH2",
+    "user": "beto",
+    "role": "admin",
+    "start": "2026-01-01T00:03:20Z",
+    "end": "2026-01-01T00:05:00Z",
+    "approved": false,
+    "approver": "jefa"
+  }
+]

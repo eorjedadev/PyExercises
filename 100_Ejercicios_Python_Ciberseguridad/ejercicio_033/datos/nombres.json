@@ -1,0 +1,22 @@
+[
+  {
+    "id": "N1",
+    "nombre": "Ana"
+  },
+  {
+    "id": "N2",
+    "nombre": "<b>Ana</b>"
+  },
+  {
+    "id": "N3",
+    "nombre": "A&B"
+  },
+  {
+    "id": "N4",
+    "nombre": "\"doble\" y simple"
+  },
+  {
+    "id": "N5",
+    "nombre": "<texto>"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "component_id": "P1",
+    "service": "portal",
+    "exposed": true,
+    "affected_function_used": true,
+    "verified_at": "2026-01-01T00:00:00Z"
+  },
+  {
+    "component_id": "P2",
+    "service": "api",
+    "exposed": true,
+    "affected_function_used": true,
+    "verified_at": "2026-01-01T00:00:00Z"
+  },
+  {
+    "component_id": "P3",
+    "service": "batch",
+    "exposed": false,
+    "affected_function_used": null,
+    "verified_at": "2026-01-01T00:00:00Z"
+  },
+  {
+    "component_id": "P4",
+    "service": "intranet",
+    "exposed": false,
+    "affected_function_used": false,
+    "verified_at": "2026-01-01T00:00:00Z"
+  },
+  {
+    "component_id": "P6",
+    "service": "interno",
+    "exposed": false,
+    "affected_function_used": false,
+    "verified_at": "2026-01-01T00:00:00Z"
+  },
+  {
+    "component_id": "P7",
+    "service": "nuevo",
+    "exposed": true,
+    "affected_function_used": null,
+    "verified_at": "2026-01-01T00:00:00Z"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "key_hex": "00000000000000000000000000000000",
+  "nonce_hex": "000000000000000000000000",
+  "aad_hex": "",
+  "ciphertext_hex": "0388dace60b6a392f328c2b971b2fe78",
+  "tag_hex": "ab6e47d42cec13bdf53a67b21257bddf",
+  "plaintext_length": 16
+}

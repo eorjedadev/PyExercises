@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "status": "confirmado",
+  "alerts": [
+    "NUEVA1",
+    "NUEVA2"
+  ]
+}

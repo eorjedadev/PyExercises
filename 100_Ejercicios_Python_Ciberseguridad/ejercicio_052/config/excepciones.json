@@ -1,0 +1,20 @@
+[
+  {
+    "id": "EX1",
+    "rule": "R1",
+    "asset": "hostA",
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-01-01T00:01:00Z",
+    "ticket": "LAB-CH1",
+    "approver": "supervisor"
+  },
+  {
+    "id": "EX2",
+    "rule": "R2",
+    "asset": "*",
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-01-01T00:01:00Z",
+    "ticket": "LAB-CH2",
+    "approver": "supervisor"
+  }
+]

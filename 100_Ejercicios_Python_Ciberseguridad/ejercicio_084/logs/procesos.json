@@ -1,0 +1,23 @@
+[
+  {
+    "id": "P1",
+    "request_id": "REQ1",
+    "host": "web1",
+    "ts": "2026-01-01T00:00:12Z",
+    "name": "LAB-WORKER"
+  },
+  {
+    "id": "P2",
+    "request_id": null,
+    "host": "web1",
+    "ts": "2026-01-01T00:00:25Z",
+    "name": "LAB-MAINT"
+  },
+  {
+    "id": "P3",
+    "request_id": null,
+    "host": "web3",
+    "ts": "2026-01-01T00:00:20Z",
+    "name": "LAB-WORKER"
+  }
+]

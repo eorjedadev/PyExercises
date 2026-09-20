@@ -1,0 +1,34 @@
+[
+  {
+    "id": "C1",
+    "evidence": "E1",
+    "ts": "2026-01-01T00:00:00Z",
+    "from": "recolector",
+    "to": "analista",
+    "sha256": "8b5cc4df7eec7d32a7814eca4af047ae33b2d52342667715682e19c25b0b9faa"
+  },
+  {
+    "id": "C2",
+    "evidence": "E1",
+    "ts": "2026-01-01T00:01:00Z",
+    "from": "analista",
+    "to": "archivo",
+    "sha256": "8b5cc4df7eec7d32a7814eca4af047ae33b2d52342667715682e19c25b0b9faa"
+  },
+  {
+    "id": "C3",
+    "evidence": "E2",
+    "ts": "2026-01-01T00:00:00Z",
+    "from": "otro",
+    "to": "analista",
+    "sha256": "ac0f09c0f8bf5e7a4b063d863255f16d8ce9abe600e288d934cf313bcbff63eb"
+  },
+  {
+    "id": "C4",
+    "evidence": "E2",
+    "ts": "2026-01-01T00:01:00Z",
+    "from": "analista",
+    "to": "archivo",
+    "sha256": "69db2fdfc57c2a569dfb70ac26c1005e7305eb55efab8ba024278fa655f11c80"
+  }
+]

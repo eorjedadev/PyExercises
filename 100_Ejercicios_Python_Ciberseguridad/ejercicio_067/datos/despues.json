@@ -1,0 +1,26 @@
+[
+  {
+    "id": "A0",
+    "platform": "linux",
+    "location": "autostart",
+    "command": "/opt/lab/agente"
+  },
+  {
+    "id": "A1",
+    "platform": "windows",
+    "location": "Run",
+    "command": "C:/Temp/agente"
+  },
+  {
+    "id": "A2",
+    "platform": "linux",
+    "location": "autostart",
+    "command": "/tmp/agente"
+  },
+  {
+    "id": "A3",
+    "platform": "windows",
+    "location": "Run",
+    "command": "C:/Program Files/Lab/agente"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "R1",
+    "failures": 3,
+    "type": "auth"
+  },
+  {
+    "id": "R2",
+    "failures": 2,
+    "type": "auth"
+  },
+  {
+    "id": "R3",
+    "type": "auth"
+  },
+  {
+    "id": "R4",
+    "failures": 5,
+    "type": "service"
+  }
+]

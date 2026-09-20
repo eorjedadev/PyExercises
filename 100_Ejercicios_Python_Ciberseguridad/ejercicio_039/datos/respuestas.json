@@ -1,0 +1,27 @@
+[
+  {
+    "id": "R1",
+    "public": "Traceback: fallo interno simulado",
+    "internal": "LAB-DIAG1"
+  },
+  {
+    "id": "R2",
+    "public": "Error de servicio. Referencia LAB-DIAG2",
+    "internal": "Traceback: ruta /srv/private/lab"
+  },
+  {
+    "id": "R3",
+    "public": "Error de servicio. Referencia LAB-DIAG3",
+    "internal": "db_password=[FICTICIO]"
+  },
+  {
+    "id": "R4",
+    "public": "No se pudo abrir /srv/private/ejemplo",
+    "internal": ""
+  },
+  {
+    "id": "R5",
+    "public": "Operación recibida",
+    "internal": ""
+  }
+]

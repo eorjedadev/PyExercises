@@ -1,0 +1,18 @@
+[
+  {
+    "ruta": "normal.txt",
+    "sha256": "6f6dabeab908a57a48cc45d4233a7ed22f25fbe1a42439711db6ab2ee3ee2100"
+  },
+  {
+    "ruta": "cambiado.txt",
+    "sha256": "6e913f7212aeeb927e8e5d1ae5a87c139dd378de309f8b456dc20eb241cecd4e"
+  },
+  {
+    "ruta": "ausente.txt",
+    "sha256": "a759af6e809102a6351693b35cd083e08ff9f2936134f7ab8f5ad693871942cc"
+  },
+  {
+    "ruta": "vacio.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

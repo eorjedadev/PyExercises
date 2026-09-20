@@ -1,0 +1,12 @@
+[
+  {
+    "id": "srv1",
+    "role": "portal",
+    "owner": "aplicaciones"
+  },
+  {
+    "id": "srv2",
+    "role": "archivo",
+    "owner": "infra"
+  }
+]

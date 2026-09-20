@@ -1,0 +1,53 @@
+[
+  {
+    "id": "L1",
+    "session_id": "s1",
+    "event": "auth_ok",
+    "ts": "2026-01-01T00:00:00Z",
+    "user": "ana",
+    "distro": "Ubuntu"
+  },
+  {
+    "id": "L2",
+    "session_id": "s1",
+    "event": "sudo",
+    "ts": "2026-01-01T00:00:30Z",
+    "user": "ana",
+    "distro": "Ubuntu",
+    "command": "LAB-CONSULTA"
+  },
+  {
+    "id": "L3",
+    "session_id": "s2",
+    "event": "sudo",
+    "ts": "2026-01-01T00:00:40Z",
+    "user": "beto",
+    "distro": "Kali",
+    "command": "LAB-MANTENIMIENTO"
+  },
+  {
+    "id": "L4",
+    "session_id": "s2",
+    "event": "auth_ok",
+    "ts": "2026-01-01T00:00:50Z",
+    "user": "beto",
+    "distro": "Kali"
+  },
+  {
+    "id": "L5",
+    "session_id": "s3",
+    "event": "auth_ok",
+    "ts": "2026-01-01T00:00:10Z",
+    "user": "cora",
+    "distro": "CachyOS"
+  },
+  {
+    "id": "L6",
+    "session_id": "s3",
+    "event": "sudo",
+    "ts": "2026-01-01T00:02:11Z",
+    "user": "cora",
+    "distro": "CachyOS",
+    "command": "LAB-REVISION"
+  }
+]

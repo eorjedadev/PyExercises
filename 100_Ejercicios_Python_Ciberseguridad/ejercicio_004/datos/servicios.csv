@@ -1,0 +1,9 @@
+id,activo,protocolo,puerto,alcance
+S01,srv1,tcp,22,interno
+S02,srv2,tcp,3389,publicado
+S03,srv3,tcp,443,publicado
+S04,srv4,udp,53,interno
+S05,srv5,tcp,22,publicado
+S06,srv6,tcp,70000,interno
+S07,srv7,udp,3389,publicado
+S08,srv8,tcp,3389,interno

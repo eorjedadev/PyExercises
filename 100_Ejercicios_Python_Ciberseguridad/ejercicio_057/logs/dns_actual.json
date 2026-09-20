@@ -1,0 +1,27 @@
+[
+  {
+    "id": "D1",
+    "client": "h1",
+    "name": "A.EXAMPLE.TEST."
+  },
+  {
+    "id": "D2",
+    "client": "h1",
+    "name": "nuevo.example.test"
+  },
+  {
+    "id": "D3",
+    "client": "h2",
+    "name": "updates.example.test"
+  },
+  {
+    "id": "D4",
+    "client": "h2",
+    "name": ""
+  },
+  {
+    "id": "D5",
+    "client": "h3",
+    "name": "a.example.test.evil.test"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "version": "LAB-2026-01",
+  "algoritmo": "scrypt",
+  "n": 131072,
+  "r": 8,
+  "p": 1,
+  "salt_bytes_min": 16
+}

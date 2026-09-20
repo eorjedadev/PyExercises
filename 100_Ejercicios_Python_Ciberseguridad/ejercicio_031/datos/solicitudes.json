@@ -1,0 +1,32 @@
+[
+  {
+    "id": "Q1",
+    "actor": "ana",
+    "object": "doc1",
+    "action": "leer"
+  },
+  {
+    "id": "Q2",
+    "actor": "beto",
+    "object": "doc1",
+    "action": "leer"
+  },
+  {
+    "id": "Q3",
+    "actor": "auditora",
+    "object": "doc1",
+    "action": "leer"
+  },
+  {
+    "id": "Q4",
+    "actor": "nadie",
+    "object": "doc2",
+    "action": "leer"
+  },
+  {
+    "id": "Q5",
+    "actor": "ana",
+    "object": "ausente",
+    "action": "leer"
+  }
+]

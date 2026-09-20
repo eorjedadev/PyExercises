@@ -1,0 +1,32 @@
+[
+  {
+    "id": "Q1",
+    "actor": "ana",
+    "action": "read",
+    "resource": "doc1"
+  },
+  {
+    "id": "Q2",
+    "actor": "ana",
+    "action": "read",
+    "resource": "doc2"
+  },
+  {
+    "id": "Q3",
+    "actor": "ana",
+    "action": "write",
+    "resource": "doc1"
+  },
+  {
+    "id": "Q4",
+    "actor": "beto",
+    "action": "read",
+    "resource": "doc1"
+  },
+  {
+    "id": "Q5",
+    "actor": "emergencia",
+    "action": "read",
+    "resource": "doc1"
+  }
+]

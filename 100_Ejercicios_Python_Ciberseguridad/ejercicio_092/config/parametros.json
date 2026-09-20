@@ -1,0 +1,10 @@
+{
+  "campos_compartidos": [
+    "event_id",
+    "ts",
+    "action",
+    "alias"
+  ],
+  "prefijo_alias": "U",
+  "digitos_alias": 3
+}

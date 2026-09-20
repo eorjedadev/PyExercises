@@ -1,0 +1,33 @@
+[
+  {
+    "id": "C1",
+    "privileged": true,
+    "run_as_uid": 0,
+    "rootfs_readonly": false,
+    "mounts": [
+      "/var/run/docker.sock"
+    ]
+  },
+  {
+    "id": "C2",
+    "privileged": false,
+    "run_as_uid": 1000,
+    "rootfs_readonly": true,
+    "mounts": [
+      "/datos/lab"
+    ]
+  },
+  {
+    "id": "C3",
+    "privileged": false,
+    "rootfs_readonly": true,
+    "mounts": []
+  },
+  {
+    "id": "C4",
+    "privileged": false,
+    "run_as_uid": 0,
+    "rootfs_readonly": true,
+    "mounts": []
+  }
+]

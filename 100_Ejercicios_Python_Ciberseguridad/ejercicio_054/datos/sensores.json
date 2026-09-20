@@ -1,0 +1,18 @@
+[
+  {
+    "id": "A",
+    "asset": "hostA"
+  },
+  {
+    "id": "B",
+    "asset": "hostB"
+  },
+  {
+    "id": "C",
+    "asset": "hostC"
+  },
+  {
+    "id": "D",
+    "asset": "hostD"
+  }
+]

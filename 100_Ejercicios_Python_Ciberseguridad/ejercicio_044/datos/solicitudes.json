@@ -1,0 +1,20 @@
+[
+  {
+    "id": "Q1",
+    "user": "ana",
+    "resource": "doc1",
+    "action": "leer"
+  },
+  {
+    "id": "Q2",
+    "user": "beto",
+    "resource": "doc1",
+    "action": "leer"
+  },
+  {
+    "id": "Q3",
+    "user": "cora",
+    "resource": "doc1",
+    "action": "leer"
+  }
+]

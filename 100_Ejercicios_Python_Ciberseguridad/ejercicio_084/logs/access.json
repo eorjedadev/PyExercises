@@ -1,0 +1,26 @@
+[
+  {
+    "id": "Q1",
+    "request_id": "REQ1",
+    "host": "web1",
+    "ts": "2026-01-01T00:00:10Z",
+    "path": "/admin/debug",
+    "status": 500
+  },
+  {
+    "id": "Q2",
+    "request_id": "REQ2",
+    "host": "web1",
+    "ts": "2026-01-01T00:00:20Z",
+    "path": "/health",
+    "status": 200
+  },
+  {
+    "id": "Q3",
+    "request_id": "REQ3",
+    "host": "web2",
+    "ts": "2026-01-01T00:00:20Z",
+    "path": "/report",
+    "status": 200
+  }
+]

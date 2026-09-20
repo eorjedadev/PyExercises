@@ -1,0 +1,32 @@
+[
+  {
+    "id": "A",
+    "service": "portal",
+    "failures": 4
+  },
+  {
+    "id": "B",
+    "service": "portal",
+    "failures": 5
+  },
+  {
+    "id": "C",
+    "service": "portal",
+    "failures": 2
+  },
+  {
+    "id": "D",
+    "service": "batch",
+    "failures": 4
+  },
+  {
+    "id": "E",
+    "service": "batch",
+    "failures": 5
+  },
+  {
+    "id": "F",
+    "service": "batch",
+    "failures": 0
+  }
+]

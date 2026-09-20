@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ACL1",
+    "subject_type": "group",
+    "subject": "lectores",
+    "resource": "doc1",
+    "action": "leer",
+    "effect": "allow"
+  },
+  {
+    "id": "ACL2",
+    "subject_type": "user",
+    "subject": "beto",
+    "resource": "doc1",
+    "action": "leer",
+    "effect": "deny"
+  }
+]

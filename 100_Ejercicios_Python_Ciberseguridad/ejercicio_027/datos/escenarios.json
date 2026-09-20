@@ -1,0 +1,29 @@
+[
+  {
+    "id": "TOK1",
+    "emision": 0,
+    "consumos": [
+      119,
+      119
+    ]
+  },
+  {
+    "id": "TOK2",
+    "emision": 0,
+    "consumos": [
+      120
+    ]
+  },
+  {
+    "id": "TOK3",
+    "emision": 10,
+    "consumos": [
+      20
+    ]
+  },
+  {
+    "id": "TOK4",
+    "emision": 100,
+    "consumos": []
+  }
+]

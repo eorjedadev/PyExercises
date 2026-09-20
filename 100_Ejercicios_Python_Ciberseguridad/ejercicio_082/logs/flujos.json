@@ -1,0 +1,30 @@
+[
+  {
+    "id": "F1",
+    "asset": "srv1",
+    "destination": "backup.example.test",
+    "ts": "2026-01-01T00:00:10Z",
+    "bytes_out": 5000
+  },
+  {
+    "id": "F2",
+    "asset": "srv1",
+    "destination": "otro.example.test",
+    "ts": "2026-01-01T00:00:20Z",
+    "bytes_out": 5000
+  },
+  {
+    "id": "F3",
+    "asset": "srv2",
+    "destination": "backup.example.test",
+    "ts": "2026-01-01T00:00:20Z",
+    "bytes_out": 100
+  },
+  {
+    "id": "F4",
+    "asset": "srv1",
+    "destination": "backup.example.test",
+    "ts": "2026-01-01T00:01:20Z",
+    "bytes_out": 6000
+  }
+]

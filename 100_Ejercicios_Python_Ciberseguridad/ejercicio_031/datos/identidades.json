@@ -1,0 +1,13 @@
+{
+  "ana": {
+    "roles": []
+  },
+  "beto": {
+    "roles": []
+  },
+  "auditora": {
+    "roles": [
+      "auditor"
+    ]
+  }
+}

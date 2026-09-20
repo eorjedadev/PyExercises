@@ -1,0 +1,47 @@
+[
+  {
+    "id": "W1",
+    "event_id": 4624,
+    "LogonType": 3,
+    "version": 2,
+    "account": "ana",
+    "host": "win1",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "W2",
+    "event_id": 4625,
+    "LogonType": 10,
+    "version": 0,
+    "account": "beto",
+    "host": "win1",
+    "ts": "2026-01-01T00:00:20Z"
+  },
+  {
+    "id": "W3",
+    "event_id": 4672,
+    "LogonType": null,
+    "version": 0,
+    "account": "svc",
+    "host": "win2",
+    "ts": "2026-01-01T00:00:30Z"
+  },
+  {
+    "id": "W4",
+    "event_id": 4624,
+    "LogonType": 2,
+    "version": 2,
+    "account": "cora",
+    "host": "win2",
+    "ts": "2026-01-01T00:00:40Z"
+  },
+  {
+    "id": "W5",
+    "event_id": 4624,
+    "LogonType": 5,
+    "version": 2,
+    "account": "svc",
+    "host": "win2",
+    "ts": "2026-01-01T00:00:50Z"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "IOC2",
+    "type": "domain",
+    "value": "viejo.example.test",
+    "expires_at": "2026-01-01T00:10:00Z",
+    "source": "LAB-FEED-v2",
+    "confidence": "media"
+  },
+  {
+    "id": "IOC3",
+    "type": "ip",
+    "value": "2001:db8::1",
+    "expires_at": "2026-01-01T00:10:00Z",
+    "source": "LAB-FEED-v2",
+    "confidence": "baja"
+  },
+  {
+    "id": "IOC4",
+    "type": "sha256",
+    "value": "6dc523794bc2406e26c62177ead2ea500ea9ccbebe118fb46681fae76dcb68bc",
+    "expires_at": "2026-01-01T00:10:00Z",
+    "source": "LAB-FEED-v2",
+    "confidence": "media"
+  },
+  {
+    "id": "IOC5",
+    "type": "domain",
+    "value": "notbad.example.test",
+    "expires_at": "2026-01-01T00:10:00Z",
+    "source": "LAB-FEED-v2",
+    "confidence": "media"
+  }
+]

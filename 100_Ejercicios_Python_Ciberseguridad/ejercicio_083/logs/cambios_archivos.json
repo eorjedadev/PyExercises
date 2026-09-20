@@ -1,0 +1,146 @@
+[
+  {
+    "id": "A0",
+    "host": "hostA",
+    "path": "/lab/doc0.txt",
+    "ts": "2026-01-01T00:00:00Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "A1",
+    "host": "hostA",
+    "path": "/lab/doc1.txt",
+    "ts": "2026-01-01T00:00:01Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "A2",
+    "host": "hostA",
+    "path": "/lab/doc2.txt",
+    "ts": "2026-01-01T00:00:02Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "A3",
+    "host": "hostA",
+    "path": "/lab/doc3.txt",
+    "ts": "2026-01-01T00:00:03Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "A4",
+    "host": "hostA",
+    "path": "/lab/doc4.txt",
+    "ts": "2026-01-01T00:00:04Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "A5",
+    "host": "hostA",
+    "path": "/lab/doc5.txt",
+    "ts": "2026-01-01T00:00:05Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "B0",
+    "host": "hostB",
+    "path": "/lab/repetido.txt",
+    "ts": "2026-01-01T00:00:00Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "B1",
+    "host": "hostB",
+    "path": "/lab/repetido.txt",
+    "ts": "2026-01-01T00:00:01Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "B2",
+    "host": "hostB",
+    "path": "/lab/repetido.txt",
+    "ts": "2026-01-01T00:00:02Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "B3",
+    "host": "hostB",
+    "path": "/lab/repetido.txt",
+    "ts": "2026-01-01T00:00:03Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "B4",
+    "host": "hostB",
+    "path": "/lab/repetido.txt",
+    "ts": "2026-01-01T00:00:04Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "B5",
+    "host": "hostB",
+    "path": "/lab/repetido.txt",
+    "ts": "2026-01-01T00:00:05Z",
+    "operation": "write",
+    "job_id": null
+  },
+  {
+    "id": "C0",
+    "host": "hostC",
+    "path": "/lab/doc0.txt",
+    "ts": "2026-01-01T00:00:00Z",
+    "operation": "rename",
+    "job_id": "JOB-C"
+  },
+  {
+    "id": "C1",
+    "host": "hostC",
+    "path": "/lab/doc1.txt",
+    "ts": "2026-01-01T00:00:01Z",
+    "operation": "rename",
+    "job_id": "JOB-C"
+  },
+  {
+    "id": "C2",
+    "host": "hostC",
+    "path": "/lab/doc2.txt",
+    "ts": "2026-01-01T00:00:02Z",
+    "operation": "rename",
+    "job_id": "JOB-C"
+  },
+  {
+    "id": "C3",
+    "host": "hostC",
+    "path": "/lab/doc3.txt",
+    "ts": "2026-01-01T00:00:03Z",
+    "operation": "rename",
+    "job_id": "JOB-C"
+  },
+  {
+    "id": "C4",
+    "host": "hostC",
+    "path": "/lab/doc4.txt",
+    "ts": "2026-01-01T00:00:04Z",
+    "operation": "rename",
+    "job_id": "JOB-C"
+  },
+  {
+    "id": "C5",
+    "host": "hostC",
+    "path": "/lab/doc5.txt",
+    "ts": "2026-01-01T00:00:05Z",
+    "operation": "rename",
+    "job_id": "JOB-C"
+  }
+]

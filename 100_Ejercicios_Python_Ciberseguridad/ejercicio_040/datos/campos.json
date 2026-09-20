@@ -1,0 +1,9 @@
+[
+  "=SUM(1,2)",
+  "  @x",
+  "Ana",
+  "+51999999999",
+  "-observacion",
+  "linea con, coma",
+  "texto\nmultilinea"
+]

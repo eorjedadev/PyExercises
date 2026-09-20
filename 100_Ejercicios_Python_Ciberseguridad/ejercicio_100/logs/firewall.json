@@ -1,0 +1,38 @@
+[
+  {
+    "id": "N1",
+    "origin": "192.0.2.10",
+    "destination": "srv1",
+    "protocol": "tcp",
+    "port": 3389,
+    "action": "allow",
+    "ts": "2026-01-01T00:03:10Z"
+  },
+  {
+    "id": "N2",
+    "origin": "192.0.2.99",
+    "destination": "srv1",
+    "protocol": "tcp",
+    "port": 3389,
+    "action": "allow",
+    "ts": "2026-01-01T00:03:00Z"
+  },
+  {
+    "id": "N3",
+    "origin": "192.0.2.20",
+    "destination": "srv1",
+    "protocol": "tcp",
+    "port": 3389,
+    "action": "allow",
+    "ts": "2026-01-01T00:02:01Z"
+  },
+  {
+    "id": "N4",
+    "origin": "192.0.2.30",
+    "destination": "srv2",
+    "protocol": "tcp",
+    "port": 443,
+    "action": "allow",
+    "ts": "2026-01-01T00:03:10Z"
+  }
+]

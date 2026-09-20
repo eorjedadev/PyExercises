@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ENV1",
+    "variables": {
+      "API_TOKEN": "LAB-NO-REAL",
+      "LOG_LEVEL": "INFO"
+    }
+  },
+  {
+    "id": "ENV2",
+    "variables": {
+      "LOG_LEVEL": "INFO"
+    }
+  },
+  {
+    "id": "ENV3",
+    "variables": {
+      "API_TOKEN": "LAB-NO-REAL",
+      "LOG_LEVEL": "TRACE"
+    }
+  },
+  {
+    "id": "ENV4",
+    "variables": {
+      "API_TOKEN": "   ",
+      "LOG_LEVEL": "WARN"
+    }
+  }
+]

@@ -1,0 +1,8 @@
+id,login,tipo,propietario
+U1,Ana,personal,equipo1
+U2, ana ,personal,equipo2
+U3,soporte,compartida,mesa
+U4,anabel,personal,equipo3
+U5,servicio_backup,servicio,infra
+U6,CORA,personal,equipo4
+U7,cora,personal,equipo4

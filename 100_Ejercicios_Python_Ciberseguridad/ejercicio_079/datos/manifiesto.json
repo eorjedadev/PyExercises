@@ -1,0 +1,12 @@
+[
+  {
+    "path": "documento.txt",
+    "size": 20,
+    "sha256": "3ecc14584e59f156e2a128d1c61dfa4645d2e214cf8796df6b64ea8e05ff8f26"
+  },
+  {
+    "path": "ausente.txt",
+    "size": 5,
+    "sha256": "216e1e3f8fed804bf3c16a8f9dac7d25fd4902b7277828729dcceb797c8c1ddc"
+  }
+]

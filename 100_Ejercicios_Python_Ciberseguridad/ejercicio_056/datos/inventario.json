@@ -1,0 +1,27 @@
+[
+  {
+    "id": "srv1",
+    "ip": "192.0.2.1",
+    "internal": true
+  },
+  {
+    "id": "srv2",
+    "ip": "192.0.2.2",
+    "internal": true
+  },
+  {
+    "id": "srv3",
+    "ip": "192.0.2.3",
+    "internal": true
+  },
+  {
+    "id": "srv4",
+    "ip": "192.0.2.4",
+    "internal": true
+  },
+  {
+    "id": "hA",
+    "ip": "192.0.2.10",
+    "role": "estacion"
+  }
+]

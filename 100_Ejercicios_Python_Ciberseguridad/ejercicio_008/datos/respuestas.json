@@ -1,0 +1,39 @@
+[
+  {
+    "id": "H1",
+    "scheme": "https",
+    "headers": {
+      "Strict-Transport-Security": "max-age=31536000",
+      "X-Content-Type-Options": "nosniff"
+    }
+  },
+  {
+    "id": "H2",
+    "scheme": "https",
+    "headers": {
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "id": "H3",
+    "scheme": "http",
+    "headers": {
+      "X-Content-Type-Options": "nosniff"
+    }
+  },
+  {
+    "id": "H4",
+    "scheme": "https",
+    "headers": {
+      "Strict-Transport-Security": "max-age=0",
+      "X-Content-Type-Options": "nosniff"
+    }
+  },
+  {
+    "id": "H5",
+    "scheme": "https",
+    "headers": {
+      "X-Content-Type-Options": "other"
+    }
+  }
+]

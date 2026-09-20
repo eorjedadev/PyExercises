@@ -1,0 +1,10 @@
+{
+  "A": {
+    "role": "servidor",
+    "maintenance": "desconocido"
+  },
+  "B": {
+    "role": "estacion",
+    "maintenance": "desconocido"
+  }
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "id": "L1",
+    "platform": "linux",
+    "resource": "archivo1",
+    "mode": "666"
+  },
+  {
+    "id": "L2",
+    "platform": "linux",
+    "resource": "archivo2",
+    "mode": "640"
+  },
+  {
+    "id": "W1",
+    "platform": "windows",
+    "resource": "recurso1",
+    "entries": [
+      {
+        "subject": "Everyone",
+        "right": "Write",
+        "effect": "allow"
+      }
+    ]
+  },
+  {
+    "id": "W2",
+    "platform": "windows",
+    "resource": "recurso2",
+    "entries": [
+      {
+        "subject": "Everyone",
+        "right": "Write",
+        "effect": "allow"
+      },
+      {
+        "subject": "Everyone",
+        "right": "Write",
+        "effect": "deny"
+      }
+    ]
+  },
+  {
+    "id": "W3",
+    "platform": "windows",
+    "resource": "recurso3",
+    "entries": [
+      {
+        "subject": "Everyone",
+        "right": "Read",
+        "effect": "allow"
+      }
+    ]
+  }
+]

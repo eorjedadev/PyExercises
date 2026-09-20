@@ -1,0 +1,7 @@
+id,ruta,clase,modo
+P01,/etc/lab/credenciales,secreto,600
+P02,/etc/lab/token,secreto,644
+P03,/var/lab/aviso,publico,666
+P04,/etc/lab/default,publico,644
+P05,/etc/lab/grupo,secreto,640
+P06,/etc/lab/rota,secreto,688

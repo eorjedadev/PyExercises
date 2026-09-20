@@ -1,0 +1,42 @@
+[
+  {
+    "id": "V1",
+    "version": 1,
+    "source": "sensorA",
+    "ts": "2026-01-01T00:00:00Z",
+    "user": "ana",
+    "status": "success"
+  },
+  {
+    "id": "V2",
+    "version": 2,
+    "source": "sensorB",
+    "ts": "2026-01-01T00:00:10Z",
+    "principal": "beto",
+    "outcome": "denied"
+  },
+  {
+    "id": "V3",
+    "version": 3,
+    "source": "sensorC",
+    "ts": "2026-01-01T00:00:20Z",
+    "principal": "cora",
+    "outcome": "ok"
+  },
+  {
+    "id": "V4",
+    "version": 1,
+    "source": "sensorA",
+    "ts": "2026-01-01T00:00:30Z",
+    "user": "dani",
+    "status": "failure"
+  },
+  {
+    "id": "V5",
+    "version": 2,
+    "source": "sensorB",
+    "ts": "2026-01-01T00:00:40Z",
+    "principal": "eva",
+    "outcome": "unknown"
+  }
+]

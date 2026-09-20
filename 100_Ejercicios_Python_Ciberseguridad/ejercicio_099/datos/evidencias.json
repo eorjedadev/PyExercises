@@ -1,0 +1,29 @@
+[
+  {
+    "id": "E1",
+    "kind": "auth",
+    "user": "ana",
+    "result": "fail",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "H1",
+    "kind": "file_hash",
+    "path": "doc.txt",
+    "sha256": "60a6c2661df4be46d85f0631c62372f69ac9800a8ec2866ba31dfd1b6658e63a",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "H2",
+    "kind": "file_hash",
+    "path": "doc.txt",
+    "sha256": "9191473f01a063226359aaf3f6aeaf57784d5dc67ed7e84ca6fda27b51322a9c",
+    "ts": "2026-01-01T00:01:00Z"
+  },
+  {
+    "id": "D1",
+    "kind": "testimony",
+    "text": "Una persona dijo que vio un cambio",
+    "ts": "2026-01-01T00:01:10Z"
+  }
+]

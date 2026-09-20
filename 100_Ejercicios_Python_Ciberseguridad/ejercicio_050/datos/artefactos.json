@@ -1,0 +1,27 @@
+[
+  {
+    "id": "R1",
+    "acquired_at": "2025-12-01T00:00:00Z",
+    "hold": false
+  },
+  {
+    "id": "R2",
+    "acquired_at": "2025-12-01T00:00:00Z",
+    "hold": true
+  },
+  {
+    "id": "R3",
+    "acquired_at": "2025-12-03T00:00:00Z",
+    "hold": false
+  },
+  {
+    "id": "R4",
+    "acquired_at": "2025-12-02T00:00:00Z",
+    "hold": false
+  },
+  {
+    "id": "R5",
+    "acquired_at": "2026-01-01T00:00:01Z",
+    "hold": false
+  }
+]

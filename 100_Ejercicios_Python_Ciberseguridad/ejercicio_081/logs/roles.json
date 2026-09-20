@@ -1,0 +1,23 @@
+[
+  {
+    "id": "P1",
+    "user": "ana",
+    "actor": "operador",
+    "new_role": "admin",
+    "ts": "2026-01-01T00:04:00Z"
+  },
+  {
+    "id": "P2",
+    "user": "beto",
+    "actor": "operador",
+    "new_role": "admin",
+    "ts": "2026-01-01T00:04:10Z"
+  },
+  {
+    "id": "P3",
+    "user": "cora",
+    "actor": "operador",
+    "new_role": "lector",
+    "ts": "2026-01-01T00:04:20Z"
+  }
+]

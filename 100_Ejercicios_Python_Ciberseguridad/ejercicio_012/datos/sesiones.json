@@ -1,0 +1,32 @@
+[
+  {
+    "id": "S1",
+    "issued_at": "2026-01-01T00:00:00Z",
+    "expires_at": "2026-01-01T10:00:00Z",
+    "revoked": false
+  },
+  {
+    "id": "S2",
+    "issued_at": "2026-01-01T00:00:00Z",
+    "expires_at": "2026-01-01T11:00:00Z",
+    "revoked": false
+  },
+  {
+    "id": "S3",
+    "issued_at": "2026-01-01T00:00:00Z",
+    "expires_at": "2026-01-01T11:00:00Z",
+    "revoked": true
+  },
+  {
+    "id": "S4",
+    "issued_at": "2026-01-01T11:06:40Z",
+    "expires_at": "2026-01-01T08:20:00Z",
+    "revoked": false
+  },
+  {
+    "id": "S5",
+    "issued_at": "2026-01-01T00:00:00Z",
+    "expires_at": "sin-fecha",
+    "revoked": false
+  }
+]

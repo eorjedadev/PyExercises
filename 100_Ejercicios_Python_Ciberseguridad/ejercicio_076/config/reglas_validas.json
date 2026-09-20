@@ -1,0 +1,17 @@
+{
+  "version": "LAB-v1",
+  "rules": [
+    {
+      "id": "COUNT",
+      "field": "failures",
+      "op": "ge",
+      "value": 3
+    },
+    {
+      "id": "AUTH",
+      "field": "type",
+      "op": "eq",
+      "value": "auth"
+    }
+  ]
+}

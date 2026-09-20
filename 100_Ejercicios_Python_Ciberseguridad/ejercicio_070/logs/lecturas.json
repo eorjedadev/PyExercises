@@ -1,0 +1,130 @@
+[
+  {
+    "id": "A1",
+    "user": "ana",
+    "object": "doc1",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "A2",
+    "user": "ana",
+    "object": "doc2",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "A3",
+    "user": "ana",
+    "object": "doc3",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:03Z"
+  },
+  {
+    "id": "A4",
+    "user": "ana",
+    "object": "doc4",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:04Z"
+  },
+  {
+    "id": "A5",
+    "user": "ana",
+    "object": "doc5",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:05Z"
+  },
+  {
+    "id": "B0",
+    "user": "beto",
+    "object": "doc1",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "B1",
+    "user": "beto",
+    "object": "doc1",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "B2",
+    "user": "beto",
+    "object": "doc1",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "B3",
+    "user": "beto",
+    "object": "doc1",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:03Z"
+  },
+  {
+    "id": "B4",
+    "user": "beto",
+    "object": "doc1",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:04Z"
+  },
+  {
+    "id": "B5",
+    "user": "beto",
+    "object": "doc1",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:05Z"
+  },
+  {
+    "id": "C1",
+    "user": "cora",
+    "object": "doc1",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:01Z"
+  },
+  {
+    "id": "C2",
+    "user": "cora",
+    "object": "doc2",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:02Z"
+  },
+  {
+    "id": "C3",
+    "user": "cora",
+    "object": "doc3",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:03Z"
+  },
+  {
+    "id": "C4",
+    "user": "cora",
+    "object": "doc4",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:04Z"
+  },
+  {
+    "id": "C5",
+    "user": "cora",
+    "object": "doc5",
+    "action": "read",
+    "result": "allow",
+    "ts": "2026-01-01T00:00:05Z"
+  }
+]

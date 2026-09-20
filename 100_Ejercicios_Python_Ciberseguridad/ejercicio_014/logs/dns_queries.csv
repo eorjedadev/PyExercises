@@ -1,0 +1,10 @@
+id,cliente,nombre,rcode
+D1,A,uno.example.test,NXDOMAIN
+D2,A,dos.example.test,NOERROR
+D3,A,tres.example.test,NXDOMAIN
+D4,A,cuatro.example.test,NOERROR
+D5,A,cinco.example.test,NXDOMAIN
+D6,B,uno.example.test,NXDOMAIN
+D7,B,dos.example.test,NOERROR
+D8,A,seis.example.test,SERVFAIL
+D9,C,uno.example.test,NOERROR

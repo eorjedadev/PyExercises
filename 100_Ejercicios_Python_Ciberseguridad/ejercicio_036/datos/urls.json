@@ -1,0 +1,10 @@
+[
+  "https://api.example.test/v1",
+  "https://api.example.test.evil.test/v1",
+  "http://api.example.test",
+  "https://ana@api.example.test/v1",
+  "https://api.example.test:8443/v1",
+  "https://api.example.test:443/v1",
+  "https://[::1]/",
+  "no es url"
+]

@@ -1,0 +1,1 @@
+Revisar tu propia implementación del ejercicio 021. No se proporciona código heredado ni solución modelo.

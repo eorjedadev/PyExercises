@@ -1,0 +1,17 @@
+[
+  {
+    "id": "H1",
+    "ruta": "m1.bin",
+    "hmac_sha256": "c74195abe9dda5f98379b18a1183c00d1e373b5def710a155557cd4c5ebb3e46"
+  },
+  {
+    "id": "H2",
+    "ruta": "m2.bin",
+    "hmac_sha256": "c74195abe9dda5f98379b18a1183c00d1e373b5def710a155557cd4c5ebb3e46"
+  },
+  {
+    "id": "H3",
+    "ruta": "m1.bin",
+    "hmac_sha256": "abc"
+  }
+]

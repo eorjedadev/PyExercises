@@ -1,0 +1,6 @@
+{
+  "package": "cryptography",
+  "documentation": "https://cryptography.io/en/stable/",
+  "purpose": "Usar una API mantenida; no implementar la primitiva.",
+  "installation": "Entorno virtual propio, registrar versión instalada y origen del paquete."
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "BK1",
+    "asset": "srv1",
+    "destination": "backup.example.test",
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-01-01T00:01:00Z",
+    "approved": true
+  }
+]

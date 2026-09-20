@@ -1,0 +1,26 @@
+[
+  {
+    "id": "A",
+    "positive": true
+  },
+  {
+    "id": "B",
+    "positive": true
+  },
+  {
+    "id": "C",
+    "positive": true
+  },
+  {
+    "id": "D",
+    "positive": false
+  },
+  {
+    "id": "E",
+    "positive": false
+  },
+  {
+    "id": "F",
+    "positive": false
+  }
+]

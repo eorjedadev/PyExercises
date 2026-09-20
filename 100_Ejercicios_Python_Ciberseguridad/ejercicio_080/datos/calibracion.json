@@ -1,0 +1,17 @@
+[
+  {
+    "source": "s1",
+    "offset_seconds": 0,
+    "error_seconds": 1
+  },
+  {
+    "source": "s2",
+    "offset_seconds": 0,
+    "error_seconds": 0
+  },
+  {
+    "source": "s3",
+    "offset_seconds": 1,
+    "error_seconds": 2
+  }
+]

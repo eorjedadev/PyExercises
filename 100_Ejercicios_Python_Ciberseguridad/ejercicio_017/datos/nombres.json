@@ -1,0 +1,12 @@
+[
+  "informe.txt",
+  "../secreto.txt",
+  "C:nota.txt",
+  "carpeta/nota.txt",
+  "carpeta\\nota.txt",
+  ".",
+  "..",
+  "",
+  "nota\u0000.txt",
+  "CON"
+]

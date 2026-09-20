@@ -1,0 +1,32 @@
+[
+  {
+    "id": "E1",
+    "actor": "ana",
+    "password": "FICTICIO-no-usar",
+    "message": "fallo"
+  },
+  {
+    "id": "E2",
+    "context": {
+      "TOKEN": "LAB-TOKEN-NO-REAL",
+      "attempt": 2
+    },
+    "message": "diagnostico"
+  },
+  {
+    "id": "E3",
+    "monkey": "visible",
+    "items": [
+      {
+        "api_key": "LAB-KEY-NO-REAL"
+      },
+      {
+        "dato": "publico"
+      }
+    ]
+  },
+  {
+    "id": "E4",
+    "message": "el texto libre queda fuera de la deteccion por clave"
+  }
+]

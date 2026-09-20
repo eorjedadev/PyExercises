@@ -1,0 +1,32 @@
+[
+  {
+    "id": "A0",
+    "asset": "A",
+    "ts": "2026-01-01T00:00:00Z",
+    "category": "auth"
+  },
+  {
+    "id": "A50",
+    "asset": "A",
+    "ts": "2026-01-01T00:00:50Z",
+    "category": "network"
+  },
+  {
+    "id": "A100",
+    "asset": "A",
+    "ts": "2026-01-01T00:01:40Z",
+    "category": "file"
+  },
+  {
+    "id": "A161",
+    "asset": "A",
+    "ts": "2026-01-01T00:02:41Z",
+    "category": "auth"
+  },
+  {
+    "id": "B50",
+    "asset": "B",
+    "ts": "2026-01-01T00:00:50Z",
+    "category": "network"
+  }
+]

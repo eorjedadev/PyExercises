@@ -1,0 +1,31 @@
+[
+  {
+    "id": "C1",
+    "debug": false,
+    "verify_tls": true,
+    "bind_host": "127.0.0.1"
+  },
+  {
+    "id": "C2",
+    "debug": true,
+    "verify_tls": true,
+    "bind_host": "::1"
+  },
+  {
+    "id": "C3",
+    "debug": false,
+    "bind_host": "127.0.0.1"
+  },
+  {
+    "id": "C4",
+    "debug": "false",
+    "verify_tls": true,
+    "bind_host": "127.0.0.1"
+  },
+  {
+    "id": "C5",
+    "debug": false,
+    "verify_tls": false,
+    "bind_host": "0.0.0.0"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "windows": [
+    "C:/Temp/"
+  ],
+  "linux": [
+    "/tmp/"
+  ]
+}

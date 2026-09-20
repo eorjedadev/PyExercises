@@ -1,0 +1,10 @@
+id,ruta,status
+R1,/login,200
+R2,/login,500
+R3,/login,302
+R4,/login,503
+R5,/login,200
+R6,/health,500
+R7,/login,999
+R8,/static,200
+R9,/static,304

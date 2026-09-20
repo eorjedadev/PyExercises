@@ -1,0 +1,22 @@
+[
+  {
+    "id": "J1",
+    "actor": "ana",
+    "message": "mensaje normal"
+  },
+  {
+    "id": "J2",
+    "actor": "beto",
+    "message": "linea1\nFAKE evento agregado"
+  },
+  {
+    "id": "J3",
+    "actor": "cora",
+    "message": "comillas \" y barra \\ y retorno\r"
+  },
+  {
+    "id": "J4",
+    "actor": "",
+    "message": "actor ausente"
+  }
+]

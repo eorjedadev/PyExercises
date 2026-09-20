@@ -1,0 +1,16 @@
+{
+  "scope": [
+    "ana",
+    "srv1"
+  ],
+  "period": [
+    "2026-01-01T00:00:00Z",
+    "2026-01-01T00:10:00Z"
+  ],
+  "question": "Determinar señales respaldadas y siguiente comprobación; no se exige dictamen binario de compromiso.",
+  "missing": [
+    "endpoint",
+    "contenido de conexiones",
+    "autorizacion de soporte para ana"
+  ]
+}

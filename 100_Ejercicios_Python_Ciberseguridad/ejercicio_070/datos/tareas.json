@@ -1,0 +1,14 @@
+[
+  {
+    "id": "JOB1",
+    "user": "cora",
+    "start": "2026-01-01T00:00:00Z",
+    "end": "2026-01-01T00:01:00Z",
+    "objects": [
+      "doc1",
+      "doc2",
+      "doc3"
+    ],
+    "approved": true
+  }
+]

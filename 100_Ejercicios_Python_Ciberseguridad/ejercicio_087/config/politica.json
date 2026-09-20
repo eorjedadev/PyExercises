@@ -1,0 +1,30 @@
+[
+  {
+    "id": "R1",
+    "actor": "ana",
+    "action": "read",
+    "resource": "doc1",
+    "effect": "allow"
+  },
+  {
+    "id": "R2",
+    "actor": "ana",
+    "action": "read",
+    "resource": "doc2",
+    "effect": "deny"
+  },
+  {
+    "id": "R3",
+    "actor": "ana",
+    "action": "read",
+    "resource": "*",
+    "effect": "allow"
+  },
+  {
+    "id": "R4",
+    "actor": "emergencia",
+    "action": "*",
+    "resource": "*",
+    "effect": "allow"
+  }
+]

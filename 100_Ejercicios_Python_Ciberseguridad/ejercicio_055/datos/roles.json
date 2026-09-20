@@ -1,0 +1,10 @@
+[
+  {
+    "host": "A",
+    "rol_declarado": "inventario"
+  },
+  {
+    "host": "B",
+    "rol_declarado": "cliente_web"
+  }
+]

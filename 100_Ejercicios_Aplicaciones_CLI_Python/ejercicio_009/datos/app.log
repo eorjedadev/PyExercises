@@ -1,0 +1,6 @@
+2026-03-01 10:00:00 INFO [server] Servicio iniciado en puerto 8080
+2026-03-01 10:05:15 DEBUG [auth] Token validado para usuario 42
+2026-03-01 10:12:40 ERROR [db] Timeout en consulta transaccional
+    Traceback (most recent call last):
+    File 'db.py', line 45, in execute_query
+2026-03-01 10:15:00 INFO [server] Heartbeat OK

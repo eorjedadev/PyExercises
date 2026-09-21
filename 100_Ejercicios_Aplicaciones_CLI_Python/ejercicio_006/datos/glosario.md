@@ -1,0 +1,2 @@
+# Glosario
+Definiciones técnicas.

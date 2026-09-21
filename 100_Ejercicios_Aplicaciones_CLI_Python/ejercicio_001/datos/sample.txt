@@ -1,0 +1,4 @@
+Python es un lenguaje de programación de alto nivel y tipado dinámico.
+Las aplicaciones CLI en Python son potentes, legibles y robustas.
+Python permite construir herramientas de terminal profesionales y eficientes.
+La terminal es el entorno natural para la automatización de tareas con Python.

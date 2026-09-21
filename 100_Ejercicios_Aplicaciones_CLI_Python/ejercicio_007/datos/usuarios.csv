@@ -1,0 +1,6 @@
+id,name,email,role,status
+1,Ana Gomez,ana@empresa.com,admin,ACTIVE
+2,Carlos Ruiz,carlos@empresa.com,developer,ACTIVE
+3,Maria Lopez,maria@empresa.com,designer,INACTIVE
+4,David Silva,david@empresa.com,developer,ACTIVE
+5,Elena Prado,elena@empresa.com,analyst,SUSPENDED

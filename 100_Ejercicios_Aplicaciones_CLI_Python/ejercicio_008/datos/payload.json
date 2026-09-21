@@ -1,0 +1,17 @@
+{
+  "event_id": "evt_998822",
+  "timestamp": "2026-06-15T14:30:00Z",
+  "database": {
+    "credentials": {
+      "host": "db.internal.lan",
+      "port": 5432,
+      "user": "app_user"
+    },
+    "pool_size": 20
+  },
+  "features": [
+    "auth",
+    "billing",
+    "notifications"
+  ]
+}

@@ -1,0 +1,6 @@
+FROM python:latest
+ENV SECRET_TOKEN=my_secret_token_12345
+EXPOSE 22
+RUN apt-get update && apt-get install -y curl
+COPY . /app
+CMD ["python", "/app/main.py"]

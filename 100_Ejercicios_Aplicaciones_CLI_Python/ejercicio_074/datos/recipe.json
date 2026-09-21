@@ -1,0 +1,53 @@
+{
+  "tables": [
+    {
+      "name": "users",
+      "count": 10,
+      "columns": {
+        "id": {
+          "type": "autoincrement"
+        },
+        "name": {
+          "type": "name"
+        },
+        "email": {
+          "type": "email"
+        },
+        "is_active": {
+          "type": "choice",
+          "options": [
+            true,
+            false
+          ]
+        }
+      }
+    },
+    {
+      "name": "orders",
+      "count": 30,
+      "columns": {
+        "id": {
+          "type": "autoincrement"
+        },
+        "user_id": {
+          "type": "foreign_key",
+          "target_table": "users",
+          "target_column": "id"
+        },
+        "amount": {
+          "type": "decimal_range",
+          "min": 10.0,
+          "max": 500.0
+        },
+        "status": {
+          "type": "choice",
+          "options": [
+            "PENDING",
+            "COMPLETED",
+            "CANCELLED"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+POST http://localhost:8000/api/v1/orders/
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+  "shipping_address_id": "{{address_id}}",
+  "items": [
+    {
+      "product_id": "{{product_id_1}}",
+      "quantity": 2
+    },
+    {
+      "product_id": "{{product_id_2}}",
+      "quantity": 1
+    }
+  ]
+}

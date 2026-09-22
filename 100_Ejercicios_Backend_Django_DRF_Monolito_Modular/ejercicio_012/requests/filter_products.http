@@ -1,0 +1,2 @@
+GET http://localhost:8000/api/v1/catalog/products/?min_price=10.00&max_price=100.00&ordering=price_amount
+Accept: application/json

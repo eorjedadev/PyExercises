@@ -1,0 +1,9 @@
+POST http://localhost:8000/api/v1/users/register/
+Content-Type: application/json
+
+{
+  "email": "usuario.prueba@empresa.com",
+  "password": "MiClaveSegura2026!#",
+  "first_name": "Ana",
+  "last_name": "Gomez"
+}

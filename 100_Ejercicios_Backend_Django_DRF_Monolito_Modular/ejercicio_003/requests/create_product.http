@@ -1,0 +1,11 @@
+POST http://localhost:8000/api/v1/catalog/products/
+Content-Type: application/json
+
+{
+  "sku": "TECH-MOU-001",
+  "name": "Wireless Gaming Mouse",
+  "description": "Optical sensor with 16000 DPI",
+  "price_amount": "49.90",
+  "currency": "USD",
+  "weight_grams": 120
+}

@@ -1,0 +1,7 @@
+### versión 1
+GET http://localhost:8000/api/v1/catalog/products/
+Accept: application/json
+
+### versión 2
+GET http://localhost:8000/api/v2/catalog/products/
+Accept: application/json

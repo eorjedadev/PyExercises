@@ -1,0 +1,6 @@
+PATCH http://localhost:8000/api/v1/catalog/products/{{product_id}}/
+Content-Type: application/json
+
+{
+  "price_amount": "59.99"
+}

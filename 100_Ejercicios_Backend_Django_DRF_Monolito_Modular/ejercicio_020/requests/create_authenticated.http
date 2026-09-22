@@ -1,0 +1,10 @@
+POST http://localhost:8000/api/v1/catalog/products/
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+  "sku": "PROD-AUTH-01",
+  "name": "Teclado Mecanico",
+  "price_amount": "89.90",
+  "category_id": "{{category_id}}"
+}

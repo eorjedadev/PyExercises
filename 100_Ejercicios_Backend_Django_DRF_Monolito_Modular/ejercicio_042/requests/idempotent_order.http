@@ -1,0 +1,14 @@
+POST http://localhost:8000/api/v1/orders/
+Authorization: Bearer {{access_token}}
+Idempotency-Key: e4d9a0d8-1234-4567-89ab-cdef01234567
+Content-Type: application/json
+
+{
+  "shipping_address_id": "{{address_id}}",
+  "items": [
+    {
+      "product_id": "{{product_id}}",
+      "quantity": 1
+    }
+  ]
+}

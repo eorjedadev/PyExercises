@@ -1,0 +1,62 @@
+{
+  "ejercicio": "068",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260990,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "una reserva",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 2107,
+      "columnas": [
+        "registro_id",
+        "fecha_reserva",
+        "fecha_llegada",
+        "hotel",
+        "canal",
+        "noches",
+        "tarifa",
+        "cancelada",
+        "pais"
+      ],
+      "unidad": "Fuente principal: una reserva."
+    },
+    {
+      "nombre": "hoteles",
+      "archivo": "hoteles.csv",
+      "filas": 3,
+      "columnas": [
+        "hotel",
+        "zona",
+        "habitaciones"
+      ],
+      "unidad": "Catálogo hotelero constante."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 132705,
+      "sha256": "f8e60a240ab1cc0104a58c985c4d3541de5a773f35c41dc5b42678bb7f21a2e1"
+    },
+    {
+      "nombre": "hoteles.csv",
+      "bytes": 65,
+      "sha256": "312663104a0a126ca650ef9585679b065ab5f18a4e5c084bbd8ab9dbc0706e3a"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "ejercicio": "060",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260982,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un usuario asignado una vez",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.json",
+      "filas": 1400,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "grupo",
+        "dispositivo",
+        "edad_cuenta_dias",
+        "sesiones_previas",
+        "expuesto",
+        "seguimiento",
+        "conversion"
+      ],
+      "unidad": "Fuente principal: un usuario asignado una vez."
+    },
+    {
+      "nombre": "asignacion",
+      "archivo": "asignacion.csv",
+      "filas": 1400,
+      "columnas": [
+        "registro_id",
+        "grupo_asignado",
+        "fecha_asignacion"
+      ],
+      "unidad": "Registro de asignación. Conservar usuarios aunque no se expongan al mensaje."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.json",
+      "bytes": 333109,
+      "sha256": "56958534220765f58e6ec12ea8346e3a4f1d5cbf2cdc92bcf6c8aba02b7f6cc4"
+    },
+    {
+      "nombre": "asignacion.csv",
+      "bytes": 39245,
+      "sha256": "5f524aec9147f2a68f2e247aa2e8ccd032e7a9fa327e5be80e23040392e250da"
+    }
+  ]
+}

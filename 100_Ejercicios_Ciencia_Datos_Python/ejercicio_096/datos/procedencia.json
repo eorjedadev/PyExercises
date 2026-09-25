@@ -1,0 +1,78 @@
+{
+  "ejercicio": "096",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20261018,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un envío",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 4515,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "ruta",
+        "transportista",
+        "distancia_km",
+        "carga_kg",
+        "tiempo_min",
+        "prometido_min",
+        "entregado"
+      ],
+      "unidad": "Fuente principal: un envío."
+    },
+    {
+      "nombre": "transportistas",
+      "archivo": "transportistas.csv",
+      "filas": 3,
+      "columnas": [
+        "transportista",
+        "fijo_pen",
+        "pen_km"
+      ],
+      "unidad": "Tarifas de contrato constantes, aplicables al despacho, sin recargos."
+    },
+    {
+      "nombre": "rutas",
+      "archivo": "rutas.csv",
+      "filas": 6,
+      "columnas": [
+        "ruta",
+        "tipo",
+        "ventana_h"
+      ],
+      "unidad": "Catálogo de rutas; ventana no es duración prometida por envío."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 250552,
+      "sha256": "1106bf34ea77654dc8ff85c7d028893521114ae5b249fcc8456bb5dd9864de60"
+    },
+    {
+      "nombre": "transportistas.csv",
+      "bytes": 65,
+      "sha256": "bf668f6495e5df0c878939316370745546c467556f98358f672d796af1642ab9"
+    },
+    {
+      "nombre": "rutas.csv",
+      "bytes": 116,
+      "sha256": "918e04bf79f648fa1287d075ed0a5da40e04ae2d02b481c17dbf5c4b4d466960"
+    }
+  ]
+}

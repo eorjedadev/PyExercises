@@ -1,0 +1,46 @@
+{
+  "ejercicio": "032",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260954,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2024-12-30"
+  },
+  "granularidad": "un trabajador ficticio en un mes",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 497,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "area",
+        "contrato",
+        "antiguedad_meses",
+        "horas",
+        "formacion_h",
+        "salario",
+        "absentismo_dias"
+      ],
+      "unidad": "Fuente principal: un trabajador ficticio en un mes."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 33573,
+      "sha256": "d33640751f47e8b019081180fbee79fd17aa4bf9368f207424fb77cd1bebe5e8"
+    }
+  ]
+}

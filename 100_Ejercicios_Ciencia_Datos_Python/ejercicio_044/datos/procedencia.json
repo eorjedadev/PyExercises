@@ -1,0 +1,62 @@
+{
+  "ejercicio": "044",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260966,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un alumno ficticio y su curso",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 1244,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "sede",
+        "modalidad",
+        "asistencia_pct",
+        "nota_inicial",
+        "nota_final",
+        "horas_estudio",
+        "tutorias"
+      ],
+      "unidad": "Fuente principal: un alumno ficticio y su curso."
+    },
+    {
+      "nombre": "sedes",
+      "archivo": "sedes.csv",
+      "filas": 3,
+      "columnas": [
+        "sede",
+        "zona",
+        "capacidad"
+      ],
+      "unidad": "Capacidad nominal constante, no ocupación real por día."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 73391,
+      "sha256": "b0b4828d0c13e5b29df6345e4846a1c8a9107519bd79cd6e6fc3661697198100"
+    },
+    {
+      "nombre": "sedes.csv",
+      "bytes": 56,
+      "sha256": "e879f080e8f5fdfb6990efc1263a821e091dd942b119c8c439e9a515c87e8962"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "ejercicio": "086",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20261008,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un edificio y día",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 2158,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "edificio",
+        "temperatura_c",
+        "ocupacion",
+        "kwh",
+        "superficie_m2",
+        "tarifa"
+      ],
+      "unidad": "Fuente principal: un edificio y día."
+    },
+    {
+      "nombre": "edificios",
+      "archivo": "edificios.csv",
+      "filas": 3,
+      "columnas": [
+        "edificio",
+        "uso",
+        "superficie_m2"
+      ],
+      "unidad": "Registro físico de edificios."
+    },
+    {
+      "nombre": "tarifas",
+      "archivo": "tarifas.csv",
+      "filas": 2,
+      "columnas": [
+        "desde",
+        "hasta",
+        "pen_kwh"
+      ],
+      "unidad": "Contrato con dos períodos. Debes resolver la relación por intervalo de fechas."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 115532,
+      "sha256": "d316a248c29fd32bd9cbbc4f7d2505f14a1f906907ab13575cd6ce369301612d"
+    },
+    {
+      "nombre": "edificios.csv",
+      "bytes": 77,
+      "sha256": "0d0a0a7b096df68d3196dff8e717e8492c325a9f5fdbd4e7f714abe9a1910e6b"
+    },
+    {
+      "nombre": "tarifas.csv",
+      "bytes": 77,
+      "sha256": "9eb89d6cb11bce8ae51f4c359e919a4df925510dbdaeada96d883e9e01a14259"
+    }
+  ]
+}

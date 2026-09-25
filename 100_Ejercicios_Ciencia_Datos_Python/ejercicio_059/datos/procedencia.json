@@ -1,0 +1,62 @@
+{
+  "ejercicio": "059",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260981,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un pedido",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 1394,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "proveedor",
+        "producto",
+        "solicitado",
+        "recibido",
+        "prometido_dias",
+        "plazo_dias",
+        "estado"
+      ],
+      "unidad": "Fuente principal: un pedido."
+    },
+    {
+      "nombre": "proveedores",
+      "archivo": "proveedores.csv",
+      "filas": 12,
+      "columnas": [
+        "proveedor",
+        "region",
+        "categoria_riesgo"
+      ],
+      "unidad": "Catálogo de proveedores; no infieras que R1 es mejor que R2."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 76257,
+      "sha256": "d224bb0bc2869261f01128c654b21856b693f3dc9add7a38c123603ccfe35c78"
+    },
+    {
+      "nombre": "proveedores.csv",
+      "bytes": 199,
+      "sha256": "15e6ee09cfe947124cc7e421462fd2b1a5607975aee6c313ae377294595a04b7"
+    }
+  ]
+}

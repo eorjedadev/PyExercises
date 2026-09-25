@@ -1,0 +1,56 @@
+{
+  "ejercicio": "064",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260986,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "una factura",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "operacion.sqlite",
+      "filas": 2107,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "proveedor",
+        "categoria",
+        "importe",
+        "moneda",
+        "vencimiento",
+        "pago"
+      ],
+      "unidad": "Fuente principal: una factura."
+    },
+    {
+      "nombre": "proveedores",
+      "archivo": "operacion.sqlite",
+      "filas": 12,
+      "columnas": [
+        "proveedor",
+        "region",
+        "categoria_riesgo"
+      ],
+      "unidad": "Catálogo de proveedores; no infieras que R1 es mejor que R2."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "operacion.sqlite",
+      "bytes": 176128,
+      "sha256": "07160f5ca1707e2f111e19d532a4b30846b66f6d3e4624763fe2264ce3596fcc"
+    }
+  ]
+}

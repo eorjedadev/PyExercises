@@ -1,0 +1,81 @@
+{
+  "ejercicio": "095",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20261017,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "una sesión",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.json",
+      "filas": 4500,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "usuario",
+        "canal",
+        "dispositivo",
+        "variante",
+        "visita",
+        "carrito",
+        "compra",
+        "ingreso",
+        "duracion_seg",
+        "campana_id"
+      ],
+      "unidad": "Fuente principal: una sesión."
+    },
+    {
+      "nombre": "usuarios",
+      "archivo": "usuarios.csv",
+      "filas": 900,
+      "columnas": [
+        "usuario",
+        "alta",
+        "pais"
+      ],
+      "unidad": "Perfiles registrados antes o en la primera sesión observada."
+    },
+    {
+      "nombre": "campanas",
+      "archivo": "campanas.csv",
+      "filas": 4,
+      "columnas": [
+        "campana_id",
+        "objetivo",
+        "presupuesto_pen"
+      ],
+      "unidad": "Campañas recurrentes del período; presupuesto no equivale a gasto ejecutado."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.json",
+      "bytes": 1330459,
+      "sha256": "52ac7f64e44bdb39172d5457f7392f3745b73634d159077353162960393c3ab2"
+    },
+    {
+      "nombre": "usuarios.csv",
+      "bytes": 18919,
+      "sha256": "a6b872083a836a0103a098b3831b698f174c1032182a85eb2f817f97c8eccade"
+    },
+    {
+      "nombre": "campanas.csv",
+      "bytes": 115,
+      "sha256": "003b51bf38b8b90a393d50678baecd978e2e12a6490964dd25e9bdffeaaf77d3"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "ejercicio": "026",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260948,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2024-05-29"
+  },
+  "granularidad": "un sensor y día observado",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.txt",
+      "filas": 412,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "sensor",
+        "zona",
+        "valor",
+        "unidad",
+        "horas_operativas"
+      ],
+      "unidad": "Fuente principal: un sensor y día observado."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.txt",
+      "bytes": 18748,
+      "sha256": "250657b803be46ac97c8161d2c28020102836da6b79d69ddf7b4737495309c93"
+    }
+  ]
+}

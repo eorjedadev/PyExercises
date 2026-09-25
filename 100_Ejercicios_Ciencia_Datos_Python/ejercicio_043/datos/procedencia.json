@@ -1,0 +1,62 @@
+{
+  "ejercicio": "043",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260965,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un ticket",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 1234,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "equipo",
+        "canal",
+        "prioridad",
+        "minutos_resolucion",
+        "estado",
+        "reabierto"
+      ],
+      "unidad": "Fuente principal: un ticket."
+    },
+    {
+      "nombre": "eventos",
+      "archivo": "eventos.csv",
+      "filas": 2504,
+      "columnas": [
+        "evento_id",
+        "registro_id",
+        "fecha_evento",
+        "estado_evento"
+      ],
+      "unidad": "Historial de aperturas, cierres y reaperturas. No hay backlog anterior a la primera fecha."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 70619,
+      "sha256": "b141c5c57b3a3634403da362436cf9e55f8f09ba885b278185087ad9c037ee54"
+    },
+    {
+      "nombre": "eventos.csv",
+      "bytes": 107722,
+      "sha256": "44a1eddff9a78fad68494777de5965761a9fa6838a2f344d968aa1bedeb514f7"
+    }
+  ]
+}

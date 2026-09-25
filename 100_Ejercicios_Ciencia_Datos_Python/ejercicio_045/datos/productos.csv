@@ -1,0 +1,13 @@
+producto,familia,coste_referencia,plazo_catalogo
+P01,papeleria,4.0,3
+P02,libros,6.2,4
+P03,accesorios,8.4,5
+P04,papeleria,10.6,6
+P05,libros,12.8,7
+P06,accesorios,15.0,8
+P07,papeleria,17.2,9
+P08,libros,19.4,3
+P09,accesorios,21.6,4
+P10,papeleria,23.8,5
+P11,libros,26.0,6
+P12,accesorios,28.2,7

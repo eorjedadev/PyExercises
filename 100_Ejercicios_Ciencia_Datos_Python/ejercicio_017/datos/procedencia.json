@@ -1,0 +1,45 @@
+{
+  "ejercicio": "017",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260939,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2024-02-11"
+  },
+  "granularidad": "un recorrido en un distrito y día",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 127,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "distrito",
+        "kg",
+        "reciclable_kg",
+        "habitantes",
+        "km",
+        "cobertura_pct"
+      ],
+      "unidad": "Fuente principal: un recorrido en un distrito y día."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 7300,
+      "sha256": "e240220902eea60d773de2b534468014f16ad9f02595c06d953f4502a7b75001"
+    }
+  ]
+}

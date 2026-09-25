@@ -1,0 +1,78 @@
+{
+  "ejercicio": "091",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20261013,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un ticket",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 4515,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "equipo",
+        "canal",
+        "prioridad",
+        "minutos_resolucion",
+        "estado",
+        "reabierto"
+      ],
+      "unidad": "Fuente principal: un ticket."
+    },
+    {
+      "nombre": "eventos",
+      "archivo": "eventos.csv",
+      "filas": 9229,
+      "columnas": [
+        "evento_id",
+        "registro_id",
+        "fecha_evento",
+        "estado_evento"
+      ],
+      "unidad": "Historial de aperturas, cierres y reaperturas. No hay backlog anterior a la primera fecha."
+    },
+    {
+      "nombre": "equipos",
+      "archivo": "equipos.csv",
+      "filas": 3,
+      "columnas": [
+        "equipo",
+        "personas",
+        "horas_semana"
+      ],
+      "unidad": "Dotación constante; no mide esfuerzo por ticket."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 257803,
+      "sha256": "75f36175c96ca42a9b61f352ea651ed21420e8d3e6674b66d4da50628cedee70"
+    },
+    {
+      "nombre": "eventos.csv",
+      "bytes": 396897,
+      "sha256": "66daba79b22d814c95e97280e9a0fe1ff003fc4db08a99ece78b4b93cbc583f9"
+    },
+    {
+      "nombre": "equipos.csv",
+      "bytes": 60,
+      "sha256": "0a072889c59a7d198ccfc9d67f47c073c77b91c46bbc3c102498e2dd10de25c5"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "ejercicio": "033",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260955,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2024-12-30"
+  },
+  "granularidad": "un lote producido",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 505,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "maquina",
+        "turno",
+        "unidades",
+        "defectos",
+        "horas",
+        "parada_min",
+        "vibracion",
+        "mantenimiento",
+        "fallo_7d",
+        "reparacion_coste"
+      ],
+      "unidad": "Fuente principal: un lote producido."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 30616,
+      "sha256": "88e0e392a0e46574c808ceed159857f152f968195a55496378871bef5e494192"
+    }
+  ]
+}

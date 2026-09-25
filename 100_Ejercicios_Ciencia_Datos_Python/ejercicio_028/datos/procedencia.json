@@ -1,0 +1,46 @@
+{
+  "ejercicio": "028",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260950,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2024-12-30"
+  },
+  "granularidad": "un envío",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 465,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "ruta",
+        "transportista",
+        "distancia_km",
+        "carga_kg",
+        "tiempo_min",
+        "prometido_min",
+        "entregado"
+      ],
+      "unidad": "Fuente principal: un envío."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 25864,
+      "sha256": "a967c23b3b2949e9b45e4a4f71f9b7070430696622a102b9e6406d024d2294d9"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+sensor,zona,altura_m,modelo
+S1,norte,10,equipo_1
+S2,centro,35,equipo_2
+S3,sur,60,equipo_1

@@ -1,0 +1,65 @@
+{
+  "ejercicio": "084",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20261006,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "una sesión",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.json",
+      "filas": 3010,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "usuario",
+        "canal",
+        "dispositivo",
+        "variante",
+        "visita",
+        "carrito",
+        "compra",
+        "ingreso",
+        "duracion_seg",
+        "campana_id"
+      ],
+      "unidad": "Fuente principal: una sesión."
+    },
+    {
+      "nombre": "usuarios",
+      "archivo": "usuarios.csv",
+      "filas": 600,
+      "columnas": [
+        "usuario",
+        "alta",
+        "pais"
+      ],
+      "unidad": "Perfiles registrados antes o en la primera sesión observada."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.json",
+      "bytes": 890281,
+      "sha256": "5c09366b599ef7ee25394778b91546579dad0472353504f8aa7032423d6e6948"
+    },
+    {
+      "nombre": "usuarios.csv",
+      "bytes": 12619,
+      "sha256": "a38029b4522b53fd975d2cb7f27f95d7593fb6ffed44af380462800cb4f0599a"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "ejercicio": "097",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20261019,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "una persona ficticia invitada",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 4515,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "zona",
+        "canal",
+        "invitado",
+        "responde",
+        "satisfaccion",
+        "peso"
+      ],
+      "unidad": "Fuente principal: una persona ficticia invitada."
+    },
+    {
+      "nombre": "marco",
+      "archivo": "marco.csv",
+      "filas": 3,
+      "columnas": [
+        "zona",
+        "poblacion_elegible",
+        "invitaciones"
+      ],
+      "unidad": "Muestreo aleatorio de igual cantidad por zona; respuesta voluntaria posterior."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 215793,
+      "sha256": "ade7e4b48117d69b64b3bb923fec2c3164fda0fd32a0020c75ade6deaab0151e"
+    },
+    {
+      "nombre": "marco.csv",
+      "bytes": 88,
+      "sha256": "f8fd315cebf59920b4b65086b4beea47a9adcd217102ca3abedfb21dd60f2651"
+    }
+  ]
+}

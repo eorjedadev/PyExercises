@@ -1,0 +1,58 @@
+{
+  "ejercicio": "063",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260985,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un producto-almacén-fecha",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "operacion.sqlite",
+      "filas": 2107,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "almacen",
+        "producto",
+        "saldo",
+        "demanda",
+        "reposicion",
+        "plazo_dias",
+        "coste_unitario"
+      ],
+      "unidad": "Fuente principal: un producto-almacén-fecha."
+    },
+    {
+      "nombre": "productos",
+      "archivo": "operacion.sqlite",
+      "filas": 12,
+      "columnas": [
+        "producto",
+        "familia",
+        "coste_referencia",
+        "plazo_catalogo"
+      ],
+      "unidad": "Catálogo vigente para todo el período."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "operacion.sqlite",
+      "bytes": 126976,
+      "sha256": "8ec4a5b9e27cb5fdb8094e549ea0f7df80628b2cab8677b2553c2b4bbebd5339"
+    }
+  ]
+}

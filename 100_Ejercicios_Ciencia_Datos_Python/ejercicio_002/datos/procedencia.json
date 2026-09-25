@@ -1,0 +1,45 @@
+{
+  "ejercicio": "002",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20260924,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2024-01-21"
+  },
+  "granularidad": "una operación de un producto",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 36,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "tienda",
+        "producto",
+        "unidades",
+        "precio",
+        "descuento",
+        "estado"
+      ],
+      "unidad": "Fuente principal: una operación de un producto."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 2081,
+      "sha256": "82546bdc0a39ef5211646d82bc3817586a3acbdc01803c72e91bb71b680aad2f"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "ejercicio": "099",
+  "origen": "Datos sintéticos creados exclusivamente para formación; no corresponden a personas u organizaciones reales.",
+  "version_paquete": "1.0",
+  "semilla_autoria": 20261021,
+  "ventana_nominal_fuente_principal": {
+    "desde": "2024-01-01",
+    "hasta": "2025-12-31"
+  },
+  "granularidad": "un lote producido",
+  "independencia": "Los paquetes son independientes entre ejercicios; no unir sus identificadores.",
+  "reproduccion_analisis": "Usar estos archivos congelados y verificar SHA-256; registrar por separado código, entorno y semillas del análisis.",
+  "formatos": {
+    "csv": "UTF-8, coma, cabecera",
+    "txt": "UTF-8, tabulador, cabecera",
+    "json": "UTF-8, lista de objetos",
+    "xlsx": "hoja registros",
+    "sqlite": "tablas de recepción con afinidad de tipos; pueden contener valores fuera del contrato"
+  },
+  "fuentes": [
+    {
+      "nombre": "registros",
+      "archivo": "registros.csv",
+      "filas": 4515,
+      "columnas": [
+        "registro_id",
+        "fecha",
+        "maquina",
+        "turno",
+        "unidades",
+        "defectos",
+        "horas",
+        "parada_min",
+        "vibracion",
+        "mantenimiento",
+        "fallo_7d",
+        "reparacion_coste"
+      ],
+      "unidad": "Fuente principal: un lote producido."
+    },
+    {
+      "nombre": "maquinas",
+      "archivo": "maquinas.csv",
+      "filas": 6,
+      "columnas": [
+        "maquina",
+        "antiguedad_anios",
+        "familia"
+      ],
+      "unidad": "Registro técnico de máquinas."
+    },
+    {
+      "nombre": "intervenciones",
+      "archivo": "intervenciones.csv",
+      "filas": 851,
+      "columnas": [
+        "intervencion_id",
+        "maquina",
+        "fecha",
+        "tipo",
+        "coste_pen"
+      ],
+      "unidad": "Bitácora de intervenciones preventivas. Puede haber varias por máquina."
+    }
+  ],
+  "archivos": [
+    {
+      "nombre": "registros.csv",
+      "bytes": 272326,
+      "sha256": "da5ad2662e8898211d4bfbc62a4ce09cf001ab130a55249fd082c94ed6cda5bb"
+    },
+    {
+      "nombre": "maquinas.csv",
+      "bytes": 88,
+      "sha256": "7b1bf08f796fe48a6cc136c4c85aef79b7b0661c00505d155cd4a9198dffb3f5"
+    },
+    {
+      "nombre": "intervenciones.csv",
+      "bytes": 32384,
+      "sha256": "bc65315eab141ac8294f31aa3819634fa9989bad924df59cda22e11c6988390d"
+    }
+  ]
+}

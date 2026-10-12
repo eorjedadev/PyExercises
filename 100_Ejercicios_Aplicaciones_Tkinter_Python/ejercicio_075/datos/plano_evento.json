@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "tipo": "redonda",
+    "x": 120,
+    "y": 140,
+    "ancho": 80,
+    "alto": 80,
+    "etiqueta": "Mesa 1",
+    "capacidad": 8
+  },
+  {
+    "id": 2,
+    "tipo": "rectangular",
+    "x": 280,
+    "y": 140,
+    "ancho": 120,
+    "alto": 60,
+    "etiqueta": "Mesa Presidencial",
+    "capacidad": 12
+  }
+]

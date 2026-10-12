@@ -1,0 +1,26 @@
+[
+  {
+    "id": "TSK-001",
+    "titulo": "Auditar accesos de servidores de produccion",
+    "responsable": "Hector Vega",
+    "prioridad": "Alta",
+    "estado": "En Curso",
+    "fecha_limite": "2026-10-20"
+  },
+  {
+    "id": "TSK-002",
+    "titulo": "Actualizar certificados SSL de gateway",
+    "responsable": "Laura Torres",
+    "prioridad": "Alta",
+    "estado": "Pendiente",
+    "fecha_limite": "2026-10-18"
+  },
+  {
+    "id": "TSK-003",
+    "titulo": "Redactar documentacion de API v2",
+    "responsable": "Carlos Slim",
+    "prioridad": "Media",
+    "estado": "Completada",
+    "fecha_limite": "2026-10-12"
+  }
+]

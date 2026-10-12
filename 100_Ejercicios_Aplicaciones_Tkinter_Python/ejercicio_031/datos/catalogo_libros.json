@@ -1,0 +1,29 @@
+[
+  {
+    "isbn": "978-0132350884",
+    "titulo": "Clean Code",
+    "autor": "Robert C. Martin",
+    "categoria": "Ingenieria de Software",
+    "estado": "Disponible",
+    "prestado_a": "-",
+    "fecha_prestamo": "-"
+  },
+  {
+    "isbn": "978-0201616224",
+    "titulo": "The Pragmatic Programmer",
+    "autor": "Andrew Hunt, David Thomas",
+    "categoria": "Desarrollo",
+    "estado": "Prestado",
+    "prestado_a": "Sofia Navarro",
+    "fecha_prestamo": "2026-10-01"
+  },
+  {
+    "isbn": "978-0596007126",
+    "titulo": "Head First Design Patterns",
+    "autor": "Eric Freeman",
+    "categoria": "Arquitectura",
+    "estado": "Disponible",
+    "prestado_a": "-",
+    "fecha_prestamo": "-"
+  }
+]

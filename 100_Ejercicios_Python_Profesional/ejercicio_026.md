@@ -2,88 +2,169 @@
 
 [Índice](README.md#indice-de-ejercicios) · [Anterior](ejercicio_025.md) · [Siguiente](ejercicio_027.md)
 
-### Contexto
+---
 
+## 1. Contexto y Propósito del Problema
+
+### Contexto
 Una caja compara el dinero contado con el saldo esperado al cierre.
 
-### Situación
-
+### Situación Operativa
 El encargo es **conciliación de un arqueo**. Expón la lógica principal mediante funciones con parámetros y retornos comprobables. La presentación por consola puede ser una adaptación; evita depender de variables globales para decidir.
 
-### Objetivo
-
+### Objetivo Principal
 Producir este resultado a partir de las entradas indicadas: **Importe contado, diferencia con signo y estado exacto, sobrante o faltante**. La solución debe distinguir los resultados válidos de los rechazos previstos.
 
-### Requisitos
+---
 
-- Respeta las reglas y los formatos, órdenes o interfaces que se indiquen.
-- Aplica las [convenciones comunes](README.md#convenciones-comunes) cuando no exista una excepción explícita.
-- Entrega implementación, pruebas y una explicación de tus decisiones.
+## 2. Especificación del Contrato (Entradas y Salidas)
 
-### Datos de entrada
-
+### Datos de Entrada
 Saldo esperado no negativo y cantidades enteras no negativas de monedas de 1, 2, 5, 10, 20, 50, 100 y 200 céntimos.
 
-### Resultado esperado
-
+### Resultado Esperado
 Importe contado, diferencia con signo y estado exacto, sobrante o faltante.
 
 Los mensajes son de redacción libre; las decisiones y los datos exigidos deben ser inequívocos.
 
-### Reglas de negocio
+### Reglas de Negocio e Invariantes
+- **Regla:** Denominaciones omitidas cuentan como cero.
+- **Regla:** Denominación no admitida invalida el arqueo.
+- **Regla:** Diferencia definida como contado menos esperado.
 
-- Denominaciones omitidas cuentan como cero.
-- Denominación no admitida invalida el arqueo.
-- Diferencia definida como contado menos esperado.
-
-### Casos especiales y límites
-
+### Casos Especiales y Límites de Frontera
 No confundir número de monedas con su valor.
 
 Comprueba las fronteras del contrato y explica cuándo un vacío es un resultado válido o una entrada rechazada.
 
-### Fundamentos de Python relacionados
+---
 
+## 3. Guía de Nomenclatura y Variables Profesionales
+
+Se recomienda definir nombres con alta carga semántica, respetando PEP 8 (`snake_case` para variables y funciones, `UPPER_SNAKE_CASE` para constantes de negocio):
+
+| Variable / Identificador | Tipo Sugerido | Propósito y Semántica |
+| :--- | :--- | :--- |
+| `denominacion` | `str` | Entidad de dominio: denominación. |
+| `cantidad_de_monedas` | `int` | Entidad de dominio: cantidad de monedas. |
+| `valor_contado` | `str` | Entidad de dominio: valor contado. |
+| `diferencia_de_arqueo` | `str` | Entidad de dominio: diferencia de arqueo. |
+
+---
+
+## 4. Guía del Instructor y Razonamiento Lógico (Paso a Paso sin Código)
+
+Para resolver este ejercicio con calidad profesional, sigue este razonamiento mental estructurado. No comiences escribiendo código directamente; primero comprende el flujo de decisiones y traslada estos pasos lógicos a tu solución.
+
+```mermaid
+graph TD
+    A[1. Recepción y Saneamiento] --> B[2. Guardianes de Validación Fail-Fast]
+    B -->|Incumple Regla / Dato Inválido| E[Retorno Inmediato de Rechazo]
+    B -->|Datos Íntegros y Válidos| C[3. Procesamiento Central y Lógica de Negocio]
+    C --> D[4. Empaquetado y Retorno del Resultado]
+```
+
+### 🧠 ¿Cómo debe razonar tu mente paso a paso?
+
+1. **Paso 1: Recepción y Limpieza de Entradas (Saneamiento):**
+   - **Qué datos recibes:** Saldo esperado no negativo y cantidades enteras no negativas de monedas de 1, 2, 5, 10, 20, 50, 100 y 200 céntimos.
+   - **Tu acción lógica preliminar:** Revisa los datos de entrada antes de operar. Si recibes cadenas de texto, elimina espacios accidentales en los extremos y normaliza el formato si la regla lo exige (por ejemplo, mayúsculas/minúsculas). Si recibes colecciones o números, asegúrate de mantener la inmutabilidad de las entradas originales.
+
+2. **Paso 2: Guardianes de Validación (*Fail-Fast*):**
+   - Tu lógica debe interrogar los datos en orden estricto antes de realizar cualquier cálculo o transformación pesada:
+     - *Condición de negocio:* Denominaciones omitidas cuentan como cero.
+     - *Condición de negocio:* Denominación no admitida invalida el arqueo.
+     - *Condición de negocio:* Diferencia definida como contado menos esperado.
+   - **Decisión inmediata (*Fail-Fast*):** Si alguna de las condiciones de validez se incumple, detén la ejecución en ese preciso instante. Genera el motivo de rechazo claro y estructurado, evitando procesamientos innecesarios o estados corruptos.
+
+3. **Paso 3: Núcleo de Transformación y Lógica de Dominio:**
+   - Una vez superados los guardianes, tienes la certeza de que todos los datos son íntegros y cumplen las restricciones.
+   - **El objetivo que debes resolver:** Producir este resultado a partir de las entradas indicadas: **Importe contado, diferencia con signo y estado exacto, sobrante o faltante**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+   - **Tu razonamiento operativo:** Aplica las operaciones, filtrados, acumulaciones o transformaciones requeridas por el negocio sobre los datos ya limpios y validados. Considera especialmente los límites de frontera: *No confundir número de monedas con su valor.*.
+
+4. **Paso 4: Empaquetado y Retorno del Resultado:**
+   - Prepara la respuesta según el contrato de salida:
+     - **En caso de éxito:** Retorna un estado afirmativo (`True`), junto con la estructura de datos procesada (Importe contado, diferencia con signo y estado exacto, sobrante o faltante.) y el indicador de error en `None`.
+     - **En caso de rechazo:** Retorna un estado negativo (`False`), sin datos procesados (`None`), e incluye el mensaje o causa descriptiva del rechazo.
+
+---
+
+## 5. Esqueleto de Diseño Profesional (Sin Implementar)
+
+> [!IMPORTANT]
+> **Queda prohibido resolver el ejercicio aquí.** El siguiente bloque define el contrato formal, tipos y documentación para que implementes la lógica completa.
+
+```python
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+# Constantes de negocio recomendadas (ejemplo de configuración de límites)
+# TODO: Define aquí tus constantes en UPPER_SNAKE_CASE con sus valores límite.
+
+def procesar_conciliacion_de_un_arqueo(
+    denominacion: str,
+    cantidad_de_monedas: int,
+    valor_contado: str,
+    diferencia_de_arqueo: str
+) -> Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+    """
+    Producir este resultado a partir de las entradas indicadas: **Importe contado, diferencia con signo y estado exacto, sobrante o faltante**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+
+    Args:
+        denominacion: Dato de entrada según contrato de negocio.
+        cantidad_de_monedas: Dato de entrada según contrato de negocio.
+        valor_contado: Dato de entrada según contrato de negocio.
+        diferencia_de_arqueo: Dato de entrada según contrato de negocio.
+
+    Returns:
+        Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+            - bool: True si la operación fue exitosa y válida; False si fue rechazada.
+            - Optional[Dict[str, Any]]: Datos resultantes estructurados, o None en caso de fallo.
+            - Optional[str]: Mensaje / causa de rechazo en caso de error, o None en caso de éxito.
+    """
+    # TODO: El profesional debe implementar la normalización, validaciones y cálculo aquí.
+    raise NotImplementedError("Implementación pendiente por el desarrollador.")
+```
+
+---
+
+## 6. Matriz de Casos de Prueba (*Test Cases*)
+
+Diseña tus pruebas unitarias (`unittest` o aserciones estructuradas) cubriendo todos estos escenarios:
+
+| ID | Escenario | Entrada | Salida Esperada | Criterio de Aceptación Evaluado |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Caso 1 | `Esperado 500; tres monedas de 200` | `contado 600, sobrante 100.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 2 | Caso 2 | `Esperado 0 y sin monedas` | `exacto.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 3 | Caso 3 | `Denominación 3` | `rechazo.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+
+---
+
+## 7. Fundamentos de Python y Buenas Prácticas
+
+### Fundamentos Clave
 - **Diccionarios, registros y colecciones anidadas**. Tema para investigar: Comprende claves únicas, ausencia de clave, valores por defecto y recorrido; justifica qué entidad merece ser una clave.
 - **Enteros, operadores aritméticos y formato de resultados**. Tema para investigar: Comprende operaciones y precedencia; distingue valor, unidad y formato. Investiga división entera, resto o redondeo solo cuando las reglas los requieran.
 - **Funciones, parámetros, retornos y contratos**. Tema para investigar: Distingue devolver un resultado de imprimirlo; identifica entradas explícitas y posibles efectos sobre argumentos.
 
 Son alternativas de estudio, no una lista de herramientas obligatorias. Justifica cuáles eliges.
 
-### ¿Por qué pueden ser útiles?
-
+### ¿Por qué son útiles en este ejercicio?
 - Relacionan identidades con atributos, estados o acumulados consultables.
 - Representan cantidades y unidades sin mezclar el dato calculado con su presentación.
 - Permiten probar decisiones sin depender de cómo se piden o muestran los datos.
 
-### Variables y nombres
-
-Identifica estas entidades: **denominación, cantidad de monedas, valor contado, diferencia de arqueo**. Diseña nombres para variables, colecciones, resultados intermedios, una función y sus parámetros; evita nombres como `dato1` o `temp`.
-
-Comunica intención y unidades, distingue singular/plural y usa verbos para acciones. Identifica qué reglas merecen constantes con nombre. Explica un nombre que descartaste y por qué el elegido ayuda a leer el código.
-
-### Antes de programar
-
-- ¿Qué significado profesional tiene el signo de la diferencia?
-- ¿Qué contratos separarías para comprobar las reglas sin depender de la presentación?
-- ¿Qué datos pueden cambiar y qué evidencia mostraría una modificación no deseada?
-
-Recupera razonamiento de [ejercicio 007](ejercicio_007.md): identifica una similitud y una diferencia de contrato antes de reutilizar algo.
-
-### Pruebas mínimas
-
-1. Esperado 500; tres monedas de 200 → contado 600, sobrante 100.
-2. Esperado 0 y sin monedas → exacto.
-3. Denominación 3 → rechazo.
-
-Añade un caso propio para el límite señalado en este enunciado. Escribe la expectativa antes de ejecutar y comprueba también los efectos sobre datos o archivos, si existen.
-
-### Errores comunes
-
+### Errores Comunes que Debes Evitar
 - Tomar el valor absoluto y perder si falta o sobra dinero.
 - Dar por correcta la solución tras un solo ejemplo, sin comprobar límites y rechazos.
 
-### Consulta recomendada
+### Recomendaciones de Código Limpio (Clean Code / PEP 8)
+- **Evita efectos secundarios (*side effects*):** No alteres colecciones recibidas como parámetros de entrada.
+- **Tipado estricto:** Aprovecha las anotaciones de tipos para detectar discrepancias antes de la ejecución.
+- **Manejo explícito de ausencia:** Distingue con claridad `None`, `0`, `""` y colecciones vacías `[]`/`{}`.
+
+---
+
+## 8. Consulta Técnica Recomendada
 
 - [Universidad_Python.md — Diccionarios](../Universidad_Python.md#diccionarios).
 - [Universidad_Python.md — Operadores](../Universidad_Python.md#operadores).
@@ -91,7 +172,9 @@ Añade un caso propio para el límite señalado en este enunciado. Escribe la ex
 
 Investiga el concepto que te falte; cierra los ejemplos resueltos antes de implementar tu diseño.
 
-### Explicación posterior
+---
+
+## 9. Preguntas de Autoevaluación y Reflexión Posterior
 
 - Explica qué hace tu programa y sigue los datos desde la entrada hasta el resultado en este escenario: **Esperado 500; tres monedas de 200 → contado 600, sobrante 100**.
 - ¿Por qué elegiste esas representaciones? ¿Qué significan tus variables, parámetros y resultados intermedios?
@@ -101,12 +184,14 @@ Investiga el concepto que te falte; cierra los ejemplos resueltos antes de imple
 
 Después de implementar, lee una función sin ejecutarla y predice su salida y sus efectos para uno de los casos mínimos. Contrasta tu predicción con la ejecución.
 
-### Aplicación profesional
+---
 
+## 10. Aplicación en el Mundo Real y Reto Adicional
+
+### Aplicación Profesional
 Arqueos y conciliaciones conservan unidades y signo para distinguir sobrantes de faltantes. Propón otro contexto donde reutilizarías el mecanismo y una regla que tendrías que adaptar.
 
-### Reto adicional
-
+### Reto Adicional (Opcional)
 Permitir un catálogo configurable de denominaciones.
 
 Es opcional. Señala qué pruebas deben conservar su resultado y cuáles cambian con el nuevo requisito.

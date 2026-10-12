@@ -1,0 +1,4 @@
+Carlos Mendoza;555-0192;carlos.mendoza@empresa.com;TI
+Valeria Rios;555-0143;valeria.rios@empresa.com;Finanzas
+Andres Suarez;555-0188;andres.suarez@empresa.com;Operaciones
+Mariana Gomez;555-0121;mariana.gomez@empresa.com;Recursos Humanos

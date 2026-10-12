@@ -1,0 +1,26 @@
+[
+  {
+    "id": "PLT-01",
+    "nombre": "Ceviche Clasico Peruano",
+    "categoria": "Entradas",
+    "costo": 45.0,
+    "precio": 135.0,
+    "margen": 66.7
+  },
+  {
+    "id": "PLT-02",
+    "nombre": "Lomo Saltado con Papas Rusticas",
+    "categoria": "Platos Fuertes",
+    "costo": 70.0,
+    "precio": 180.0,
+    "margen": 61.1
+  },
+  {
+    "id": "PLT-03",
+    "nombre": "Tiramisu Tradicional",
+    "categoria": "Postres",
+    "costo": 25.0,
+    "precio": 75.0,
+    "margen": 66.7
+  }
+]

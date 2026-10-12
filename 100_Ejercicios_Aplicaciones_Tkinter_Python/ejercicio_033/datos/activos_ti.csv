@@ -1,0 +1,5 @@
+serial,tipo,marca,modelo,asignado_a,fecha,estatus
+SN-LPT-8891,Laptop,Dell,Latitude 5420,Marcos Diaz,2025-06-12,Asignado
+SN-LPT-8892,Laptop,Lenovo,ThinkPad T14,Diana Ortiz,2025-08-01,Asignado
+SN-MON-3341,Monitor,Dell,P2419H,Diana Ortiz,2025-08-01,Asignado
+SN-LPT-9001,Laptop,HP,EliteBook 840,-,-,En Bodega

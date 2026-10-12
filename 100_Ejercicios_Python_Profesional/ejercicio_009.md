@@ -2,86 +2,169 @@
 
 [Índice](README.md#indice-de-ejercicios) · [Anterior](ejercicio_008.md) · [Siguiente](ejercicio_010.md)
 
-### Contexto
+---
 
+## 1. Contexto y Propósito del Problema
+
+### Contexto
 Mantenimiento revisa una serie corta de mediciones de una sala de equipos.
 
-### Situación
-
+### Situación Operativa
 El encargo es **lecturas de temperatura de una sala**. Puedes empezar con valores preparados y una salida por consola. Mantén separadas las reglas del formato de los mensajes; no es obligatorio construir un menú.
 
-### Objetivo
-
+### Objetivo Principal
 Producir este resultado a partir de las entradas indicadas: **Cantidad válida, cantidad confortable, índices inválidos desde 1 y media con una cifra decimal; sin válidas, media ausente**. La solución debe distinguir los resultados válidos de los rechazos previstos.
 
-### Requisitos
+---
 
-- Respeta las reglas y los formatos, órdenes o interfaces que se indiquen.
-- Aplica las [convenciones comunes](README.md#convenciones-comunes) cuando no exista una excepción explícita.
-- Entrega implementación, pruebas y una explicación de tus decisiones.
+## 2. Especificación del Contrato (Entradas y Salidas)
 
-### Datos de entrada
-
+### Datos de Entrada
 Lista de temperaturas enteras en grados Celsius.
 
-### Resultado esperado
-
+### Resultado Esperado
 Cantidad válida, cantidad confortable, índices inválidos desde 1 y media con una cifra decimal; sin válidas, media ausente.
 
 Los mensajes son de redacción libre; las decisiones y los datos exigidos deben ser inequívocos.
 
-### Reglas de negocio
+### Reglas de Negocio e Invariantes
+- **Regla:** Rango admisible de sensor: -40 a 80.
+- **Regla:** Separar lecturas fuera de rango.
+- **Regla:** Considerar confortable de 18 a 26 inclusive.
+- **Regla:** Media solo de lecturas válidas.
 
-- Rango admisible de sensor: -40 a 80.
-- Separar lecturas fuera de rango.
-- Considerar confortable de 18 a 26 inclusive.
-- Media solo de lecturas válidas.
-
-### Casos especiales y límites
-
+### Casos Especiales y Límites de Frontera
 No presentar cero como media cuando faltan observaciones.
 
 Comprueba las fronteras del contrato y explica cuándo un vacío es un resultado válido o una entrada rechazada.
 
-### Fundamentos de Python relacionados
+---
 
+## 3. Guía de Nomenclatura y Variables Profesionales
+
+Se recomienda definir nombres con alta carga semántica, respetando PEP 8 (`snake_case` para variables y funciones, `UPPER_SNAKE_CASE` para constantes de negocio):
+
+| Variable / Identificador | Tipo Sugerido | Propósito y Semántica |
+| :--- | :--- | :--- |
+| `lecturas_validas` | `int` | Entidad de dominio: lecturas válidas. |
+| `indices_rechazados` | `str` | Entidad de dominio: índices rechazados. |
+| `rango_confortable` | `str` | Entidad de dominio: rango confortable. |
+| `media` | `str` | Entidad de dominio: media. |
+
+---
+
+## 4. Guía del Instructor y Razonamiento Lógico (Paso a Paso sin Código)
+
+Para resolver este ejercicio con calidad profesional, sigue este razonamiento mental estructurado. No comiences escribiendo código directamente; primero comprende el flujo de decisiones y traslada estos pasos lógicos a tu solución.
+
+```mermaid
+graph TD
+    A[1. Recepción y Saneamiento] --> B[2. Guardianes de Validación Fail-Fast]
+    B -->|Incumple Regla / Dato Inválido| E[Retorno Inmediato de Rechazo]
+    B -->|Datos Íntegros y Válidos| C[3. Procesamiento Central y Lógica de Negocio]
+    C --> D[4. Empaquetado y Retorno del Resultado]
+```
+
+### 🧠 ¿Cómo debe razonar tu mente paso a paso?
+
+1. **Paso 1: Recepción y Limpieza de Entradas (Saneamiento):**
+   - **Qué datos recibes:** Lista de temperaturas enteras en grados Celsius.
+   - **Tu acción lógica preliminar:** Revisa los datos de entrada antes de operar. Si recibes cadenas de texto, elimina espacios accidentales en los extremos y normaliza el formato si la regla lo exige (por ejemplo, mayúsculas/minúsculas). Si recibes colecciones o números, asegúrate de mantener la inmutabilidad de las entradas originales.
+
+2. **Paso 2: Guardianes de Validación (*Fail-Fast*):**
+   - Tu lógica debe interrogar los datos en orden estricto antes de realizar cualquier cálculo o transformación pesada:
+     - *Condición de negocio:* Rango admisible de sensor: -40 a 80.
+     - *Condición de negocio:* Separar lecturas fuera de rango.
+     - *Condición de negocio:* Considerar confortable de 18 a 26 inclusive.
+     - *Condición de negocio:* Media solo de lecturas válidas.
+   - **Decisión inmediata (*Fail-Fast*):** Si alguna de las condiciones de validez se incumple, detén la ejecución en ese preciso instante. Genera el motivo de rechazo claro y estructurado, evitando procesamientos innecesarios o estados corruptos.
+
+3. **Paso 3: Núcleo de Transformación y Lógica de Dominio:**
+   - Una vez superados los guardianes, tienes la certeza de que todos los datos son íntegros y cumplen las restricciones.
+   - **El objetivo que debes resolver:** Producir este resultado a partir de las entradas indicadas: **Cantidad válida, cantidad confortable, índices inválidos desde 1 y media con una cifra decimal; sin válidas, media ausente**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+   - **Tu razonamiento operativo:** Aplica las operaciones, filtrados, acumulaciones o transformaciones requeridas por el negocio sobre los datos ya limpios y validados. Considera especialmente los límites de frontera: *No presentar cero como media cuando faltan observaciones.*.
+
+4. **Paso 4: Empaquetado y Retorno del Resultado:**
+   - Prepara la respuesta según el contrato de salida:
+     - **En caso de éxito:** Retorna un estado afirmativo (`True`), junto con la estructura de datos procesada (Cantidad válida, cantidad confortable, índices inválidos desde 1 y media con una cifra decimal; sin válidas, media ausente.) y el indicador de error en `None`.
+     - **En caso de rechazo:** Retorna un estado negativo (`False`), sin datos procesados (`None`), e incluye el mensaje o causa descriptiva del rechazo.
+
+---
+
+## 5. Esqueleto de Diseño Profesional (Sin Implementar)
+
+> [!IMPORTANT]
+> **Queda prohibido resolver el ejercicio aquí.** El siguiente bloque define el contrato formal, tipos y documentación para que implementes la lógica completa.
+
+```python
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+# Constantes de negocio recomendadas (ejemplo de configuración de límites)
+# TODO: Define aquí tus constantes en UPPER_SNAKE_CASE con sus valores límite.
+
+def ejecutar_ejercicio_009(
+    lecturas_validas: int,
+    indices_rechazados: str,
+    rango_confortable: str,
+    media: str
+) -> Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+    """
+    Producir este resultado a partir de las entradas indicadas: **Cantidad válida, cantidad confortable, índices inválidos desde 1 y media con una cifra decimal; sin válidas, media ausente**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+
+    Args:
+        lecturas_validas: Dato de entrada según contrato de negocio.
+        indices_rechazados: Dato de entrada según contrato de negocio.
+        rango_confortable: Dato de entrada según contrato de negocio.
+        media: Dato de entrada según contrato de negocio.
+
+    Returns:
+        Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+            - bool: True si la operación fue exitosa y válida; False si fue rechazada.
+            - Optional[Dict[str, Any]]: Datos resultantes estructurados, o None en caso de fallo.
+            - Optional[str]: Mensaje / causa de rechazo en caso de error, o None en caso de éxito.
+    """
+    # TODO: El profesional debe implementar la normalización, validaciones y cálculo aquí.
+    raise NotImplementedError("Implementación pendiente por el desarrollador.")
+```
+
+---
+
+## 6. Matriz de Casos de Prueba (*Test Cases*)
+
+Diseña tus pruebas unitarias (`unittest` o aserciones estructuradas) cubriendo todos estos escenarios:
+
+| ID | Escenario | Entrada | Salida Esperada | Criterio de Aceptación Evaluado |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Caso 1 | `18, 26, 30` | `3 válidas, 2 confortables, media 24.7.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 2 | Caso 2 | `81, -41` | `0 válidas, media ausente.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 3 | Caso 3 | `Lista vacía` | `contadores cero.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+
+---
+
+## 7. Fundamentos de Python y Buenas Prácticas
+
+### Fundamentos Clave
 - **Listas, tuplas, índices y recorridos**. Compara secuencias mutables e inmutables; comprueba cómo se representa una secuencia vacía.
 - **Bucles, acumuladores y control de flujo**. Comprende inicialización, condición de terminación y significado de cada acumulador; no confundas una iteración con un resultado final.
 - **Condicionales, booleanos y operadores de comparación**. Comprende límites inclusivos, condiciones compuestas y orden de evaluación antes de elegir ramas.
 
-### ¿Por qué pueden ser útiles?
-
+### ¿Por qué son útiles en este ejercicio?
 - Representan grupos donde la posición, el orden o la asociación de varios valores tiene significado.
 - Permiten examinar entradas sucesivas manteniendo la información necesaria para el resultado.
 - Expresan las condiciones del contrato y la prioridad entre decisiones que pueden coincidir.
 
-### Variables y nombres
-
-Identifica estas entidades: **lecturas válidas, índices rechazados, rango confortable, media**. Diseña nombres para variables, colecciones, resultados intermedios, una función y sus parámetros; evita nombres como `dato1` o `temp`.
-
-Comunica intención y unidades, distingue singular/plural y usa verbos para acciones. Identifica qué reglas merecen constantes con nombre. Explica un nombre que descartaste y por qué el elegido ayuda a leer el código.
-
-### Antes de programar
-
-- ¿Qué diferencia hay entre una lectura extrema válida y una lectura descartada?
-- ¿Cuáles son las entradas, sus unidades y el resultado que podrías comprobar a mano?
-- ¿Qué entrada está justo en un límite y qué cambia al pasar al valor siguiente?
-- ¿Cómo representarías un caso válido y un rechazo sin escribir aún el programa?
-
-### Pruebas mínimas
-
-1. 18, 26, 30 → 3 válidas, 2 confortables, media 24.7.
-2. 81, -41 → 0 válidas, media ausente.
-3. Lista vacía → contadores cero.
-
-Añade un caso propio para el límite señalado en este enunciado. Escribe la expectativa antes de ejecutar y comprueba también los efectos sobre datos o archivos, si existen.
-
-### Errores comunes
-
+### Errores Comunes que Debes Evitar
 - Incluir lecturas descartadas en el denominador.
 - Dar por correcta la solución tras un solo ejemplo, sin comprobar límites y rechazos.
 
-### Consulta recomendada
+### Recomendaciones de Código Limpio (Clean Code / PEP 8)
+- **Evita efectos secundarios (*side effects*):** No alteres colecciones recibidas como parámetros de entrada.
+- **Tipado estricto:** Aprovecha las anotaciones de tipos para detectar discrepancias antes de la ejecución.
+- **Manejo explícito de ausencia:** Distingue con claridad `None`, `0`, `""` y colecciones vacías `[]`/`{}`.
+
+---
+
+## 8. Consulta Técnica Recomendada
 
 - [Universidad_Python.md — Listas](../Universidad_Python.md#listas).
 - [Universidad_Python.md — Bucles](../Universidad_Python.md#bucles).
@@ -89,7 +172,9 @@ Añade un caso propio para el límite señalado en este enunciado. Escribe la ex
 
 Investiga el concepto que te falte; cierra los ejemplos resueltos antes de implementar tu diseño.
 
-### Explicación posterior
+---
+
+## 9. Preguntas de Autoevaluación y Reflexión Posterior
 
 - Explica qué hace tu programa y sigue los datos desde la entrada hasta el resultado en este escenario: **18, 26, 30 → 3 válidas, 2 confortables, media 24.7**.
 - ¿Por qué elegiste esas representaciones? ¿Qué significan tus variables, parámetros y resultados intermedios?
@@ -99,12 +184,14 @@ Investiga el concepto que te falte; cierra los ejemplos resueltos antes de imple
 
 Después de implementar, lee tu código sin ejecutarlo y anota qué representa cada valor importante durante un caso mínimo. Comprueba después tu predicción.
 
-### Aplicación profesional
+---
 
+## 10. Aplicación en el Mundo Real y Reto Adicional
+
+### Aplicación Profesional
 Tableros de sensores separan observaciones válidas, valores fuera de rango y ausencia de información suficiente. Propón otro contexto donde reutilizarías el mecanismo y una regla que tendrías que adaptar.
 
-### Reto adicional
-
+### Reto Adicional (Opcional)
 Informar también cuántas lecturas válidas quedaron bajo el rango confortable.
 
 Es opcional. Señala qué pruebas deben conservar su resultado y cuáles cambian con el nuevo requisito.

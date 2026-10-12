@@ -1,0 +1,7 @@
+id,fecha,concepto,categoria,tipo,monto
+TRX-101,2026-03-01,Pago de Factura Cliente Alpha,Ventas,INGRESO,4500.00
+TRX-102,2026-03-02,Servicio de Internet Fibra,Servicios,EGRESO,120.00
+TRX-103,2026-03-05,Honorarios Consultoria TI,Servicios,INGRESO,1800.00
+TRX-104,2026-03-10,Renta de Oficina Mensual,Inmuebles,EGRESO,2000.00
+TRX-105,2026-03-15,Compra de Papeleria y Tintas,Suministros,EGRESO,85.50
+TRX-106,2026-03-20,Cobro Anticipo Proyecto Beta,Ventas,INGRESO,3200.00

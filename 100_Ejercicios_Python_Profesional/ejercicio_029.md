@@ -2,90 +2,173 @@
 
 [Índice](README.md#indice-de-ejercicios) · [Anterior](ejercicio_028.md) · [Siguiente](ejercicio_030.md)
 
-### Contexto
+---
 
+## 1. Contexto y Propósito del Problema
+
+### Contexto
 Un equipo reparte tickets nuevos de manera continua entre sus integrantes.
 
-### Situación
-
+### Situación Operativa
 El encargo es **asignación circular de responsables**. Expón la lógica principal mediante funciones con parámetros y retornos comprobables. La presentación por consola puede ser una adaptación; evita depender de variables globales para decidir.
 
-### Objetivo
-
+### Objetivo Principal
 Producir este resultado a partir de las entradas indicadas: **Asignación de cada ticket y siguiente posición**. La solución debe distinguir los resultados válidos de los rechazos previstos.
 
-### Requisitos
+---
 
-- Respeta las reglas y los formatos, órdenes o interfaces que se indiquen.
-- Aplica las [convenciones comunes](README.md#convenciones-comunes) cuando no exista una excepción explícita.
-- Entrega implementación, pruebas y una explicación de tus decisiones.
+## 2. Especificación del Contrato (Entradas y Salidas)
 
-### Datos de entrada
-
+### Datos de Entrada
 Lista ordenada de integrantes únicos, lista de tickets únicos y posición inicial desde 0.
 
-### Resultado esperado
-
+### Resultado Esperado
 Asignación de cada ticket y siguiente posición.
 
 Los mensajes son de redacción libre; las decisiones y los datos exigidos deben ser inequívocos.
 
-### Reglas de negocio
+### Reglas de Negocio e Invariantes
+- **Regla:** Con tickets debe existir al menos un integrante.
+- **Regla:** Posición válida dentro de integrantes.
+- **Regla:** Asignar por turnos circulares.
+- **Regla:** Devolver también posición para el siguiente lote.
+- **Regla:** Sin integrantes y sin tickets, posición ausente.
 
-- Con tickets debe existir al menos un integrante.
-- Posición válida dentro de integrantes.
-- Asignar por turnos circulares.
-- Devolver también posición para el siguiente lote.
-- Sin integrantes y sin tickets, posición ausente.
-
-### Casos especiales y límites
-
+### Casos Especiales y Límites de Frontera
 Un lote nuevo no debe reiniciar por accidente el turno.
 
 Comprueba las fronteras del contrato y explica cuándo un vacío es un resultado válido o una entrada rechazada.
 
-### Fundamentos de Python relacionados
+---
 
+## 3. Guía de Nomenclatura y Variables Profesionales
+
+Se recomienda definir nombres con alta carga semántica, respetando PEP 8 (`snake_case` para variables y funciones, `UPPER_SNAKE_CASE` para constantes de negocio):
+
+| Variable / Identificador | Tipo Sugerido | Propósito y Semántica |
+| :--- | :--- | :--- |
+| `integrantes_disponibles` | `str` | Entidad de dominio: integrantes disponibles. |
+| `tickets_pendientes` | `str` | Entidad de dominio: tickets pendientes. |
+| `posicion_inicial` | `str` | Entidad de dominio: posición inicial. |
+| `siguiente_turno` | `str` | Entidad de dominio: siguiente turno. |
+
+---
+
+## 4. Guía del Instructor y Razonamiento Lógico (Paso a Paso sin Código)
+
+Para resolver este ejercicio con calidad profesional, sigue este razonamiento mental estructurado. No comiences escribiendo código directamente; primero comprende el flujo de decisiones y traslada estos pasos lógicos a tu solución.
+
+```mermaid
+graph TD
+    A[1. Recepción y Saneamiento] --> B[2. Guardianes de Validación Fail-Fast]
+    B -->|Incumple Regla / Dato Inválido| E[Retorno Inmediato de Rechazo]
+    B -->|Datos Íntegros y Válidos| C[3. Procesamiento Central y Lógica de Negocio]
+    C --> D[4. Empaquetado y Retorno del Resultado]
+```
+
+### 🧠 ¿Cómo debe razonar tu mente paso a paso?
+
+1. **Paso 1: Recepción y Limpieza de Entradas (Saneamiento):**
+   - **Qué datos recibes:** Lista ordenada de integrantes únicos, lista de tickets únicos y posición inicial desde 0.
+   - **Tu acción lógica preliminar:** Revisa los datos de entrada antes de operar. Si recibes cadenas de texto, elimina espacios accidentales en los extremos y normaliza el formato si la regla lo exige (por ejemplo, mayúsculas/minúsculas). Si recibes colecciones o números, asegúrate de mantener la inmutabilidad de las entradas originales.
+
+2. **Paso 2: Guardianes de Validación (*Fail-Fast*):**
+   - Tu lógica debe interrogar los datos en orden estricto antes de realizar cualquier cálculo o transformación pesada:
+     - *Condición de negocio:* Con tickets debe existir al menos un integrante.
+     - *Condición de negocio:* Posición válida dentro de integrantes.
+     - *Condición de negocio:* Asignar por turnos circulares.
+     - *Condición de negocio:* Devolver también posición para el siguiente lote.
+     - *Condición de negocio:* Sin integrantes y sin tickets, posición ausente.
+   - **Decisión inmediata (*Fail-Fast*):** Si alguna de las condiciones de validez se incumple, detén la ejecución en ese preciso instante. Genera el motivo de rechazo claro y estructurado, evitando procesamientos innecesarios o estados corruptos.
+
+3. **Paso 3: Núcleo de Transformación y Lógica de Dominio:**
+   - Una vez superados los guardianes, tienes la certeza de que todos los datos son íntegros y cumplen las restricciones.
+   - **El objetivo que debes resolver:** Producir este resultado a partir de las entradas indicadas: **Asignación de cada ticket y siguiente posición**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+   - **Tu razonamiento operativo:** Aplica las operaciones, filtrados, acumulaciones o transformaciones requeridas por el negocio sobre los datos ya limpios y validados. Considera especialmente los límites de frontera: *Un lote nuevo no debe reiniciar por accidente el turno.*.
+
+4. **Paso 4: Empaquetado y Retorno del Resultado:**
+   - Prepara la respuesta según el contrato de salida:
+     - **En caso de éxito:** Retorna un estado afirmativo (`True`), junto con la estructura de datos procesada (Asignación de cada ticket y siguiente posición.) y el indicador de error en `None`.
+     - **En caso de rechazo:** Retorna un estado negativo (`False`), sin datos procesados (`None`), e incluye el mensaje o causa descriptiva del rechazo.
+
+---
+
+## 5. Esqueleto de Diseño Profesional (Sin Implementar)
+
+> [!IMPORTANT]
+> **Queda prohibido resolver el ejercicio aquí.** El siguiente bloque define el contrato formal, tipos y documentación para que implementes la lógica completa.
+
+```python
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+# Constantes de negocio recomendadas (ejemplo de configuración de límites)
+# TODO: Define aquí tus constantes en UPPER_SNAKE_CASE con sus valores límite.
+
+def ejecutar_ejercicio_029(
+    integrantes_disponibles: str,
+    tickets_pendientes: str,
+    posicion_inicial: str,
+    siguiente_turno: str
+) -> Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+    """
+    Producir este resultado a partir de las entradas indicadas: **Asignación de cada ticket y siguiente posición**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+
+    Args:
+        integrantes_disponibles: Dato de entrada según contrato de negocio.
+        tickets_pendientes: Dato de entrada según contrato de negocio.
+        posicion_inicial: Dato de entrada según contrato de negocio.
+        siguiente_turno: Dato de entrada según contrato de negocio.
+
+    Returns:
+        Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+            - bool: True si la operación fue exitosa y válida; False si fue rechazada.
+            - Optional[Dict[str, Any]]: Datos resultantes estructurados, o None en caso de fallo.
+            - Optional[str]: Mensaje / causa de rechazo en caso de error, o None en caso de éxito.
+    """
+    # TODO: El profesional debe implementar la normalización, validaciones y cálculo aquí.
+    raise NotImplementedError("Implementación pendiente por el desarrollador.")
+```
+
+---
+
+## 6. Matriz de Casos de Prueba (*Test Cases*)
+
+Diseña tus pruebas unitarias (`unittest` o aserciones estructuradas) cubriendo todos estos escenarios:
+
+| ID | Escenario | Entrada | Salida Esperada | Criterio de Aceptación Evaluado |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Caso 1 | `Ana,Beto; T1,T2,T3; inicio 0` | `Ana,Beto,Ana; siguiente 1.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 2 | Caso 2 | `Mismos integrantes sin tickets e inicio 1` | `siguiente 1.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 3 | Caso 3 | `Tickets sin integrantes` | `error.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+
+---
+
+## 7. Fundamentos de Python y Buenas Prácticas
+
+### Fundamentos Clave
 - **Listas, tuplas, índices y recorridos**. Tema para investigar: Compara secuencias mutables e inmutables; comprueba cómo se representa una secuencia vacía.
 - **Enteros, operadores aritméticos y formato de resultados**. Tema para investigar: Comprende operaciones y precedencia; distingue valor, unidad y formato. Investiga división entera, resto o redondeo solo cuando las reglas los requieran.
 - **Funciones, parámetros, retornos y contratos**. Tema para investigar: Distingue devolver un resultado de imprimirlo; identifica entradas explícitas y posibles efectos sobre argumentos.
 
 Son alternativas de estudio, no una lista de herramientas obligatorias. Justifica cuáles eliges.
 
-### ¿Por qué pueden ser útiles?
-
+### ¿Por qué son útiles en este ejercicio?
 - Representan grupos donde la posición, el orden o la asociación de varios valores tiene significado.
 - Representan cantidades y unidades sin mezclar el dato calculado con su presentación.
 - Permiten probar decisiones sin depender de cómo se piden o muestran los datos.
 
-### Variables y nombres
-
-Identifica estas entidades: **integrantes disponibles, tickets pendientes, posición inicial, siguiente turno**. Diseña nombres para variables, colecciones, resultados intermedios, una función y sus parámetros; evita nombres como `dato1` o `temp`.
-
-Comunica intención y unidades, distingue singular/plural y usa verbos para acciones. Identifica qué reglas merecen constantes con nombre. Explica un nombre que descartaste y por qué el elegido ayuda a leer el código.
-
-### Antes de programar
-
-- ¿Qué dato permite continuar el reparto entre llamadas?
-- ¿Qué contratos separarías para comprobar las reglas sin depender de la presentación?
-- ¿Qué datos pueden cambiar y qué evidencia mostraría una modificación no deseada?
-
-Recupera razonamiento de [ejercicio 014](ejercicio_014.md): identifica una similitud y una diferencia de contrato antes de reutilizar algo.
-
-### Pruebas mínimas
-
-1. Ana,Beto; T1,T2,T3; inicio 0 → Ana,Beto,Ana; siguiente 1.
-2. Mismos integrantes sin tickets e inicio 1 → siguiente 1.
-3. Tickets sin integrantes → error.
-
-Añade un caso propio para el límite señalado en este enunciado. Escribe la expectativa antes de ejecutar y comprueba también los efectos sobre datos o archivos, si existen.
-
-### Errores comunes
-
+### Errores Comunes que Debes Evitar
 - Asignar siempre el primer ticket a la primera persona.
 - Dar por correcta la solución tras un solo ejemplo, sin comprobar límites y rechazos.
 
-### Consulta recomendada
+### Recomendaciones de Código Limpio (Clean Code / PEP 8)
+- **Evita efectos secundarios (*side effects*):** No alteres colecciones recibidas como parámetros de entrada.
+- **Tipado estricto:** Aprovecha las anotaciones de tipos para detectar discrepancias antes de la ejecución.
+- **Manejo explícito de ausencia:** Distingue con claridad `None`, `0`, `""` y colecciones vacías `[]`/`{}`.
+
+---
+
+## 8. Consulta Técnica Recomendada
 
 - [Universidad_Python.md — Listas](../Universidad_Python.md#listas).
 - [Universidad_Python.md — Operadores](../Universidad_Python.md#operadores).
@@ -93,7 +176,9 @@ Añade un caso propio para el límite señalado en este enunciado. Escribe la ex
 
 Investiga el concepto que te falte; cierra los ejemplos resueltos antes de implementar tu diseño.
 
-### Explicación posterior
+---
+
+## 9. Preguntas de Autoevaluación y Reflexión Posterior
 
 - Explica qué hace tu programa y sigue los datos desde la entrada hasta el resultado en este escenario: **Ana,Beto; T1,T2,T3; inicio 0 → Ana,Beto,Ana; siguiente 1**.
 - ¿Por qué elegiste esas representaciones? ¿Qué significan tus variables, parámetros y resultados intermedios?
@@ -103,12 +188,14 @@ Investiga el concepto que te falte; cierra los ejemplos resueltos antes de imple
 
 Después de implementar, lee una función sin ejecutarla y predice su salida y sus efectos para uno de los casos mínimos. Contrasta tu predicción con la ejecución.
 
-### Aplicación profesional
+---
 
+## 10. Aplicación en el Mundo Real y Reto Adicional
+
+### Aplicación Profesional
 Distribución de trabajo entre equipos necesita continuidad entre lotes para no favorecer siempre al mismo integrante. Propón otro contexto donde reutilizarías el mecanismo y una regla que tendrías que adaptar.
 
-### Reto adicional
-
+### Reto Adicional (Opcional)
 Excluir temporalmente integrantes ausentes antes del reparto.
 
 Es opcional. Señala qué pruebas deben conservar su resultado y cuáles cambian con el nuevo requisito.

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "MED-1",
+    "paciente": "Elena Ramos (Hab. 102)",
+    "farmaco": "Metformina 850mg",
+    "dosis": "1 tableta",
+    "hora_programada": "08:00",
+    "estado": "Administrado",
+    "hora_real": "08:05"
+  },
+  {
+    "id": "MED-2",
+    "paciente": "Elena Ramos (Hab. 102)",
+    "farmaco": "Enalapril 10mg",
+    "dosis": "1 tableta",
+    "hora_programada": "14:00",
+    "estado": "Pendiente",
+    "hora_real": "-"
+  },
+  {
+    "id": "MED-3",
+    "paciente": "Raul Castro (Hab. 105)",
+    "farmaco": "Omeprazol 20mg",
+    "dosis": "1 capsula",
+    "hora_programada": "07:30",
+    "estado": "Administrado",
+    "hora_real": "07:32"
+  }
+]

@@ -2,90 +2,173 @@
 
 [Índice](README.md#indice-de-ejercicios) · [Anterior](ejercicio_039.md) · [Siguiente](ejercicio_041.md)
 
-### Contexto
+---
 
+## 1. Contexto y Propósito del Problema
+
+### Contexto
 Un instalador local compara versiones con un formato acotado.
 
-### Situación
-
+### Situación Operativa
 El encargo es **compatibilidad de versiones publicadas**. Expón la lógica principal mediante funciones con parámetros y retornos comprobables. La presentación por consola puede ser una adaptación; evita depender de variables globales para decidir.
 
-### Objetivo
-
+### Objetivo Principal
 Producir este resultado a partir de las entradas indicadas: **Compatible si instalada pertenece al intervalo, o error de formato/configuración**. La solución debe distinguir los resultados válidos de los rechazos previstos.
 
-### Requisitos
+---
 
-- Respeta las reglas y los formatos, órdenes o interfaces que se indiquen.
-- Aplica las [convenciones comunes](README.md#convenciones-comunes) cuando no exista una excepción explícita.
-- Entrega implementación, pruebas y una explicación de tus decisiones.
+## 2. Especificación del Contrato (Entradas y Salidas)
 
-### Datos de entrada
-
+### Datos de Entrada
 Versión instalada, mínima y máxima exclusiva como textos de tres componentes numéricos separados por puntos.
 
-### Resultado esperado
-
+### Resultado Esperado
 Compatible si instalada pertenece al intervalo, o error de formato/configuración.
 
 Los mensajes son de redacción libre; las decisiones y los datos exigidos deben ser inequívocos.
 
-### Reglas de negocio
+### Reglas de Negocio e Invariantes
+- **Regla:** Componentes de dígitos ASCII no negativos, sin signos ni espacios.
+- **Regla:** Se permiten ceros iniciales.
+- **Regla:** Comparar por valor de cada componente.
+- **Regla:** Mínima debe ser menor que máxima.
+- **Regla:** No existen sufijos.
 
-- Componentes de dígitos ASCII no negativos, sin signos ni espacios.
-- Se permiten ceros iniciales.
-- Comparar por valor de cada componente.
-- Mínima debe ser menor que máxima.
-- No existen sufijos.
-
-### Casos especiales y límites
-
+### Casos Especiales y Límites de Frontera
 La comparación alfabética no representa el orden numérico.
 
 Comprueba las fronteras del contrato y explica cuándo un vacío es un resultado válido o una entrada rechazada.
 
-### Fundamentos de Python relacionados
+---
 
+## 3. Guía de Nomenclatura y Variables Profesionales
+
+Se recomienda definir nombres con alta carga semántica, respetando PEP 8 (`snake_case` para variables y funciones, `UPPER_SNAKE_CASE` para constantes de negocio):
+
+| Variable / Identificador | Tipo Sugerido | Propósito y Semántica |
+| :--- | :--- | :--- |
+| `componentes_de_version` | `str` | Entidad de dominio: componentes de versión. |
+| `limite_incluido` | `int` | Entidad de dominio: límite incluido. |
+| `limite_excluido` | `int` | Entidad de dominio: límite excluido. |
+| `compatibilidad` | `int` | Entidad de dominio: compatibilidad. |
+
+---
+
+## 4. Guía del Instructor y Razonamiento Lógico (Paso a Paso sin Código)
+
+Para resolver este ejercicio con calidad profesional, sigue este razonamiento mental estructurado. No comiences escribiendo código directamente; primero comprende el flujo de decisiones y traslada estos pasos lógicos a tu solución.
+
+```mermaid
+graph TD
+    A[1. Recepción y Saneamiento] --> B[2. Guardianes de Validación Fail-Fast]
+    B -->|Incumple Regla / Dato Inválido| E[Retorno Inmediato de Rechazo]
+    B -->|Datos Íntegros y Válidos| C[3. Procesamiento Central y Lógica de Negocio]
+    C --> D[4. Empaquetado y Retorno del Resultado]
+```
+
+### 🧠 ¿Cómo debe razonar tu mente paso a paso?
+
+1. **Paso 1: Recepción y Limpieza de Entradas (Saneamiento):**
+   - **Qué datos recibes:** Versión instalada, mínima y máxima exclusiva como textos de tres componentes numéricos separados por puntos.
+   - **Tu acción lógica preliminar:** Revisa los datos de entrada antes de operar. Si recibes cadenas de texto, elimina espacios accidentales en los extremos y normaliza el formato si la regla lo exige (por ejemplo, mayúsculas/minúsculas). Si recibes colecciones o números, asegúrate de mantener la inmutabilidad de las entradas originales.
+
+2. **Paso 2: Guardianes de Validación (*Fail-Fast*):**
+   - Tu lógica debe interrogar los datos en orden estricto antes de realizar cualquier cálculo o transformación pesada:
+     - *Condición de negocio:* Componentes de dígitos ASCII no negativos, sin signos ni espacios.
+     - *Condición de negocio:* Se permiten ceros iniciales.
+     - *Condición de negocio:* Comparar por valor de cada componente.
+     - *Condición de negocio:* Mínima debe ser menor que máxima.
+     - *Condición de negocio:* No existen sufijos.
+   - **Decisión inmediata (*Fail-Fast*):** Si alguna de las condiciones de validez se incumple, detén la ejecución en ese preciso instante. Genera el motivo de rechazo claro y estructurado, evitando procesamientos innecesarios o estados corruptos.
+
+3. **Paso 3: Núcleo de Transformación y Lógica de Dominio:**
+   - Una vez superados los guardianes, tienes la certeza de que todos los datos son íntegros y cumplen las restricciones.
+   - **El objetivo que debes resolver:** Producir este resultado a partir de las entradas indicadas: **Compatible si instalada pertenece al intervalo, o error de formato/configuración**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+   - **Tu razonamiento operativo:** Aplica las operaciones, filtrados, acumulaciones o transformaciones requeridas por el negocio sobre los datos ya limpios y validados. Considera especialmente los límites de frontera: *La comparación alfabética no representa el orden numérico.*.
+
+4. **Paso 4: Empaquetado y Retorno del Resultado:**
+   - Prepara la respuesta según el contrato de salida:
+     - **En caso de éxito:** Retorna un estado afirmativo (`True`), junto con la estructura de datos procesada (Compatible si instalada pertenece al intervalo, o error de formato/configuración.) y el indicador de error en `None`.
+     - **En caso de rechazo:** Retorna un estado negativo (`False`), sin datos procesados (`None`), e incluye el mensaje o causa descriptiva del rechazo.
+
+---
+
+## 5. Esqueleto de Diseño Profesional (Sin Implementar)
+
+> [!IMPORTANT]
+> **Queda prohibido resolver el ejercicio aquí.** El siguiente bloque define el contrato formal, tipos y documentación para que implementes la lógica completa.
+
+```python
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+# Constantes de negocio recomendadas (ejemplo de configuración de límites)
+# TODO: Define aquí tus constantes en UPPER_SNAKE_CASE con sus valores límite.
+
+def ejecutar_ejercicio_040(
+    componentes_de_version: str,
+    limite_incluido: int,
+    limite_excluido: int,
+    compatibilidad: int
+) -> Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+    """
+    Producir este resultado a partir de las entradas indicadas: **Compatible si instalada pertenece al intervalo, o error de formato/configuración**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+
+    Args:
+        componentes_de_version: Dato de entrada según contrato de negocio.
+        limite_incluido: Dato de entrada según contrato de negocio.
+        limite_excluido: Dato de entrada según contrato de negocio.
+        compatibilidad: Dato de entrada según contrato de negocio.
+
+    Returns:
+        Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+            - bool: True si la operación fue exitosa y válida; False si fue rechazada.
+            - Optional[Dict[str, Any]]: Datos resultantes estructurados, o None en caso de fallo.
+            - Optional[str]: Mensaje / causa de rechazo en caso de error, o None en caso de éxito.
+    """
+    # TODO: El profesional debe implementar la normalización, validaciones y cálculo aquí.
+    raise NotImplementedError("Implementación pendiente por el desarrollador.")
+```
+
+---
+
+## 6. Matriz de Casos de Prueba (*Test Cases*)
+
+Diseña tus pruebas unitarias (`unittest` o aserciones estructuradas) cubriendo todos estos escenarios:
+
+| ID | Escenario | Entrada | Salida Esperada | Criterio de Aceptación Evaluado |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Caso 1 | `Instalada 2.10.0, mínimo2.9.0, máximo3.0.0` | `compatible.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 2 | Caso 2 | `3.0.0` | `incompatible.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 3 | Caso 3 | `2.1 o 2.1.0-beta` | `error.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+
+---
+
+## 7. Fundamentos de Python y Buenas Prácticas
+
+### Fundamentos Clave
 - **Cadenas, métodos de texto y comparaciones**. Tema para investigar: Investiga recorte, partición, pertenencia y diferencias entre igualdad textual y equivalencia definida por negocio.
 - **Listas, tuplas, índices y recorridos**. Tema para investigar: Compara secuencias mutables e inmutables; comprueba cómo se representa una secuencia vacía.
 - **Funciones, parámetros, retornos y contratos**. Tema para investigar: Distingue devolver un resultado de imprimirlo; identifica entradas explícitas y posibles efectos sobre argumentos.
 
 Son alternativas de estudio, no una lista de herramientas obligatorias. Justifica cuáles eliges.
 
-### ¿Por qué pueden ser útiles?
-
+### ¿Por qué son útiles en este ejercicio?
 - Permiten separar el texto recibido de la forma usada para validarlo o compararlo.
 - Representan grupos donde la posición, el orden o la asociación de varios valores tiene significado.
 - Permiten probar decisiones sin depender de cómo se piden o muestran los datos.
 
-### Variables y nombres
-
-Identifica estas entidades: **componentes de versión, límite incluido, límite excluido, compatibilidad**. Diseña nombres para variables, colecciones, resultados intermedios, una función y sus parámetros; evita nombres como `dato1` o `temp`.
-
-Comunica intención y unidades, distingue singular/plural y usa verbos para acciones. Identifica qué reglas merecen constantes con nombre. Explica un nombre que descartaste y por qué el elegido ayuda a leer el código.
-
-### Antes de programar
-
-- ¿Qué parte del texto expresa estructura y qué parte expresa cantidades?
-- ¿Qué contratos separarías para comprobar las reglas sin depender de la presentación?
-- ¿Qué datos pueden cambiar y qué evidencia mostraría una modificación no deseada?
-
-Recupera razonamiento de [ejercicio 005](ejercicio_005.md), [ejercicio 015](ejercicio_015.md): identifica una similitud y una diferencia de contrato antes de reutilizar algo.
-
-### Pruebas mínimas
-
-1. Instalada 2.10.0, mínimo2.9.0, máximo3.0.0 → compatible.
-2. 3.0.0 → incompatible.
-3. 2.1 o 2.1.0-beta → error.
-
-Añade un caso propio para el límite señalado en este enunciado. Escribe la expectativa antes de ejecutar y comprueba también los efectos sobre datos o archivos, si existen.
-
-### Errores comunes
-
+### Errores Comunes que Debes Evitar
 - Tratar 2.10.0 como menor que 2.9.0.
 - Dar por correcta la solución tras un solo ejemplo, sin comprobar límites y rechazos.
 
-### Consulta recomendada
+### Recomendaciones de Código Limpio (Clean Code / PEP 8)
+- **Evita efectos secundarios (*side effects*):** No alteres colecciones recibidas como parámetros de entrada.
+- **Tipado estricto:** Aprovecha las anotaciones de tipos para detectar discrepancias antes de la ejecución.
+- **Manejo explícito de ausencia:** Distingue con claridad `None`, `0`, `""` y colecciones vacías `[]`/`{}`.
+
+---
+
+## 8. Consulta Técnica Recomendada
 
 - [Diccionario_Python.md — Métodos de Cadenas](../Diccionario_Python.md#m%C3%A9todos-de-cadenas).
 - [Universidad_Python.md — Listas](../Universidad_Python.md#listas).
@@ -93,7 +176,9 @@ Añade un caso propio para el límite señalado en este enunciado. Escribe la ex
 
 Investiga el concepto que te falte; cierra los ejemplos resueltos antes de implementar tu diseño.
 
-### Explicación posterior
+---
+
+## 9. Preguntas de Autoevaluación y Reflexión Posterior
 
 - Explica qué hace tu programa y sigue los datos desde la entrada hasta el resultado en este escenario: **Instalada 2.10.0, mínimo2.9.0, máximo3.0.0 → compatible**.
 - ¿Por qué elegiste esas representaciones? ¿Qué significan tus variables, parámetros y resultados intermedios?
@@ -103,12 +188,14 @@ Investiga el concepto que te falte; cierra los ejemplos resueltos antes de imple
 
 Después de implementar, lee una función sin ejecutarla y predice su salida y sus efectos para uno de los casos mínimos. Contrasta tu predicción con la ejecución.
 
-### Aplicación profesional
+---
 
+## 10. Aplicación en el Mundo Real y Reto Adicional
+
+### Aplicación Profesional
 Herramientas de compatibilidad interpretan versiones estructuradas sin confundir su presentación con su orden. Propón otro contexto donde reutilizarías el mecanismo y una regla que tendrías que adaptar.
 
-### Reto adicional
-
+### Reto Adicional (Opcional)
 Aceptar un cuarto componente opcional con valor cero si falta.
 
 Es opcional. Señala qué pruebas deben conservar su resultado y cuáles cambian con el nuevo requisito.

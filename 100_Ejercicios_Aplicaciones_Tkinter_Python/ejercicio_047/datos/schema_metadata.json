@@ -1,0 +1,20 @@
+{
+  "tablas": {
+    "clientes": {
+      "descripcion": "Registro maestro de clientes y cuentas comerciales",
+      "columnas": [
+        {"nombre": "id", "tipo": "INTEGER", "pk": true, "nulo": false, "descripcion": "Identificador unico autoincremental"},
+        {"nombre": "razon_social", "tipo": "VARCHAR(150)", "pk": false, "nulo": false, "descripcion": "Nombre legal o comercial"},
+        {"nombre": "rfc", "tipo": "VARCHAR(13)", "pk": false, "nulo": false, "descripcion": "Identificacion tributaria fiscal"}
+      ]
+    },
+    "facturas": {
+      "descripcion": "Comprobantes fiscales emitidos a clientes",
+      "columnas": [
+        {"nombre": "id", "tipo": "INTEGER", "pk": true, "nulo": false, "descripcion": "Folio interno unico"},
+        {"nombre": "cliente_id", "tipo": "INTEGER", "pk": false, "nulo": false, "descripcion": "Clave foranea a clientes(id)"},
+        {"nombre": "monto_total", "tipo": "DECIMAL(12,2)", "pk": false, "nulo": false, "descripcion": "Importe total con impuestos"}
+      ]
+    }
+  }
+}

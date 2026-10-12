@@ -2,90 +2,173 @@
 
 [Índice](README.md#indice-de-ejercicios) · [Anterior](ejercicio_037.md) · [Siguiente](ejercicio_039.md)
 
-### Contexto
+---
 
+## 1. Contexto y Propósito del Problema
+
+### Contexto
 Una actividad asigna plazas por llegada y promueve personas cuando alguien cancela.
 
-### Situación
-
+### Situación Operativa
 El encargo es **distribución de plazas con lista de espera**. Expón la lógica principal mediante funciones con parámetros y retornos comprobables. La presentación por consola puede ser una adaptación; evita depender de variables globales para decidir.
 
-### Objetivo
-
+### Objetivo Principal
 Producir este resultado a partir de las entradas indicadas: **Confirmados, espera y resultado de cada operación**. La solución debe distinguir los resultados válidos de los rechazos previstos.
 
-### Requisitos
+---
 
-- Respeta las reglas y los formatos, órdenes o interfaces que se indiquen.
-- Aplica las [convenciones comunes](README.md#convenciones-comunes) cuando no exista una excepción explícita.
-- Entrega implementación, pruebas y una explicación de tus decisiones.
+## 2. Especificación del Contrato (Entradas y Salidas)
 
-### Datos de entrada
-
+### Datos de Entrada
 Capacidad positiva, lista inicial de inscritos únicos y operaciones inscribir/cancelar por identificador.
 
-### Resultado esperado
-
+### Resultado Esperado
 Confirmados, espera y resultado de cada operación.
 
 Los mensajes son de redacción libre; las decisiones y los datos exigidos deben ser inequívocos.
 
-### Reglas de negocio
+### Reglas de Negocio e Invariantes
+- **Regla:** Primeros hasta capacidad confirmados y resto en espera.
+- **Regla:** Duplicados activos rechazados.
+- **Regla:** Cancelar confirmado promueve primero en espera.
+- **Regla:** Cancelar en espera solo lo retira.
+- **Regla:** Desconocidos se informan.
 
-- Primeros hasta capacidad confirmados y resto en espera.
-- Duplicados activos rechazados.
-- Cancelar confirmado promueve primero en espera.
-- Cancelar en espera solo lo retira.
-- Desconocidos se informan.
-
-### Casos especiales y límites
-
+### Casos Especiales y Límites de Frontera
 Una persona cancelada puede inscribirse de nuevo al final.
 
 Comprueba las fronteras del contrato y explica cuándo un vacío es un resultado válido o una entrada rechazada.
 
-### Fundamentos de Python relacionados
+---
 
+## 3. Guía de Nomenclatura y Variables Profesionales
+
+Se recomienda definir nombres con alta carga semántica, respetando PEP 8 (`snake_case` para variables y funciones, `UPPER_SNAKE_CASE` para constantes de negocio):
+
+| Variable / Identificador | Tipo Sugerido | Propósito y Semántica |
+| :--- | :--- | :--- |
+| `personas_confirmadas` | `str` | Entidad de dominio: personas confirmadas. |
+| `lista_de_espera` | `List[Any]` | Entidad de dominio: lista de espera. |
+| `persona_promovida` | `int` | Entidad de dominio: persona promovida. |
+| `estado_de_inscripcion` | `str` | Entidad de dominio: estado de inscripción. |
+
+---
+
+## 4. Guía del Instructor y Razonamiento Lógico (Paso a Paso sin Código)
+
+Para resolver este ejercicio con calidad profesional, sigue este razonamiento mental estructurado. No comiences escribiendo código directamente; primero comprende el flujo de decisiones y traslada estos pasos lógicos a tu solución.
+
+```mermaid
+graph TD
+    A[1. Recepción y Saneamiento] --> B[2. Guardianes de Validación Fail-Fast]
+    B -->|Incumple Regla / Dato Inválido| E[Retorno Inmediato de Rechazo]
+    B -->|Datos Íntegros y Válidos| C[3. Procesamiento Central y Lógica de Negocio]
+    C --> D[4. Empaquetado y Retorno del Resultado]
+```
+
+### 🧠 ¿Cómo debe razonar tu mente paso a paso?
+
+1. **Paso 1: Recepción y Limpieza de Entradas (Saneamiento):**
+   - **Qué datos recibes:** Capacidad positiva, lista inicial de inscritos únicos y operaciones inscribir/cancelar por identificador.
+   - **Tu acción lógica preliminar:** Revisa los datos de entrada antes de operar. Si recibes cadenas de texto, elimina espacios accidentales en los extremos y normaliza el formato si la regla lo exige (por ejemplo, mayúsculas/minúsculas). Si recibes colecciones o números, asegúrate de mantener la inmutabilidad de las entradas originales.
+
+2. **Paso 2: Guardianes de Validación (*Fail-Fast*):**
+   - Tu lógica debe interrogar los datos en orden estricto antes de realizar cualquier cálculo o transformación pesada:
+     - *Condición de negocio:* Primeros hasta capacidad confirmados y resto en espera.
+     - *Condición de negocio:* Duplicados activos rechazados.
+     - *Condición de negocio:* Cancelar confirmado promueve primero en espera.
+     - *Condición de negocio:* Cancelar en espera solo lo retira.
+     - *Condición de negocio:* Desconocidos se informan.
+   - **Decisión inmediata (*Fail-Fast*):** Si alguna de las condiciones de validez se incumple, detén la ejecución en ese preciso instante. Genera el motivo de rechazo claro y estructurado, evitando procesamientos innecesarios o estados corruptos.
+
+3. **Paso 3: Núcleo de Transformación y Lógica de Dominio:**
+   - Una vez superados los guardianes, tienes la certeza de que todos los datos son íntegros y cumplen las restricciones.
+   - **El objetivo que debes resolver:** Producir este resultado a partir de las entradas indicadas: **Confirmados, espera y resultado de cada operación**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+   - **Tu razonamiento operativo:** Aplica las operaciones, filtrados, acumulaciones o transformaciones requeridas por el negocio sobre los datos ya limpios y validados. Considera especialmente los límites de frontera: *Una persona cancelada puede inscribirse de nuevo al final.*.
+
+4. **Paso 4: Empaquetado y Retorno del Resultado:**
+   - Prepara la respuesta según el contrato de salida:
+     - **En caso de éxito:** Retorna un estado afirmativo (`True`), junto con la estructura de datos procesada (Confirmados, espera y resultado de cada operación.) y el indicador de error en `None`.
+     - **En caso de rechazo:** Retorna un estado negativo (`False`), sin datos procesados (`None`), e incluye el mensaje o causa descriptiva del rechazo.
+
+---
+
+## 5. Esqueleto de Diseño Profesional (Sin Implementar)
+
+> [!IMPORTANT]
+> **Queda prohibido resolver el ejercicio aquí.** El siguiente bloque define el contrato formal, tipos y documentación para que implementes la lógica completa.
+
+```python
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+# Constantes de negocio recomendadas (ejemplo de configuración de límites)
+# TODO: Define aquí tus constantes en UPPER_SNAKE_CASE con sus valores límite.
+
+def ejecutar_ejercicio_038(
+    personas_confirmadas: str,
+    lista_de_espera: List[Any],
+    persona_promovida: int,
+    estado_de_inscripcion: str
+) -> Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+    """
+    Producir este resultado a partir de las entradas indicadas: **Confirmados, espera y resultado de cada operación**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+
+    Args:
+        personas_confirmadas: Dato de entrada según contrato de negocio.
+        lista_de_espera: Dato de entrada según contrato de negocio.
+        persona_promovida: Dato de entrada según contrato de negocio.
+        estado_de_inscripcion: Dato de entrada según contrato de negocio.
+
+    Returns:
+        Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+            - bool: True si la operación fue exitosa y válida; False si fue rechazada.
+            - Optional[Dict[str, Any]]: Datos resultantes estructurados, o None en caso de fallo.
+            - Optional[str]: Mensaje / causa de rechazo en caso de error, o None en caso de éxito.
+    """
+    # TODO: El profesional debe implementar la normalización, validaciones y cálculo aquí.
+    raise NotImplementedError("Implementación pendiente por el desarrollador.")
+```
+
+---
+
+## 6. Matriz de Casos de Prueba (*Test Cases*)
+
+Diseña tus pruebas unitarias (`unittest` o aserciones estructuradas) cubriendo todos estos escenarios:
+
+| ID | Escenario | Entrada | Salida Esperada | Criterio de Aceptación Evaluado |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Caso 1 | `Capacidad1; A,B; cancelar A` | `B confirmado.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 2 | Caso 2 | `Inscribir B otra vez` | `rechazo.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 3 | Caso 3 | `Cancelar X` | `sin cambios.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+
+---
+
+## 7. Fundamentos de Python y Buenas Prácticas
+
+### Fundamentos Clave
 - **Listas, tuplas, índices y recorridos**. Tema para investigar: Compara secuencias mutables e inmutables; comprueba cómo se representa una secuencia vacía.
 - **Diccionarios, registros y colecciones anidadas**. Tema para investigar: Comprende claves únicas, ausencia de clave, valores por defecto y recorrido; justifica qué entidad merece ser una clave.
 - **Funciones, parámetros, retornos y contratos**. Tema para investigar: Distingue devolver un resultado de imprimirlo; identifica entradas explícitas y posibles efectos sobre argumentos.
 
 Son alternativas de estudio, no una lista de herramientas obligatorias. Justifica cuáles eliges.
 
-### ¿Por qué pueden ser útiles?
-
+### ¿Por qué son útiles en este ejercicio?
 - Representan grupos donde la posición, el orden o la asociación de varios valores tiene significado.
 - Relacionan identidades con atributos, estados o acumulados consultables.
 - Permiten probar decisiones sin depender de cómo se piden o muestran los datos.
 
-### Variables y nombres
-
-Identifica estas entidades: **personas confirmadas, lista de espera, persona promovida, estado de inscripción**. Diseña nombres para variables, colecciones, resultados intermedios, una función y sus parámetros; evita nombres como `dato1` o `temp`.
-
-Comunica intención y unidades, distingue singular/plural y usa verbos para acciones. Identifica qué reglas merecen constantes con nombre. Explica un nombre que descartaste y por qué el elegido ayuda a leer el código.
-
-### Antes de programar
-
-- ¿Qué operaciones deben preservar el orden de llegada?
-- ¿Qué contratos separarías para comprobar las reglas sin depender de la presentación?
-- ¿Qué datos pueden cambiar y qué evidencia mostraría una modificación no deseada?
-
-Recupera razonamiento de [ejercicio 014](ejercicio_014.md), [ejercicio 023](ejercicio_023.md): identifica una similitud y una diferencia de contrato antes de reutilizar algo.
-
-### Pruebas mínimas
-
-1. Capacidad1; A,B; cancelar A → B confirmado.
-2. Inscribir B otra vez → rechazo.
-3. Cancelar X → sin cambios.
-
-Añade un caso propio para el límite señalado en este enunciado. Escribe la expectativa antes de ejecutar y comprueba también los efectos sobre datos o archivos, si existen.
-
-### Errores comunes
-
+### Errores Comunes que Debes Evitar
 - Promover a alguien al cancelar una persona que solo estaba en espera.
 - Dar por correcta la solución tras un solo ejemplo, sin comprobar límites y rechazos.
 
-### Consulta recomendada
+### Recomendaciones de Código Limpio (Clean Code / PEP 8)
+- **Evita efectos secundarios (*side effects*):** No alteres colecciones recibidas como parámetros de entrada.
+- **Tipado estricto:** Aprovecha las anotaciones de tipos para detectar discrepancias antes de la ejecución.
+- **Manejo explícito de ausencia:** Distingue con claridad `None`, `0`, `""` y colecciones vacías `[]`/`{}`.
+
+---
+
+## 8. Consulta Técnica Recomendada
 
 - [Universidad_Python.md — Listas](../Universidad_Python.md#listas).
 - [Universidad_Python.md — Diccionarios](../Universidad_Python.md#diccionarios).
@@ -93,7 +176,9 @@ Añade un caso propio para el límite señalado en este enunciado. Escribe la ex
 
 Investiga el concepto que te falte; cierra los ejemplos resueltos antes de implementar tu diseño.
 
-### Explicación posterior
+---
+
+## 9. Preguntas de Autoevaluación y Reflexión Posterior
 
 - Explica qué hace tu programa y sigue los datos desde la entrada hasta el resultado en este escenario: **Capacidad1; A,B; cancelar A → B confirmado**.
 - ¿Por qué elegiste esas representaciones? ¿Qué significan tus variables, parámetros y resultados intermedios?
@@ -103,12 +188,14 @@ Investiga el concepto que te falte; cierra los ejemplos resueltos antes de imple
 
 Después de implementar, lee una función sin ejecutarla y predice su salida y sus efectos para uno de los casos mínimos. Contrasta tu predicción con la ejecución.
 
-### Aplicación profesional
+---
 
+## 10. Aplicación en el Mundo Real y Reto Adicional
+
+### Aplicación Profesional
 Inscripciones con espera deben preservar orden y promover personas solo cuando se libera una plaza real. Propón otro contexto donde reutilizarías el mecanismo y una regla que tendrías que adaptar.
 
-### Reto adicional
-
+### Reto Adicional (Opcional)
 Añadir cambio de capacidad sin expulsar confirmados existentes.
 
 Es opcional. Señala qué pruebas deben conservar su resultado y cuáles cambian con el nuevo requisito.

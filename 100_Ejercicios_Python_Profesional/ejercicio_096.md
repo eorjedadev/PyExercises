@@ -2,90 +2,175 @@
 
 [Índice](README.md#indice-de-ejercicios) · [Anterior](ejercicio_095.md) · [Siguiente](ejercicio_097.md)
 
-### Contexto
+---
 
+## 1. Contexto y Propósito del Problema
+
+### Contexto
 Un equipo redacta avisos reutilizables sin permitir expresiones ejecutables.
 
-### Situación
-
+### Situación Operativa
 El encargo es **plantillas de mensajes con contrato acotado**. Define una interfaz comprobable y justifica la organización elegida. Automatiza las pruebas del contrato y evita dependencias externas que el problema no necesita.
 
-### Objetivo
-
+### Objetivo Principal
 Producir este resultado a partir de las entradas indicadas: **Mensaje renderizado o diagnóstico, y claves no utilizadas**. La solución debe distinguir los resultados válidos de los rechazos previstos.
 
-### Requisitos
+---
 
-- Respeta las reglas y los formatos, órdenes o interfaces que se indiquen.
-- Aplica las [convenciones comunes](README.md#convenciones-comunes) cuando no exista una excepción explícita.
-- Entrega implementación, pruebas y una explicación de tus decisiones.
+## 2. Especificación del Contrato (Entradas y Salidas)
 
-### Datos de entrada
-
+### Datos de Entrada
 Plantilla y mapa de valores textuales; marcadores con forma {{nombre}}, nombre compuesto por letras ASCII y guion bajo, al menos un carácter.
 
-### Resultado esperado
-
+### Resultado Esperado
 Mensaje renderizado o diagnóstico, y claves no utilizadas.
 
 Los mensajes son de redacción libre; las decisiones y los datos exigidos deben ser inequívocos.
 
-### Reglas de negocio
+### Reglas de Negocio e Invariantes
+- **Regla:** Sustituir marcadores existentes.
+- **Regla:** Clave ausente produce error sin salida parcial.
+- **Regla:** Claves sobrantes se informan.
+- **Regla:** Cualquier par de llaves mal formado se rechaza.
+- **Regla:** Llaves sueltas se rechazan.
+- **Regla:** Valores insertados son literales y no se vuelven a interpretar.
 
-- Sustituir marcadores existentes.
-- Clave ausente produce error sin salida parcial.
-- Claves sobrantes se informan.
-- Cualquier par de llaves mal formado se rechaza.
-- Llaves sueltas se rechazan.
-- Valores insertados son literales y no se vuelven a interpretar.
-
-### Casos especiales y límites
-
+### Casos Especiales y Límites de Frontera
 Un reemplazo no debe convertirse en una segunda plantilla.
 
 Comprueba las fronteras del contrato y explica cuándo un vacío es un resultado válido o una entrada rechazada.
 
-### Fundamentos de Python relacionados
+---
 
+## 3. Guía de Nomenclatura y Variables Profesionales
+
+Se recomienda definir nombres con alta carga semántica, respetando PEP 8 (`snake_case` para variables y funciones, `UPPER_SNAKE_CASE` para constantes de negocio):
+
+| Variable / Identificador | Tipo Sugerido | Propósito y Semántica |
+| :--- | :--- | :--- |
+| `plantilla_original` | `str` | Entidad de dominio: plantilla original. |
+| `marcador_reconocido` | `int` | Entidad de dominio: marcador reconocido. |
+| `valor_literal` | `str` | Entidad de dominio: valor literal. |
+| `clave_faltante` | `str` | Entidad de dominio: clave faltante. |
+
+---
+
+## 4. Guía del Instructor y Razonamiento Lógico (Paso a Paso sin Código)
+
+Para resolver este ejercicio con calidad profesional, sigue este razonamiento mental estructurado. No comiences escribiendo código directamente; primero comprende el flujo de decisiones y traslada estos pasos lógicos a tu solución.
+
+```mermaid
+graph TD
+    A[1. Recepción y Saneamiento] --> B[2. Guardianes de Validación Fail-Fast]
+    B -->|Incumple Regla / Dato Inválido| E[Retorno Inmediato de Rechazo]
+    B -->|Datos Íntegros y Válidos| C[3. Procesamiento Central y Lógica de Negocio]
+    C --> D[4. Empaquetado y Retorno del Resultado]
+```
+
+### 🧠 ¿Cómo debe razonar tu mente paso a paso?
+
+1. **Paso 1: Recepción y Limpieza de Entradas (Saneamiento):**
+   - **Qué datos recibes:** Plantilla y mapa de valores textuales; marcadores con forma {{nombre}}, nombre compuesto por letras ASCII y guion bajo, al menos un carácter.
+   - **Tu acción lógica preliminar:** Revisa los datos de entrada antes de operar. Si recibes cadenas de texto, elimina espacios accidentales en los extremos y normaliza el formato si la regla lo exige (por ejemplo, mayúsculas/minúsculas). Si recibes colecciones o números, asegúrate de mantener la inmutabilidad de las entradas originales.
+
+2. **Paso 2: Guardianes de Validación (*Fail-Fast*):**
+   - Tu lógica debe interrogar los datos en orden estricto antes de realizar cualquier cálculo o transformación pesada:
+     - *Condición de negocio:* Sustituir marcadores existentes.
+     - *Condición de negocio:* Clave ausente produce error sin salida parcial.
+     - *Condición de negocio:* Claves sobrantes se informan.
+     - *Condición de negocio:* Cualquier par de llaves mal formado se rechaza.
+     - *Condición de negocio:* Llaves sueltas se rechazan.
+     - *Condición de negocio:* Valores insertados son literales y no se vuelven a interpretar.
+   - **Decisión inmediata (*Fail-Fast*):** Si alguna de las condiciones de validez se incumple, detén la ejecución en ese preciso instante. Genera el motivo de rechazo claro y estructurado, evitando procesamientos innecesarios o estados corruptos.
+
+3. **Paso 3: Núcleo de Transformación y Lógica de Dominio:**
+   - Una vez superados los guardianes, tienes la certeza de que todos los datos son íntegros y cumplen las restricciones.
+   - **El objetivo que debes resolver:** Producir este resultado a partir de las entradas indicadas: **Mensaje renderizado o diagnóstico, y claves no utilizadas**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+   - **Tu razonamiento operativo:** Aplica las operaciones, filtrados, acumulaciones o transformaciones requeridas por el negocio sobre los datos ya limpios y validados. Considera especialmente los límites de frontera: *Un reemplazo no debe convertirse en una segunda plantilla.*.
+
+4. **Paso 4: Empaquetado y Retorno del Resultado:**
+   - Prepara la respuesta según el contrato de salida:
+     - **En caso de éxito:** Retorna un estado afirmativo (`True`), junto con la estructura de datos procesada (Mensaje renderizado o diagnóstico, y claves no utilizadas.) y el indicador de error en `None`.
+     - **En caso de rechazo:** Retorna un estado negativo (`False`), sin datos procesados (`None`), e incluye el mensaje o causa descriptiva del rechazo.
+
+---
+
+## 5. Esqueleto de Diseño Profesional (Sin Implementar)
+
+> [!IMPORTANT]
+> **Queda prohibido resolver el ejercicio aquí.** El siguiente bloque define el contrato formal, tipos y documentación para que implementes la lógica completa.
+
+```python
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+# Constantes de negocio recomendadas (ejemplo de configuración de límites)
+# TODO: Define aquí tus constantes en UPPER_SNAKE_CASE con sus valores límite.
+
+def ejecutar_ejercicio_096(
+    plantilla_original: str,
+    marcador_reconocido: int,
+    valor_literal: str,
+    clave_faltante: str
+) -> Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+    """
+    Producir este resultado a partir de las entradas indicadas: **Mensaje renderizado o diagnóstico, y claves no utilizadas**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+
+    Args:
+        plantilla_original: Dato de entrada según contrato de negocio.
+        marcador_reconocido: Dato de entrada según contrato de negocio.
+        valor_literal: Dato de entrada según contrato de negocio.
+        clave_faltante: Dato de entrada según contrato de negocio.
+
+    Returns:
+        Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+            - bool: True si la operación fue exitosa y válida; False si fue rechazada.
+            - Optional[Dict[str, Any]]: Datos resultantes estructurados, o None en caso de fallo.
+            - Optional[str]: Mensaje / causa de rechazo en caso de error, o None en caso de éxito.
+    """
+    # TODO: El profesional debe implementar la normalización, validaciones y cálculo aquí.
+    raise NotImplementedError("Implementación pendiente por el desarrollador.")
+```
+
+---
+
+## 6. Matriz de Casos de Prueba (*Test Cases*)
+
+Diseña tus pruebas unitarias (`unittest` o aserciones estructuradas) cubriendo todos estos escenarios:
+
+| ID | Escenario | Entrada | Salida Esperada | Criterio de Aceptación Evaluado |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Caso 1 | `'Hola {{nombre}}' con nombre Ana` | `Hola Ana.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 2 | Caso 2 | `Nombre ausente` | `error.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 3 | Caso 3 | `Valor '{{otro}}'` | `se inserta literalmente.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+
+---
+
+## 7. Fundamentos de Python y Buenas Prácticas
+
+### Fundamentos Clave
 Elige y justifica tus herramientas antes de abrir las referencias. Debes relacionar estos conceptos, sin una estructura de datos impuesta:
 
 - Identidad textual, normalización y formatos admitidos.
 - Contratos, parámetros explícitos y responsabilidades comprobables.
 - Evidencia automatizada y detección de regresiones.
 
-### ¿Por qué pueden ser útiles?
-
+### ¿Por qué son útiles en este ejercicio?
 - Permiten separar el texto recibido de la forma usada para validarlo o compararlo.
 - Permiten probar decisiones sin depender de cómo se piden o muestran los datos.
 - Aportan evidencia repetible de comportamientos y de fallos que deben permanecer controlados.
 
-### Variables y nombres
-
-Identifica estas entidades: **plantilla original, marcador reconocido, valor literal, clave faltante**. Diseña nombres para variables, colecciones, resultados intermedios, una función y sus parámetros; evita nombres como `dato1` o `temp`.
-
-Comunica intención y unidades, distingue singular/plural y usa verbos para acciones. Identifica qué reglas merecen constantes con nombre. Explica un nombre que descartaste y por qué el elegido ayuda a leer el código.
-
-### Antes de programar
-
-- ¿Qué distingue datos de una instrucción dentro de este contrato?
-- Define por tu cuenta los contratos, invariantes y límites de responsabilidad; contrasta al menos dos diseños posibles antes de elegir.
-
-Recupera razonamiento de [ejercicio 005](ejercicio_005.md), [ejercicio 016](ejercicio_016.md), [ejercicio 068](ejercicio_068.md): identifica una similitud y una diferencia de contrato antes de reutilizar algo.
-
-### Pruebas mínimas
-
-1. 'Hola {{nombre}}' con nombre Ana →Hola Ana.
-2. Nombre ausente →error.
-3. Valor '{{otro}}' →se inserta literalmente.
-
-Añade un caso propio para el límite señalado en este enunciado. Escribe la expectativa antes de ejecutar y comprueba también los efectos sobre datos o archivos, si existen.
-
-### Errores comunes
-
+### Errores Comunes que Debes Evitar
 - Usar evaluación de código para resolver marcadores textuales.
 - Dar por correcta la solución tras un solo ejemplo, sin comprobar límites y rechazos.
 
-### Consulta recomendada
+### Recomendaciones de Código Limpio (Clean Code / PEP 8)
+- **Evita efectos secundarios (*side effects*):** No alteres colecciones recibidas como parámetros de entrada.
+- **Tipado estricto:** Aprovecha las anotaciones de tipos para detectar discrepancias antes de la ejecución.
+- **Manejo explícito de ausencia:** Distingue con claridad `None`, `0`, `""` y colecciones vacías `[]`/`{}`.
+
+---
+
+## 8. Consulta Técnica Recomendada
 
 - [Diccionario_Python.md — Métodos de Cadenas](../Diccionario_Python.md#m%C3%A9todos-de-cadenas).
 - [INTENSIVO DE PYTHON (Eric Matthes).md — 8. Funciones](../INTENSIVO%20DE%20PYTHON%20%28Eric%20Matthes%29.md#toc-154).
@@ -93,7 +178,9 @@ Añade un caso propio para el límite señalado en este enunciado. Escribe la ex
 
 Investiga el concepto que te falte; cierra los ejemplos resueltos antes de implementar tu diseño.
 
-### Explicación posterior
+---
+
+## 9. Preguntas de Autoevaluación y Reflexión Posterior
 
 - Explica qué hace tu programa y sigue los datos desde la entrada hasta el resultado en este escenario: **'Hola {{nombre}}' con nombre Ana →Hola Ana**.
 - ¿Por qué elegiste esas representaciones? ¿Qué significan tus variables, parámetros y resultados intermedios?
@@ -103,12 +190,14 @@ Investiga el concepto que te falte; cierra los ejemplos resueltos antes de imple
 
 Antes de modificar o reutilizar código anterior, léelo y predice el recorrido de un caso límite sin ejecutarlo. Registra la predicción y compruébala después.
 
-### Aplicación profesional
+---
 
+## 10. Aplicación en el Mundo Real y Reto Adicional
+
+### Aplicación Profesional
 Generación de mensajes separa sustitución literal de interpretación y valida un lenguaje deliberadamente acotado. Propón otro contexto donde reutilizarías el mecanismo y una regla que tendrías que adaptar.
 
-### Reto adicional
-
+### Reto Adicional (Opcional)
 Permitir escapar llaves con una sintaxis nueva y pruebas de ambigüedad.
 
 Es opcional. Señala qué pruebas deben conservar su resultado y cuáles cambian con el nuevo requisito.

@@ -2,89 +2,171 @@
 
 [Índice](README.md#indice-de-ejercicios) · [Anterior](ejercicio_030.md) · [Siguiente](ejercicio_032.md)
 
-### Contexto
+---
 
+## 1. Contexto y Propósito del Problema
+
+### Contexto
 Administración recibe solicitudes que compiten por presupuestos independientes.
 
-### Situación
-
+### Situación Operativa
 El encargo es **presupuesto de compras por departamento**. Expón la lógica principal mediante funciones con parámetros y retornos comprobables. La presentación por consola puede ser una adaptación; evita depender de variables globales para decidir.
 
-### Objetivo
-
+### Objetivo Principal
 Producir este resultado a partir de las entradas indicadas: **Decisiones con motivo y presupuesto restante de cada departamento**. La solución debe distinguir los resultados válidos de los rechazos previstos.
 
-### Requisitos
+---
 
-- Respeta las reglas y los formatos, órdenes o interfaces que se indiquen.
-- Aplica las [convenciones comunes](README.md#convenciones-comunes) cuando no exista una excepción explícita.
-- Entrega implementación, pruebas y una explicación de tus decisiones.
+## 2. Especificación del Contrato (Entradas y Salidas)
 
-### Datos de entrada
-
+### Datos de Entrada
 Presupuesto inicial por departamento y solicitudes ordenadas con identificador, departamento e importe positivo en céntimos.
 
-### Resultado esperado
-
+### Resultado Esperado
 Decisiones con motivo y presupuesto restante de cada departamento.
 
 Los mensajes son de redacción libre; las decisiones y los datos exigidos deben ser inequívocos.
 
-### Reglas de negocio
+### Reglas de Negocio e Invariantes
+- **Regla:** Identificadores de solicitud únicos.
+- **Regla:** Aceptar si el departamento existe y dispone de saldo.
+- **Regla:** No transferir presupuesto entre departamentos.
+- **Regla:** Continuar después de rechazos.
 
-- Identificadores de solicitud únicos.
-- Aceptar si el departamento existe y dispone de saldo.
-- No transferir presupuesto entre departamentos.
-- Continuar después de rechazos.
-
-### Casos especiales y límites
-
+### Casos Especiales y Límites de Frontera
 Un departamento agotado no impide procesar otros.
 
 Comprueba las fronteras del contrato y explica cuándo un vacío es un resultado válido o una entrada rechazada.
 
-### Fundamentos de Python relacionados
+---
 
+## 3. Guía de Nomenclatura y Variables Profesionales
+
+Se recomienda definir nombres con alta carga semántica, respetando PEP 8 (`snake_case` para variables y funciones, `UPPER_SNAKE_CASE` para constantes de negocio):
+
+| Variable / Identificador | Tipo Sugerido | Propósito y Semántica |
+| :--- | :--- | :--- |
+| `presupuesto_asignado` | `str` | Entidad de dominio: presupuesto asignado. |
+| `departamento_solicitante` | `str` | Entidad de dominio: departamento solicitante. |
+| `gasto_aprobado` | `str` | Entidad de dominio: gasto aprobado. |
+| `remanente` | `str` | Entidad de dominio: remanente. |
+
+---
+
+## 4. Guía del Instructor y Razonamiento Lógico (Paso a Paso sin Código)
+
+Para resolver este ejercicio con calidad profesional, sigue este razonamiento mental estructurado. No comiences escribiendo código directamente; primero comprende el flujo de decisiones y traslada estos pasos lógicos a tu solución.
+
+```mermaid
+graph TD
+    A[1. Recepción y Saneamiento] --> B[2. Guardianes de Validación Fail-Fast]
+    B -->|Incumple Regla / Dato Inválido| E[Retorno Inmediato de Rechazo]
+    B -->|Datos Íntegros y Válidos| C[3. Procesamiento Central y Lógica de Negocio]
+    C --> D[4. Empaquetado y Retorno del Resultado]
+```
+
+### 🧠 ¿Cómo debe razonar tu mente paso a paso?
+
+1. **Paso 1: Recepción y Limpieza de Entradas (Saneamiento):**
+   - **Qué datos recibes:** Presupuesto inicial por departamento y solicitudes ordenadas con identificador, departamento e importe positivo en céntimos.
+   - **Tu acción lógica preliminar:** Revisa los datos de entrada antes de operar. Si recibes cadenas de texto, elimina espacios accidentales en los extremos y normaliza el formato si la regla lo exige (por ejemplo, mayúsculas/minúsculas). Si recibes colecciones o números, asegúrate de mantener la inmutabilidad de las entradas originales.
+
+2. **Paso 2: Guardianes de Validación (*Fail-Fast*):**
+   - Tu lógica debe interrogar los datos en orden estricto antes de realizar cualquier cálculo o transformación pesada:
+     - *Condición de negocio:* Identificadores de solicitud únicos.
+     - *Condición de negocio:* Aceptar si el departamento existe y dispone de saldo.
+     - *Condición de negocio:* No transferir presupuesto entre departamentos.
+     - *Condición de negocio:* Continuar después de rechazos.
+   - **Decisión inmediata (*Fail-Fast*):** Si alguna de las condiciones de validez se incumple, detén la ejecución en ese preciso instante. Genera el motivo de rechazo claro y estructurado, evitando procesamientos innecesarios o estados corruptos.
+
+3. **Paso 3: Núcleo de Transformación y Lógica de Dominio:**
+   - Una vez superados los guardianes, tienes la certeza de que todos los datos son íntegros y cumplen las restricciones.
+   - **El objetivo que debes resolver:** Producir este resultado a partir de las entradas indicadas: **Decisiones con motivo y presupuesto restante de cada departamento**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+   - **Tu razonamiento operativo:** Aplica las operaciones, filtrados, acumulaciones o transformaciones requeridas por el negocio sobre los datos ya limpios y validados. Considera especialmente los límites de frontera: *Un departamento agotado no impide procesar otros.*.
+
+4. **Paso 4: Empaquetado y Retorno del Resultado:**
+   - Prepara la respuesta según el contrato de salida:
+     - **En caso de éxito:** Retorna un estado afirmativo (`True`), junto con la estructura de datos procesada (Decisiones con motivo y presupuesto restante de cada departamento.) y el indicador de error en `None`.
+     - **En caso de rechazo:** Retorna un estado negativo (`False`), sin datos procesados (`None`), e incluye el mensaje o causa descriptiva del rechazo.
+
+---
+
+## 5. Esqueleto de Diseño Profesional (Sin Implementar)
+
+> [!IMPORTANT]
+> **Queda prohibido resolver el ejercicio aquí.** El siguiente bloque define el contrato formal, tipos y documentación para que implementes la lógica completa.
+
+```python
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+# Constantes de negocio recomendadas (ejemplo de configuración de límites)
+# TODO: Define aquí tus constantes en UPPER_SNAKE_CASE con sus valores límite.
+
+def ejecutar_ejercicio_031(
+    presupuesto_asignado: str,
+    departamento_solicitante: str,
+    gasto_aprobado: str,
+    remanente: str
+) -> Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+    """
+    Producir este resultado a partir de las entradas indicadas: **Decisiones con motivo y presupuesto restante de cada departamento**. La solución debe distinguir los resultados válidos de los rechazos previstos.
+
+    Args:
+        presupuesto_asignado: Dato de entrada según contrato de negocio.
+        departamento_solicitante: Dato de entrada según contrato de negocio.
+        gasto_aprobado: Dato de entrada según contrato de negocio.
+        remanente: Dato de entrada según contrato de negocio.
+
+    Returns:
+        Tuple[bool, Optional[Dict[str, Any]], Optional[str]]:
+            - bool: True si la operación fue exitosa y válida; False si fue rechazada.
+            - Optional[Dict[str, Any]]: Datos resultantes estructurados, o None en caso de fallo.
+            - Optional[str]: Mensaje / causa de rechazo en caso de error, o None en caso de éxito.
+    """
+    # TODO: El profesional debe implementar la normalización, validaciones y cálculo aquí.
+    raise NotImplementedError("Implementación pendiente por el desarrollador.")
+```
+
+---
+
+## 6. Matriz de Casos de Prueba (*Test Cases*)
+
+Diseña tus pruebas unitarias (`unittest` o aserciones estructuradas) cubriendo todos estos escenarios:
+
+| ID | Escenario | Entrada | Salida Esperada | Criterio de Aceptación Evaluado |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Caso 1 | `TI:1000, RH:500; TI700, TI400, RH500` | `acepta, rechaza, acepta; TI300, RH0.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 2 | Caso 2 | `Departamento desconocido` | `rechazo.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+| 3 | Caso 3 | `Sin solicitudes` | `mismos presupuestos.` | Cumplimiento del contrato y reglas de negocio asociadas. |
+
+---
+
+## 7. Fundamentos de Python y Buenas Prácticas
+
+### Fundamentos Clave
 - **Diccionarios, registros y colecciones anidadas**. Tema para investigar: Comprende claves únicas, ausencia de clave, valores por defecto y recorrido; justifica qué entidad merece ser una clave.
 - **Funciones, parámetros, retornos y contratos**. Tema para investigar: Distingue devolver un resultado de imprimirlo; identifica entradas explícitas y posibles efectos sobre argumentos.
 - **Bucles, acumuladores y control de flujo**. Tema para investigar: Comprende inicialización, condición de terminación y significado de cada acumulador; no confundas una iteración con un resultado final.
 
 Son alternativas de estudio, no una lista de herramientas obligatorias. Justifica cuáles eliges.
 
-### ¿Por qué pueden ser útiles?
-
+### ¿Por qué son útiles en este ejercicio?
 - Relacionan identidades con atributos, estados o acumulados consultables.
 - Permiten probar decisiones sin depender de cómo se piden o muestran los datos.
 - Permiten examinar entradas sucesivas manteniendo la información necesaria para el resultado.
 
-### Variables y nombres
-
-Identifica estas entidades: **presupuesto asignado, departamento solicitante, gasto aprobado, remanente**. Diseña nombres para variables, colecciones, resultados intermedios, una función y sus parámetros; evita nombres como `dato1` o `temp`.
-
-Comunica intención y unidades, distingue singular/plural y usa verbos para acciones. Identifica qué reglas merecen constantes con nombre. Explica un nombre que descartaste y por qué el elegido ayuda a leer el código.
-
-### Antes de programar
-
-- ¿Qué debe permanecer invariable después de un rechazo?
-- ¿Qué contratos separarías para comprobar las reglas sin depender de la presentación?
-- ¿Qué datos pueden cambiar y qué evidencia mostraría una modificación no deseada?
-
-Recupera razonamiento de [ejercicio 019](ejercicio_019.md), [ejercicio 023](ejercicio_023.md): identifica una similitud y una diferencia de contrato antes de reutilizar algo.
-
-### Pruebas mínimas
-
-1. TI:1000, RH:500; TI700, TI400, RH500 → acepta, rechaza, acepta; TI300, RH0.
-2. Departamento desconocido → rechazo.
-3. Sin solicitudes → mismos presupuestos.
-
-Añade un caso propio para el límite señalado en este enunciado. Escribe la expectativa antes de ejecutar y comprueba también los efectos sobre datos o archivos, si existen.
-
-### Errores comunes
-
+### Errores Comunes que Debes Evitar
 - Validar contra la suma global y gastar fondos de otra área.
 - Dar por correcta la solución tras un solo ejemplo, sin comprobar límites y rechazos.
 
-### Consulta recomendada
+### Recomendaciones de Código Limpio (Clean Code / PEP 8)
+- **Evita efectos secundarios (*side effects*):** No alteres colecciones recibidas como parámetros de entrada.
+- **Tipado estricto:** Aprovecha las anotaciones de tipos para detectar discrepancias antes de la ejecución.
+- **Manejo explícito de ausencia:** Distingue con claridad `None`, `0`, `""` y colecciones vacías `[]`/`{}`.
+
+---
+
+## 8. Consulta Técnica Recomendada
 
 - [Universidad_Python.md — Diccionarios](../Universidad_Python.md#diccionarios).
 - [INTENSIVO DE PYTHON (Eric Matthes).md — 8. Funciones](../INTENSIVO%20DE%20PYTHON%20%28Eric%20Matthes%29.md#toc-154).
@@ -92,7 +174,9 @@ Añade un caso propio para el límite señalado en este enunciado. Escribe la ex
 
 Investiga el concepto que te falte; cierra los ejemplos resueltos antes de implementar tu diseño.
 
-### Explicación posterior
+---
+
+## 9. Preguntas de Autoevaluación y Reflexión Posterior
 
 - Explica qué hace tu programa y sigue los datos desde la entrada hasta el resultado en este escenario: **TI:1000, RH:500; TI700, TI400, RH500 → acepta, rechaza, acepta; TI300, RH0**.
 - ¿Por qué elegiste esas representaciones? ¿Qué significan tus variables, parámetros y resultados intermedios?
@@ -102,12 +186,14 @@ Investiga el concepto que te falte; cierra los ejemplos resueltos antes de imple
 
 Después de implementar, lee una función sin ejecutarla y predice su salida y sus efectos para uno de los casos mínimos. Contrasta tu predicción con la ejecución.
 
-### Aplicación profesional
+---
 
+## 10. Aplicación en el Mundo Real y Reto Adicional
+
+### Aplicación Profesional
 Control de presupuestos protege límites independientes y permite continuar con solicitudes de otras áreas. Propón otro contexto donde reutilizarías el mecanismo y una regla que tendrías que adaptar.
 
-### Reto adicional
-
+### Reto Adicional (Opcional)
 Incorporar cancelación de una solicitud aprobada una sola vez.
 
 Es opcional. Señala qué pruebas deben conservar su resultado y cuáles cambian con el nuevo requisito.

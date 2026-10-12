@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "enunciado": "Cual es el gestor de geometria mas recomendado para formularios en cuadricula en Tkinter?",
+    "opciones": {
+      "A": "place",
+      "B": "pack",
+      "C": "grid",
+      "D": "layout"
+    },
+    "respuesta_correcta": "C"
+  },
+  {
+    "id": 2,
+    "enunciado": "Que metodo de Tkinter programa la ejecucion diferida de una funcion en el bucle de eventos?",
+    "opciones": {
+      "A": "time.sleep()",
+      "B": "root.after()",
+      "C": "root.schedule()",
+      "D": "event.defer()"
+    },
+    "respuesta_correcta": "B"
+  }
+]
